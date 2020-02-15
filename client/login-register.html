@@ -1,0 +1,61 @@
+<!-- TELLS THE BROSWER -->
+<!doctype html>
+<!-- ENGLISH -->
+<html lang="en">
+  <!-- HEAD -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ADD TITLE -->
+    <title></title>
+    <!-- ADD DESCRIPTION -->
+    <meta name="description" content="">
+    <!-- ADD AUTHOR -->
+    <meta name="author" content="">
+    <!-- ADD CSS FILES HERE -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ADD FAVICON -->
+    <!-- Learn more about favicons here: https://en.wikipedia.org/wiki/Favicon -->
+  </head>
+  <!-- BODY -->
+  <body>
+    <!-- ADD CONTENT HERE -->
+    <main>
+      <!-- Register Form -->
+      <section>
+        <h2>Register</h2>
+        <p>Create an account :D</p>
+        <div>
+          <label for="emailRegister">Email</label>
+          <input id="emailRegister" type="text" placeholder="Enter Email" name="emailRegister" required>
+      
+          <label for="passwordRegister">Password</label>
+          <input id="passwordRegister" type="password" placeholder="Enter Password" name="passwordRegister" required>
+      
+          <button type="submit" onclick="createAccount()">Register</button>
+        </div>
+      </section>
+      <!-- Login Form -->
+      <section>
+        <h2>Login</h2>
+        <p>If you already have an account login here!</p>
+        <div>
+          <label for="emailLogin">Email</label>
+          <input id="emailLogin" type="text" placeholder="Enter Email" name="emailLogin" required>
+      
+          <label for="passwordLogin">Password</label>
+          <input id="passwordLogin" type="password" placeholder="Enter Password" name="passwordLogin" required>
+      
+          <button type="submit" onclick="login()">Login</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- JAVASCRIPT SCRIPT -->
+    <!-- ADD JS FILES HERE -->
+    <script src="js/helper.js"></script> <!-- Loopback JavaScript Helper-->
+    <script src="js/login-register.js"></script>
+  </body>
+</html>
