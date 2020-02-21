@@ -58,7 +58,7 @@ function login() {
 // Check if user is already logged in
 if (getCookie("userAuth")) {
   // User already logged in
- console.log("You are already logged in.");
+ console.log("Welcome");
   // Redirect User to Homepage
   window.location = "/";
 }
