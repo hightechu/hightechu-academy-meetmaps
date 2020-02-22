@@ -4,7 +4,8 @@
     "AccessToken": 3,
     "ACL": 1,
     "RoleMapping": 1,
-    "Role": 1
+    "Role": 1,
+    "group": 2
   },
   "models": {
     "User": {
@@ -17,6 +18,9 @@
     },
     "ACL": {},
     "RoleMapping": {},
-    "Role": {}
+    "Role": {},
+    "group": {
+      "1": "{\"name\":\"Test\",\"defLocation\":\"828\",\"id\":1}"
+    }
   }
 }

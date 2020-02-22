@@ -34,11 +34,23 @@
 					<span id="loginRegister"></span>
 				</p>
 			</section>
+			<div>
+				<h3>Create new group</h3>
+				<label for="groupName">Group Name</label>
+				<input id="groupName" type="text" placeholder="Enter name" name="groupName" required>
+			
+				<label for="defLocation">Default Location</label>
+				<input id="defLocation" type="text" placeholder="Enter home location" name="defLocation" required>
+			
+				<button type="submit" onclick="createGroup()">Create Group</button>
+			  </div>
+			  <span id="dataName"></span>
 		</main>
 
 		<!-- JAVASCRIPT SCRIPT -->
 		<!-- ADD JS FILES HERE -->
 		<script src="js/helper.js"></script> <!-- Loopback JavaScript Helper-->
 		<script src="js/data.js"></script>
+		<script src="js/group.js"></script>
 	</body>
 </html>
