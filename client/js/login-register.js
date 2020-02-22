@@ -20,7 +20,7 @@ function createAccount() {
   jsonObj.email = document.getElementById("emailRegister").value;
   jsonObj.password = document.getElementById("passwordRegister").value;
   jsonObj.username = document.getElementById("usernameRegister").value;
-  jsonObj.defaultAddress = document.getElementById("default address").value;
+  jsonObj.defaultAddress = document.getElementById("defaultAddress").value;
 
   // Connect to the API
   connectAPI("users", "POST", responseStatus, jsonObj);
