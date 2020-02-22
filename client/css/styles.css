@@ -1,6 +1,6 @@
 /* Add Styles Here */
 table {
-  
+    display: inline-block;
     border: 1px solid green;
     height: 50vh;
     background-color: green
@@ -8,7 +8,6 @@ table {
 .title {
     height: 10vh;
     width: 100vw;
-    
 }
 body {
     background-color: rgb(97, 86, 86);
