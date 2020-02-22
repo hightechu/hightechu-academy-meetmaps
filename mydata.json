@@ -4,7 +4,8 @@
     "AccessToken": 4,
     "ACL": 1,
     "RoleMapping": 1,
-    "Role": 1
+    "Role": 1,
+    "group": 5
   },
   "models": {
     "User": {
@@ -18,6 +19,12 @@
     },
     "ACL": {},
     "RoleMapping": {},
-    "Role": {}
+    "Role": {},
+    "group": {
+      "1": "{\"name\":\"Test\",\"defLocation\":\"828\",\"id\":1}",
+      "2": "{\"name\":\"Group2\",\"defLocation\":\"1800\",\"id\":2}",
+      "3": "{\"name\":\"Group3\",\"defLocation\":\"2020\",\"id\":3}",
+      "4": "{\"name\":\"Group4\",\"defLocation\":\"2021\",\"id\":4}"
+    }
   }
 }
