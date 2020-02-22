@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- ADD TITLE -->
-		<title></title>
+		<title>Title</title>
 		<!-- ADD DESCRIPTION -->
 		<meta name="description" content="">
 		<!-- ADD AUTHOR -->
@@ -25,32 +25,93 @@
 
 		<!-- LANDING CONTENT -->
 		<main>
-			<section>
-				<h1>Logged In</h1>
-			</section>
-			<section>
-				<p>
-					<span id="dataFromAPI"></span>
-					<span id="loginRegister"></span>
-				</p>
-			</section>
-			<div>
-				<h3>Create new group</h3>
-				<label for="groupName">Group Name</label>
-				<input id="groupName" type="text" placeholder="Enter name" name="groupName" required>
-			
-				<label for="defLocation">Default Location</label>
-				<input id="defLocation" type="text" placeholder="Enter home location" name="defLocation" required>
-			
-				<button type="submit" onclick="createGroup()">Create Group</button>
-			  </div>
-			  <span id="dataName"></span>
+	<!--Banner-->		
+<table class="title">
+	<tr>
+		<td><img src= ""></td>
+		<td><h1>Title</h1></td>
+		<td><button>Profile</button></td>
+		<td><button>Sign Out</button></td>
+	</tr>
+</table>
+
+<br>
+
+<!--Locations Table-->
+<table>
+	<tr>
+		<td>
+			<h2>Locations</h2><br>
+			<button>Meet</button>
+			<h3>Recommended</h3>
+			<hr>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<ol>
+				<li>item 1</li>
+				<li>item 2</li>
+			</ol>
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h3>Favourites</h3>
+			<ol>
+				<li>item 1</li>
+				<li>item 2</li>
+			</ol>
+			<hr>
+		</td>
+		
+	</tr>
+</table>
+<!--Map Place Holder-->
+<table class = "Map">
+	<tr>
+		<td>
+			<img src="https://images-na.ssl-images-amazon.com/images/I/51qbezyitbL._AC_.jpg">
+		</td>
+	</tr>
+</table>
+
+<!--Groups Table-->
+<table>
+	<tr>
+		<td>
+			<h2>Groups</h2><br>
+			<button>+</button>
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<ul>
+				<li>group one</li>
+				<li>group two</li>
+			</ul>
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h3>Invites</h3>
+			<ul>
+				<li>Invite one</li>
+			</ul>
+		</td>
+	</tr>
+</table>
+
 		</main>
 
 		<!-- JAVASCRIPT SCRIPT -->
 		<!-- ADD JS FILES HERE -->
 		<script src="js/helper.js"></script> <!-- Loopback JavaScript Helper-->
 		<script src="js/data.js"></script>
-		<script src="js/group.js"></script>
+		
 	</body>
 </html>

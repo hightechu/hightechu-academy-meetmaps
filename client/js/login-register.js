@@ -19,6 +19,8 @@ function createAccount() {
   var jsonObj = new Object();
   jsonObj.email = document.getElementById("emailRegister").value;
   jsonObj.password = document.getElementById("passwordRegister").value;
+  jsonObj.username = document.getElementById("usernameRegister").value;
+  jsonObj.defaultAddress = document.getElementById("defaultAddress").value;
 
   // Connect to the API
   connectAPI("users", "POST", responseStatus, jsonObj);
@@ -58,7 +60,7 @@ function login() {
 // Check if user is already logged in
 if (getCookie("userAuth")) {
   // User already logged in
- console.log("Welcome!");
+ console.log("You are already logged in.");
   // Redirect User to Homepage
   window.location = "/";
 }
