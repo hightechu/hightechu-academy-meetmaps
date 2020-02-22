@@ -38,5 +38,13 @@
   "group": {
     "dataSource": "db",
     "public": true
+  },
+  "groupMembers": {
+    "dataSource": "db",
+    "public": true
+  },
+  "location": {
+    "dataSource": "db",
+    "public": true
   }
 }

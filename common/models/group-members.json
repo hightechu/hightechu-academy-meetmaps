@@ -1,14 +1,18 @@
 {
-  "name": "group",
-  "plural": "groups",
+  "name": "groupMembers",
+  "plural": "groupMembers",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string",
+    "userID": {
+      "type": "number",
+      "required": true
+    },
+    "groupID": {
+      "type": "number",
       "required": true
     }
   },
