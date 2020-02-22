@@ -1,1 +1,17 @@
 /* Add Styles Here */
+table {
+    display: inline-block;
+    border: 1px solid green;
+    height: 50vh;
+    background-color: green
+}
+.title {
+    height: 10vh;
+    width: 100vw;
+}
+body {
+    background-color: rgb(97, 86, 86);
+}
+.Map{
+    width: 200px;
+}
