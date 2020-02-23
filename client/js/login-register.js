@@ -56,10 +56,11 @@ function login() {
   // Connect to the API
   connectAPI("users/login", "POST", responseStatus, jsonObj);
 }
-
+/*
 function signOut() {
     userAuthentication = JSON.parse(getCookie("userAuth")); 
     console.log(JSON.stringify(userAuthentication)); 
     setCookie("userAuth", JSON.stringify("false")); 
-    window.location = "/"; 
+    window.location = "/index.html"; 
 }
+*/
