@@ -18,15 +18,6 @@ function createGroup() {
         addUserToGroup(userID, groupID); 
         }
     }
-    /*
-    responseUserID = function (response, status) {
-        if ('error' in response) {
-          console.log("{0}: {1}".format(status, response.error.message));
-        }
-        else {
-          userID = "{0}".format(response.id);
-        }
-    }*/ 
 
     // Grab data index page
     var jsonObj = new Object();
@@ -34,7 +25,6 @@ function createGroup() {
 
     // Connect to the API
     connectAPI("groups", "POST", newGroup, jsonObj);
-    //connectAPI("users/{0}".format(getCookie("userId")), "GET", responseUserID); 
     
 } // createGroup
 
