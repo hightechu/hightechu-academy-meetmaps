@@ -1,14 +1,22 @@
 {
-  "name": "group",
-  "plural": "groups",
+  "name": "location",
+  "plural": "locations",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string",
+    "userID": {
+      "type": "number",
+      "required": true
+    },
+    "lat": {
+      "type": "number",
+      "required": true
+    },
+    "lng": {
+      "type": "number",
       "required": true
     }
   },

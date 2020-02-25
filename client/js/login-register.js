@@ -57,10 +57,8 @@ function login() {
   connectAPI("users/login", "POST", responseStatus, jsonObj);
 }
 
-// Check if user is already logged in
-if (getCookie("userAuth")) {
-  // User already logged in
- console.log("You are already logged in.");
-  // Redirect User to Homepage
-  window.location = "/";
+function signOut() {
+    document.cookie = "userAuth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location = "/index.html"; 
 }
