@@ -5,8 +5,8 @@
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
-    "group": 31,
-    "groupMembers": 10
+    "group": 33,
+    "groupMembers": 12
   },
   "models": {
     "User": {
@@ -60,7 +60,9 @@
       "27": "{\"name\":\"TestTest\",\"id\":27}",
       "28": "{\"name\":\"TestGroup\",\"id\":28}",
       "29": "{\"name\":\"TestGroup\",\"id\":29}",
-      "30": "{\"name\":\"MattTest\",\"id\":30}"
+      "30": "{\"name\":\"MattTest\",\"id\":30}",
+      "31": "{\"name\":\"NewGrOUP\",\"id\":31}",
+      "32": "{\"name\":\"NewGrOUP\",\"id\":32}"
     },
     "groupMembers": {
       "1": "{\"userID\":3,\"groupID\":21,\"id\":1}",
@@ -71,7 +73,9 @@
       "6": "{\"userID\":3,\"groupID\":27,\"id\":6}",
       "7": "{\"userID\":3,\"groupID\":28,\"id\":7}",
       "8": "{\"userID\":3,\"groupID\":29,\"id\":8}",
-      "9": "{\"userID\":5,\"groupID\":30,\"id\":9}"
+      "9": "{\"userID\":5,\"groupID\":30,\"id\":9}",
+      "10": "{\"userID\":0,\"groupID\":31,\"id\":10}",
+      "11": "{\"userID\":0,\"groupID\":32,\"id\":11}"
     }
   }
 }

@@ -161,20 +161,63 @@
 	</tr>
 </table> -->
 
+
+// Register Form --
+<section id="loginSignup">
+	<section>
+	  <h2>Register</h2>
+	  <p>Create an account :D</p>
+  
+	  <div>
+		<label for="emailRegister">Email</label>
+		<input id="emailRegister" type="text" placeholder="Enter Email" name="emailRegister" required>
+	
+		<label for="passwordRegister">Password</label>
+		<input id="passwordRegister" type="password" placeholder="Enter Password" name="passwordRegister" required>
+
+		<label for="usernameRegister">username</label>
+		<input id="usernameRegister" type="username" placeholder="Enter username" name="usernameRegister" required>
+
+		<label for="defaultAddress">defaultAddress</label>
+		<input id="defaultAddress" type="defaultAddress" placeholder="Enter Default Address" name="defaultAddress" required>
+	
+		<button type="submit" onclick="createAccount()">Register</button>
+	  </div>
+	</section>
+// Login Form --
+	<section>
+	  <h2>Login</h2>
+	  <p>If you already have an account login here!</p>
+	  <div>
+		<label for="emailLogin">Email</label>
+		<input id="emailLogin" type="text" placeholder="Enter Email" name="emailLogin" required>
+	
+		<label for="passwordLogin">Password</label>
+		<input id="passwordLogin" type="password" placeholder="Enter Password" name="passwordLogin" required>
+	
+		<button type="submit" onclick="login()">Login</button>
+	  </div>
+	</section>
+</section>
 <!--Bootstrap Main Body-->
 <div class="container mw-90">
 	<div id="separator" class="row">
 	</div>
 	<div class="row">
 		<div class ="col-md-3 text text-center">
-			<h2>Locations</h1>
+			<h2>Locations</h2>
 		</div>
 		<div id="map" class ="col-md-6">
 			<img src="https://images-na.ssl-images-amazon.com/images/I/51qbezyitbL._AC_.jpg">
 		</div>
-		<div class="col-md-3 text text-center">
-			<h2>Groups</h1>
-		</div>
+		<div class="col-md-3 text-center">
+			<h2>Groups</h2>
+			<input id="groupName" type="text" placeholder="Enter Group Name" name="groupName" required>
+			<button onclick="createGroup()">Create Group</button>
+			
+			<div id="groups">
+			</div>
+			</div>
 	</div>
 </div>
 
