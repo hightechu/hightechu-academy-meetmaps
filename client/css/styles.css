@@ -20,3 +20,38 @@ body {
     float: right; 
     display: block;
 }
+
+#header {
+    height: 5em;
+    background-color: #118A0F;
+}
+
+#separator {
+    height:2em;
+}
+
+#logo img {
+    margin: 10px;
+    height: 59px;
+}
+
+#map img {
+    width: 100%;
+}
+
+.mw-90 {
+    max-width: 90%!important;
+}
+
+.text {
+    display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 1.2;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
