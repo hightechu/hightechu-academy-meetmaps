@@ -10,6 +10,6 @@ function loadPage () {
         var loginSignup = document.getElementById("loginSignup");
         loginSignup.style.display = "block"; 
     }
-
+    showGroups(); 
 }
 
