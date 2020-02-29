@@ -1,11 +1,11 @@
 /* Add Styles Here */
 table {
     display: inline-block;
-  
+    border: 1px solid green;
+    height: 50vh;
+    background-color: green
 }
 .title {
-    border: 1px solid green;
-    background-color: green;
     height: 10vh;
     width: 100vw;
 }
@@ -15,12 +15,8 @@ body {
 .Map{
     width: 200px;
 }
-.sidebar {
-    border: 1px solid green;
-    height: 50vh;
-    background-color: green
-}
-.container {
-    border: 1px solid green;
-    background-color: green;
+
+#loginSignup {
+    float: right; 
+    display: block;
 }

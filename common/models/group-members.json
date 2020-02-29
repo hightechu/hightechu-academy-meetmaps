@@ -1,0 +1,23 @@
+{
+  "name": "groupMembers",
+  "plural": "groupMembers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userID": {
+      "type": "number",
+      "required": true
+    },
+    "groupID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
