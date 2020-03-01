@@ -66,34 +66,60 @@ function showGroups() {
                 //group.onclick = function(){inGroup(response[i].groupID)};
                 group.addEventListener('click', function(){ inGroup(this.id)});
                 group.className = "groupButton";
-                group.setAttribute("id", "groupName" + i);
+                group.setAttribute("id", "groupName" + response[i-1].groupID);
                 groups.appendChild(group);//to show on myView 
             } //for each group
         } // no error with group
     } // response
-    connectAPI("groupMembers?filter[userID]={0}".format(currentUser), "GET", response); 
+    connectAPI('groupMembers?filter={"where":{"userID":"' + "{0}".format(currentUser) + '"}}', "GET", response); 
     // Connect to the API
 }
 
 function inGroup(id) {
-    id = id.substring(9, id.length+1); 
-    response = function(response, status) {
-        if ('error' in response) {
-            console.log("{0}: {1}".format(status, response.error.message));
-        } else {
             showUsers = function(users, status) {
                 if ('error' in users) {
                     console.log("{0}: {1}".format(status, users.error.message));
                 } else {
+                    groupName = function(group, status) {
+                        if ('error' in group) {
+                            console.log("{0}: {1}".format(status, group.error.message));
+                        } else {
+                            console.log(group.name); 
+                            if (document.getElementById("groupTitle")) {
+                                document.getElementById("groupTitle").innerHTML = group.name; 
+                            } else {
+                                var gHeader = document.createElement("h2");
+                                var t = document.createTextNode(group.name); 
+                                gHeader.appendChild(t); 
+                                gHeader.setAttribute("id", "groupTitle");
+                                groups.appendChild(gHeader); 
+                            } // if element exists
+                        } // if error
+                    } // groupName
+                    connectAPI("groups/{0}".format(id), "GET", groupName);
                     for (var i = 0; i < users.length; i++) {
+                        usersInGroup = function(username, status) {
+                            if ('error' in username) {
+                                console.log("{0}: {1}".format(status, username.error.message));
+                            } else {
+                                console.log(username.username); 
+                                if (document.getElementById("userTitle" + i)) {
+                                    document.getElementById("userTitle" + i).innerHTML = "- " + username.username; 
+                                } else {
+                                    var gHeader = document.createElement("h4");
+                                    var t = document.createTextNode("- " + username.username); 
+                                    gHeader.appendChild(t); 
+                                    gHeader.setAttribute("id", "userTitle" + i);
+                                    groups.appendChild(gHeader); 
+                                } // if element exists
+                            } // if error
+                        } // usersInGroup
                         console.log(users[i].userID); 
+                        connectAPI("users/{0}".format(users[i].userID), "GET", usersInGroup);
                     }
                 }
             } // showUsers
-            console.log("Group: " + response.groupID); // 30
-            connectAPI('groupMembers?filter={"where":{"groupID":"' + response.groupID + '"}}', "GET", showUsers); 
-        } // no error with group
-    } // response
-    //console.log(id); 
-    connectAPI("groupMembers/{0}".format(id), "GET", response); 
+            id = id.substring(9, id.length+1); 
+            console.log("Group: " + id); // 30
+            connectAPI('groupMembers?filter={"where":{"groupID":"' + id + '"}}', "GET", showUsers); 
 } // inGroup
