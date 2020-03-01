@@ -91,7 +91,7 @@ function inGroup(id) {
                 }
             } // showUsers
             console.log("Group: " + response.groupID); // 30
-            connectAPI("groupMembers?filter[groupID]={0}".format(response.groupID), "GET", showUsers); 
+            connectAPI('groupMembers?filter={"where":{"groupID":"' + response.groupID + '"}}', "GET", showUsers); 
         } // no error with group
     } // response
     //console.log(id); 
