@@ -8,13 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- ADD TITLE -->
-		<title>Title</title>
+		<title>Meet Map</title>
 		<!-- ADD DESCRIPTION -->
 		<meta name="description" content="">
 		<!-- ADD AUTHOR -->
 		<meta name="author" content="">
 		<!-- ADD CSS FILES HERE -->
 		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 		<!-- ADD FAVICON -->
 		<!-- Learn more about favicons here: https://en.wikipedia.org/wiki/Favicon -->
@@ -26,17 +27,34 @@
 		<!-- LANDING CONTENT -->
 		<main>
 	<!--Banner-->		
-<table class="title">
+<!--table class="title">
 	<tr>
 		<td><img src= ""></td>
 		<td><h1>Title</h1></td>
 		<td><button>Profile</button></td>
 		<td><button onclick="signOut()">Sign Out</button></td>
 	</tr>
-</table>
+</table-->
 
-<br>
-	<!-- Register Form -->
+<div id="header" class="container mw-100 ">
+	<div class="row w-100 no-gutters align-items-center">
+		<div id="logo" class="col-sm-1">
+			<img src="https://image.flaticon.com/icons/svg/814/814587.svg" alt="logo">
+		</div>
+		<div class="col-sm-9">
+			<h1 class="text-center">Meet Map</h1>
+		</div>
+		<div class="col-sm-1">
+			<button class="btn btn-light">Profile</button>
+		</div>
+		<div class="col-sm-1">
+			<button onclick="signOut()" class="btn btn-light">Sign Out</button>
+		</div>
+	</div>
+</div>
+
+<!-- <br>
+// Register Form --
 <section id="loginSignup">
 	<section>
 	  <h2>Register</h2>
@@ -58,7 +76,7 @@
 		<button type="submit" onclick="createAccount()">Register</button>
 	  </div>
 	</section>
-	<!-- Login Form -->
+// Login Form --
 	<section>
 	  <h2>Login</h2>
 	  <p>If you already have an account login here!</p>
@@ -73,7 +91,7 @@
 	  </div>
 	</section>
 </section>
-<!--Locations Table-->
+// Locations Table--
 <table>
 	<tr>
 		<td>
@@ -105,7 +123,7 @@
 		
 	</tr>
 </table>
-<!--Map Place Holder-->
+// Map Place Holder--
 <table class = "Map">
 	<tr>
 		<td>
@@ -114,7 +132,7 @@
 	</tr>
 </table>
 
-<!--Groups Table-->
+//Groups Table--
 <table>
 	<tr>
 		<td>
@@ -127,8 +145,8 @@
 	<tr>
 		<td>
 			<ul id="groups">
-				<!--<li>group one</li>
-				<li>group two</li> -->
+				<li>group one</li>
+				<li>group two</li>
 			</ul>
 			<hr>
 		</td>
@@ -141,7 +159,67 @@
 			</ul>
 		</td>
 	</tr>
-</table>
+</table> -->
+
+
+// Register Form --
+<section id="loginSignup">
+	<section>
+	  <h2>Register</h2>
+	  <p>Create an account :D</p>
+  
+	  <div>
+		<label for="emailRegister">Email</label>
+		<input id="emailRegister" type="text" placeholder="Enter Email" name="emailRegister" required>
+	
+		<label for="passwordRegister">Password</label>
+		<input id="passwordRegister" type="password" placeholder="Enter Password" name="passwordRegister" required>
+
+		<label for="usernameRegister">username</label>
+		<input id="usernameRegister" type="username" placeholder="Enter username" name="usernameRegister" required>
+
+		<label for="defaultAddress">defaultAddress</label>
+		<input id="defaultAddress" type="defaultAddress" placeholder="Enter Default Address" name="defaultAddress" required>
+	
+		<button type="submit" onclick="createAccount()">Register</button>
+	  </div>
+	</section>
+// Login Form --
+	<section>
+	  <h2>Login</h2>
+	  <p>If you already have an account login here!</p>
+	  <div>
+		<label for="emailLogin">Email</label>
+		<input id="emailLogin" type="text" placeholder="Enter Email" name="emailLogin" required>
+	
+		<label for="passwordLogin">Password</label>
+		<input id="passwordLogin" type="password" placeholder="Enter Password" name="passwordLogin" required>
+	
+		<button type="submit" onclick="login()">Login</button>
+	  </div>
+	</section>
+</section>
+<!--Bootstrap Main Body-->
+<div class="container mw-90">
+	<div id="separator" class="row">
+	</div>
+	<div class="row">
+		<div class ="col-md-3 text text-center">
+			<h2>Locations</h2>
+		</div>
+		<div id="map" class ="col-md-6">
+			<img src="https://images-na.ssl-images-amazon.com/images/I/51qbezyitbL._AC_.jpg">
+		</div>
+		<div class="col-md-3 text-center">
+			<h2>Groups</h2>
+			<input id="groupName" type="text" placeholder="Enter Group Name" name="groupName" required>
+			<button onclick="createGroup()">Create Group</button>
+			
+			<div id="groups">
+			</div>
+			</div>
+	</div>
+</div>
 
 		</main>
 
