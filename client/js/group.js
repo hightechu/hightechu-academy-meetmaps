@@ -1,3 +1,4 @@
+
 // creates a new group in the group model
 function createGroup() {
     var userID;
@@ -76,50 +77,52 @@ function showGroups() {
 }
 
 function inGroup(id) {
-            showUsers = function(users, status) {
-                if ('error' in users) {
-                    console.log("{0}: {1}".format(status, users.error.message));
+    showUsers = function(users, status) {
+        if ('error' in users) {
+            console.log("{0}: {1}".format(status, users.error.message));
+        } else {
+            groupName = function(group, status) {
+                if ('error' in group) {
+                    console.log("{0}: {1}".format(status, group.error.message));
                 } else {
-                    groupName = function(group, status) {
-                        if ('error' in group) {
-                            console.log("{0}: {1}".format(status, group.error.message));
+                    console.log(group.name); 
+                    if (document.getElementById("groupTitle")) {
+                        document.getElementById("groupTitle").innerHTML = group.name; 
+                    } else {
+                        var gHeader = document.createElement("h2");
+                        var t = document.createTextNode(group.name); 
+                        gHeader.appendChild(t); 
+                        gHeader.setAttribute("id", "groupTitle");
+                        groups.appendChild(gHeader); 
+                    } // if element exists
+                } // if error
+            } // groupName
+            connectAPI("groups/{0}".format(id), "GET", groupName);
+            for (var i = 0; i < users.length; i++) {
+                usersInGroup = function(uname, status) {
+                    if ('error' in uname) {
+                        console.log("{0}: {1}".format(status, uname.error.message));
+                    } else {
+                        console.log(uname.name); 
+                        if (document.getElementById("userTitle" + i)) {
+                            document.getElementById("userTitle" + i).innerHTML = "- " + uname.name; 
                         } else {
-                            console.log(group.name); 
-                            if (document.getElementById("groupTitle")) {
-                                document.getElementById("groupTitle").innerHTML = group.name; 
-                            } else {
-                                var gHeader = document.createElement("h2");
-                                var t = document.createTextNode(group.name); 
-                                gHeader.appendChild(t); 
-                                gHeader.setAttribute("id", "groupTitle");
-                                groups.appendChild(gHeader); 
-                            } // if element exists
-                        } // if error
-                    } // groupName
-                    connectAPI("groups/{0}".format(id), "GET", groupName);
-                    for (var i = 0; i < users.length; i++) {
-                        usersInGroup = function(username, status) {
-                            if ('error' in username) {
-                                console.log("{0}: {1}".format(status, username.error.message));
-                            } else {
-                                console.log(username.username); 
-                                if (document.getElementById("userTitle" + i)) {
-                                    document.getElementById("userTitle" + i).innerHTML = "- " + username.username; 
-                                } else {
-                                    var gHeader = document.createElement("h4");
-                                    var t = document.createTextNode("- " + username.username); 
-                                    gHeader.appendChild(t); 
-                                    gHeader.setAttribute("id", "userTitle" + i);
-                                    groups.appendChild(gHeader); 
-                                } // if element exists
-                            } // if error
-                        } // usersInGroup
-                        console.log(users[i].userID); 
-                        connectAPI("users/{0}".format(users[i].userID), "GET", usersInGroup);
-                    }
-                }
-            } // showUsers
-            id = id.substring(9, id.length+1); 
-            console.log("Group: " + id); // 30
-            connectAPI('groupMembers?filter={"where":{"groupID":"' + id + '"}}', "GET", showUsers); 
+                            var gHeader = document.createElement("h4");
+                            var t = document.createTextNode("- " + uname.name); 
+                            gHeader.appendChild(t); 
+                            gHeader.setAttribute("id", "userTitle" + i);
+                            groups.appendChild(gHeader); 
+                        } // if element exists
+                    } // if error
+                } // usersInGroup
+                console.log(users[i].userID); 
+                connectAPI('usernames?filter={"where":{"useridnty":"' + users[i].userID + '"}}', "GET", usersInGroup);
+            } // for
+        } // else - no error
+    } // showUsers
+    id = id.substring(9, id.length+1); 
+    console.log("Group: " + id); 
+    currentGroupId = id; 
+    connectAPI('groupMembers?filter={"where":{"groupID":"' + id + '"}}', "GET", showUsers);
+    document.getElementById("invite").style.display = "block";  
 } // inGroup

@@ -1,3 +1,5 @@
+var currentGroupId; 
+
 // Add JS Here
 function loadPage () {
     if (getCookie("userAuth")) {

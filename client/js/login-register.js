@@ -8,12 +8,37 @@ function createAccount() {
       console.log("{0}: {1}".format(status, response.error.message));
     }
     else {
-      // Account Created Successfully
       console.log("Account created successfully!");
-      // Redirect User to Homepage
-      window.location = "/";
     }
   }
+  login = function (response, status) {
+    if ('error' in response) {
+      // Inform User of Error
+      console.log("{0}: {1}".format(status, response.error.message));
+    }
+    else {
+      console.log("User Logged In successfully!");
+      setCookie("userAuth", response.id);
+      // Set userID in a cookie
+      setCookie("userId", response.userId);
+
+      saveNewUser = function (a, b) {
+        if ('error' in a) {
+          // Inform User of Error
+          console.log("{0}: {1}".format(b, a.error.message));
+        }
+        else {
+          console.log("User {0}: {1}".format(a.useridnty, a.name));
+
+        }
+      }
+      var jsonNameObj = new Object(); 
+      jsonNameObj.name = document.getElementById("usernameRegister").value;
+      jsonNameObj.useridnty = "{0}".format(response.userId); 
+      connectAPI("usernames", "POST", saveNewUser, jsonNameObj); 
+      window.location = "/";
+    }
+  } // login response fxn
 
   // Grab data from login-register page
   var jsonObj = new Object();
@@ -22,9 +47,15 @@ function createAccount() {
   jsonObj.username = document.getElementById("usernameRegister").value;
   jsonObj.defaultAddress = document.getElementById("defaultAddress").value;
 
-  // Connect to the API
   connectAPI("users", "POST", responseStatus, jsonObj);
-}
+
+  var loginObj = new Object();
+  loginObj.email = document.getElementById("emailRegister").value;
+  loginObj.password = document.getElementById("passwordRegister").value;
+
+  // Connect to the API
+  connectAPI("users/login", "POST", login, loginObj);
+} // create Account
 
 // login
 function login() {
@@ -41,7 +72,7 @@ function login() {
       // Set userAuth in a cookie
       setCookie("userAuth", response.id);
       // Set userID in a cookie
-      setCookie("userId", response.userId)
+      setCookie("userId", response.userId); 
 
       // Redirect User to Homepage
       window.location = "/";

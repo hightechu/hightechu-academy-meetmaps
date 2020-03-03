@@ -55,3 +55,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#invite {
+    display: none; 
+}
