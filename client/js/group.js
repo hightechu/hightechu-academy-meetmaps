@@ -101,18 +101,14 @@ function inGroup(id) {
             for (var i = 0; i < users.length; i++) {
                 usersInGroup = function(uname, status) {
                     if ('error' in uname) {
-                        console.log("{0}: {1}".format(status, uname.error.message));
+                        console.log("{0}: {1}".format(status, uname[0].error.message));
                     } else {
-                        console.log(uname.name); 
-                        if (document.getElementById("userTitle" + i)) {
-                            document.getElementById("userTitle" + i).innerHTML = "- " + uname.name; 
-                        } else {
-                            var gHeader = document.createElement("h4");
-                            var t = document.createTextNode("- " + uname.name); 
-                            gHeader.appendChild(t); 
-                            gHeader.setAttribute("id", "userTitle" + i);
-                            groups.appendChild(gHeader); 
-                        } // if element exists
+                        console.log(uname[0].name); 
+                        var gHeader = document.createElement("h4");
+                        var t = document.createTextNode("- " + uname[0].name); 
+                        gHeader.appendChild(t); 
+                        gHeader.setAttribute("id", "userTitle" + i);
+                        groups.appendChild(gHeader); 
                     } // if error
                 } // usersInGroup
                 console.log(users[i].userID); 
