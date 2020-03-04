@@ -45,10 +45,10 @@
 			<h1 class="text-center">Meet Map</h1>
 		</div>
 		<div class="col-sm-1">
-			<button class="btn btn-light">Profile</button>
+			<button id="btn1" class="btn btn-light">Profile</button>
 		</div>
 		<div class="col-sm-1">
-			<button onclick="signOut()" class="btn btn-light">Sign Out</button>
+			<button id="btn2" onclick="signOut()" class="btn btn-light">Sign Out</button>
 		</div>
 	</div>
 </div>
@@ -160,9 +160,6 @@
 		</td>
 	</tr>
 </table> -->
-
-
-// Register Form --
 <section id="loginSignup">
 	<section>
 	  <h2>Register</h2>
@@ -208,9 +205,9 @@
 			<h2>Locations</h2>
 		</div>
 		<div id="map" class ="col-md-6">
-			<img src="https://images-na.ssl-images-amazon.com/images/I/51qbezyitbL._AC_.jpg">
+			<!--<img src="https://images-na.ssl-images-amazon.com/images/I/51qbezyitbL._AC_.jpg"> --> 
 		</div>
-		<div class="col-md-3 text-center">
+		<div id="g" class="col-md-3 text-center">
 			<h2>Groups</h2>
 			<input id="groupName" type="text" placeholder="Enter Group Name" name="groupName" required>
 			<button onclick="createGroup()">Create Group</button>
@@ -232,6 +229,8 @@
 
 		<!-- JAVASCRIPT SCRIPT -->
 		<!-- ADD JS FILES HERE -->
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANm027_WDDizQ_TXnCIIwLIdp1FSous58&callback=initMap"></script>
+		<script src="js/maps.js"></script>
 		<script src="js/helper.js"></script> <!-- Loopback JavaScript Helper-->
 		<script src="js/data.js"></script>
 		<script src="js/invite.js"></script>

@@ -8,15 +8,15 @@ function createGroup() {
     newGroup = function (response, status) {
         if ('error' in response) {
         // Inform User of Error
-        console.log("{0}: {1}".format(status, response.error.message));
+            console.log("{0}: {1}".format(status, response.error.message));
         }
         else {
-        // Group created Successfully
-        console.log("Group Created!");
-        userID = getCookie("userId");
-        groupID = "{0}".format(response.id);
-        console.log(userID + " - " + groupID);
-        addUserToGroup(userID, groupID); 
+            // Group created Successfully
+            console.log("Group Created!");
+            userID = getCookie("userId");
+            groupID = "{0}".format(response.id);
+            console.log(userID + " - " + groupID);
+            addUserToGroup(userID, groupID); 
         }
     }
 
@@ -73,7 +73,6 @@ function showGroups() {
         } // no error with group
     } // response
     connectAPI('groupMembers?filter={"where":{"userID":"' + "{0}".format(currentUser) + '"}}', "GET", response); 
-    // Connect to the API
 }
 
 function inGroup(id) {
@@ -121,4 +120,5 @@ function inGroup(id) {
     currentGroupId = id; 
     connectAPI('groupMembers?filter={"where":{"groupID":"' + id + '"}}', "GET", showUsers);
     document.getElementById("invite").style.display = "block";  
+    getMembersLocations(id); 
 } // inGroup
