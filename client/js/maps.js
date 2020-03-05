@@ -1,6 +1,7 @@
 var map;
 var currentPos;
-var allMembersPos = new Array();  
+var allMembersPos = new Array();
+var currentMemberPos = new Object();   
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -70,21 +71,22 @@ function saveLocation () {
 } // saveLocation
 
 function deleteLoc() {
-for (var i = 36; i <=39; i++) {
-    responseStatus = function (response, status) {
-        if ('error' in response) {
-        // Inform User of Error
-            console.log("{0}: {1}".format(status, response.error.message));
+    for (var i = 36; i <=39; i++) {
+        responseStatus = function (response, status) {
+            if ('error' in response) {
+            // Inform User of Error
+                console.log("{0}: {1}".format(status, response.error.message));
+            }
+            else {
+                console.log("location deleted"); 
+            }
         }
-        else {
-            console.log("location deleted"); 
-        }
-    }
-    connectAPI("locations/{0}".format(i), "DELETE", responseStatus);
-}
-}
+        connectAPI("locations/{0}".format(i), "DELETE", responseStatus);
+    } // for
+} // deleteLoc
 
 function getMembersLocations(groupid) {
+    allMembersPos.splice(0, allMembersPos.length); 
     getGroup = function (usersInGroup, status) {
         if ('error' in response) {
         // Inform User of Error
@@ -96,10 +98,11 @@ function getMembersLocations(groupid) {
                     if ('error' in posit) {
                         console.log("{0}: {1}".format(status, posit[0].error.message));
                     } else {
-                        allMembersPos[i] = { 
+                        currentMemberPos = { 
                             lat: posit[0].lat, 
                             lng: posit[0].lng
                         }; 
+                        allMembersPos.push(currentMemberPos);  
                     } // if error
                 } // usersInGroup
                 console.log(usersInGroup[i].userID); 
@@ -108,11 +111,4 @@ function getMembersLocations(groupid) {
         } // else no error
     } // getGroup
     connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup);
-    printMembersLoc(); 
 } // getMembersLocations
-
-function printMembersLoc () {
-    for (var i = 0; i < allMembersPos.length; i++) {
-        console.log("Lat: " + allMembersPos[i].lat + " Lng: " + allMembersPos[i].lng); 
-    } // for
-} // printMembersLoc

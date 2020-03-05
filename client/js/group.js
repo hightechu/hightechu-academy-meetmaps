@@ -97,6 +97,9 @@ function inGroup(id) {
                 } // if error
             } // groupName
             connectAPI("groups/{0}".format(id), "GET", groupName);
+            if (document.getElementsByClassName("groupUsers")) {
+                $('.groupUsers').remove();
+            }
             for (var i = 0; i < users.length; i++) {
                 usersInGroup = function(uname, status) {
                     if ('error' in uname) {
@@ -106,6 +109,7 @@ function inGroup(id) {
                         var gHeader = document.createElement("h4");
                         var t = document.createTextNode("- " + uname[0].name); 
                         gHeader.appendChild(t); 
+                        gHeader.className = "groupUsers";
                         gHeader.setAttribute("id", "userTitle" + i);
                         groups.appendChild(gHeader); 
                     } // if error
