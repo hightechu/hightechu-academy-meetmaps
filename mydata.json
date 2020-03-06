@@ -1,12 +1,14 @@
 {
   "ids": {
-    "User": 6,
-    "AccessToken": 10,
+    "User": 20,
+    "AccessToken": 34,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
     "group": 33,
-    "groupMembers": 12
+    "groupMembers": 15,
+    "username": 8,
+    "location": 45
   },
   "models": {
     "User": {
@@ -14,7 +16,21 @@
       "2": "{\"username\":\"myUsername\",\"password\":\"$2a$10$eKOa2h4.33wTCMDptyrxiel8oXAfKVJZC7jm8QDFn/M0hczJPrzE.\",\"email\":\"anjali@test.test\",\"id\":2}",
       "3": "{\"username\":\"matt\",\"password\":\"$2a$10$A3cR7KUD0SR0MNirsWxCme07lDPh0efygUu1U/LO6xxm5tkj0r9Bm\",\"email\":\"smis@shaw.ca\",\"defaultAddress\":\"828 Rogers Court\",\"id\":3}",
       "4": "{\"username\":\"asdffdsa\",\"password\":\"$2a$10$s6G3DPBqVkIB0OYJGiN/suI76LsccKSqsSaW510E0qDtdAicTa9tW\",\"email\":\"asdf@asdf.asdf\",\"defaultAddress\":\"123456\",\"id\":4}",
-      "5": "{\"username\":\"MattSmith\",\"password\":\"$2a$10$IkbmPLz2FtroBWP24Vb5LO8drhiZwzpZ/ElaZiNGhQibse94ChRw.\",\"email\":\"matt@smith.ca\",\"defaultAddress\":\"828Rogers\",\"id\":5}"
+      "5": "{\"username\":\"MattSmith\",\"password\":\"$2a$10$IkbmPLz2FtroBWP24Vb5LO8drhiZwzpZ/ElaZiNGhQibse94ChRw.\",\"email\":\"matt@smith.ca\",\"defaultAddress\":\"828Rogers\",\"id\":5}",
+      "6": "{\"username\":\"matthew\",\"password\":\"$2a$10$fOL8.z.BuodYL.31mNYqreCFTavCjS..zJbNsOv60qCOIUAmFJ6s.\",\"email\":\"smoose007@gmail.com\",\"defaultAddress\":\"828 Rogers\",\"id\":6}",
+      "7": "{\"username\":\"smith\",\"password\":\"$2a$10$n5vP7w1bFkbDqO2AKi9vEOentlTbYwgjvEBWJoLFFv99xcJt6gGlq\",\"email\":\"victoriamtbt@gmail.com\",\"defaultAddress\":\"1800 White\",\"id\":7}",
+      "8": "{\"username\":\"david\",\"password\":\"$2a$10$LvYsnx.QRL7AVAZpNEPnAOsonurMHjBMnGL.WLLAU9dCAK09bOhFK\",\"email\":\"moviemocs@gmail.com\",\"defaultAddress\":\"99 brooklyn \",\"id\":8}",
+      "9": "{\"username\":\"1234\",\"password\":\"$2a$10$n7rOrtR.ghLOk/0Mx3lyXOEtImuhygBg8lKxotOKDkUbzbOI95YBe\",\"email\":\"1234@1234.com\",\"defaultAddress\":\"828\",\"id\":9}",
+      "10": "{\"username\":\"ms\",\"password\":\"$2a$10$v566XYKx6IH8aAEboMIlpurcdYSHbTtLnp6x6v0oa74smg0HGiPNa\",\"email\":\"ms@gmail.com\",\"defaultAddress\":\"123\",\"id\":10}",
+      "11": "{\"username\":\"User1111\",\"password\":\"$2a$10$54qyRqA6SoaYIYS6CzNyK.HtB6mM0uuotoJwZiHqAoiveZtBUr4y.\",\"email\":\"1111@gmail.com\",\"defaultAddress\":\"1111 St\",\"id\":11}",
+      "12": "{\"username\":\"54321\",\"password\":\"$2a$10$1DMRRcpzpaaIunfpozpPLe3H/T8NaYR3Ny9jJKIxHESB55Dkj1yYa\",\"email\":\"54321@gmail.com\",\"defaultAddress\":\"54321 Rd. \",\"id\":12}",
+      "13": "{\"username\":\"Chad\",\"password\":\"$2a$10$osJvl97G2oxKujIJvMioheMqBRUc9H0psZoqLs.aiLmD6.NcNb2Cu\",\"email\":\"new@user.com\",\"defaultAddress\":\"9229\",\"id\":13}",
+      "14": "{\"username\":\"Fred\",\"password\":\"$2a$10$X5jCNEfMiaoAShZf/wJvAunDGvdaCu2I6/Ks9vTlM5LPAYuyvS13K\",\"email\":\"next@email.com\",\"defaultAddress\":\"1000\",\"id\":14}",
+      "15": "{\"username\":\"Maxxis\",\"password\":\"$2a$10$GWU0msgfD.0vD2uFOmYavuuD0Ocjfs7grtaHlPuil1W9OKfbbZ9R.\",\"email\":\"another@email.com\",\"defaultAddress\":\"2468\",\"id\":15}",
+      "16": "{\"username\":\"Max\",\"password\":\"$2a$10$3CN7ZAat1MROkO6Ec3vFweotXZtjM6m0DgarIyJJMOqWfncn.fkLm\",\"email\":\"max@email.com\",\"defaultAddress\":\"1999\",\"id\":16}",
+      "17": "{\"username\":\"PleaseWork\",\"password\":\"$2a$10$w3oHuA2Jsw5u5vyehucXyeYRIEBn9mJLm3yeZ6CRFEEc/LRgtU3Ai\",\"email\":\"plz@work.com\",\"defaultAddress\":\"Please\",\"id\":17}",
+      "18": "{\"username\":\"smis\",\"password\":\"$2a$10$FtUr.BkWI.OEmwDrXhpenuK.C6EzwFhlCrgQ9a/UyKZDIupVpFaie\",\"email\":\"newUser@gmail.com\",\"defaultAddress\":\"1234\",\"id\":18}",
+      "19": "{\"username\":\"David Smith\",\"password\":\"$2a$10$YmCKEsOQ37XY.u2i07AQ9uLgG6IrjysuZHRPfYRIOkL43G3H9l/0S\",\"email\":\"new1@gmail.com\",\"defaultAddress\":\"282\",\"id\":19}"
     },
     "AccessToken": {
       "KtRP2aopwSVLTF5qKjRLwB39CAhna3dOAbC08nnYsj7AReWhKjqzTGcZTO8elgmZ": "{\"id\":\"KtRP2aopwSVLTF5qKjRLwB39CAhna3dOAbC08nnYsj7AReWhKjqzTGcZTO8elgmZ\",\"ttl\":1209600,\"created\":\"2020-02-08T20:51:25.591Z\",\"userId\":1}",
@@ -25,7 +41,31 @@
       "e7c2EmTF3norQoOa53wVVagZVyvGdA8CtJ0KeSAMq3WenwfTBE3YqYeuFpk7zJhE": "{\"id\":\"e7c2EmTF3norQoOa53wVVagZVyvGdA8CtJ0KeSAMq3WenwfTBE3YqYeuFpk7zJhE\",\"ttl\":1209600,\"created\":\"2020-02-24T04:50:44.925Z\",\"userId\":3}",
       "mZqOexzMkw8BDkkMKBF8snRAop0i8JpNBiX1eIGqK5hxinWXJXsd8aidbJHc0Oqz": "{\"id\":\"mZqOexzMkw8BDkkMKBF8snRAop0i8JpNBiX1eIGqK5hxinWXJXsd8aidbJHc0Oqz\",\"ttl\":1209600,\"created\":\"2020-02-29T18:31:02.556Z\",\"userId\":3}",
       "qRezNGb6sJwEZkelehN7pEDBMZyYzxnWJRD0MmnlLKSHJZOGVttraNYLN6tMcXDP": "{\"id\":\"qRezNGb6sJwEZkelehN7pEDBMZyYzxnWJRD0MmnlLKSHJZOGVttraNYLN6tMcXDP\",\"ttl\":1209600,\"created\":\"2020-02-29T21:10:07.951Z\",\"userId\":3}",
-      "IhEsU6LAlM0dTVjY5aWnkfECeO0ffIrU5RHtx4WODtGHqp2lkKlxkDU9hFfzpdSV": "{\"id\":\"IhEsU6LAlM0dTVjY5aWnkfECeO0ffIrU5RHtx4WODtGHqp2lkKlxkDU9hFfzpdSV\",\"ttl\":1209600,\"created\":\"2020-02-29T22:51:02.092Z\",\"userId\":5}"
+      "IhEsU6LAlM0dTVjY5aWnkfECeO0ffIrU5RHtx4WODtGHqp2lkKlxkDU9hFfzpdSV": "{\"id\":\"IhEsU6LAlM0dTVjY5aWnkfECeO0ffIrU5RHtx4WODtGHqp2lkKlxkDU9hFfzpdSV\",\"ttl\":1209600,\"created\":\"2020-02-29T22:51:02.092Z\",\"userId\":5}",
+      "tYKTXuSVBCkUfq4zbAmmK8GwypHb1myOj6WXodPRmz7hjKSBvuZ0fXJu7MuJrQDK": "{\"id\":\"tYKTXuSVBCkUfq4zbAmmK8GwypHb1myOj6WXodPRmz7hjKSBvuZ0fXJu7MuJrQDK\",\"ttl\":1209600,\"created\":\"2020-03-01T01:55:28.472Z\",\"userId\":3}",
+      "VIwKc6lGXmuj5dsdKo8HulB6FSE5NGy3EKKDE1nnGZYjCgOeKEBpj5fsQiN4XQT4": "{\"id\":\"VIwKc6lGXmuj5dsdKo8HulB6FSE5NGy3EKKDE1nnGZYjCgOeKEBpj5fsQiN4XQT4\",\"ttl\":1209600,\"created\":\"2020-03-01T01:57:06.372Z\",\"userId\":5}",
+      "frtdhFcvLzJK3W3qY7CMAqi7iXehYa3XyBXYyMv3GJiSQ3pXcDDYaFXCSrPYAVph": "{\"id\":\"frtdhFcvLzJK3W3qY7CMAqi7iXehYa3XyBXYyMv3GJiSQ3pXcDDYaFXCSrPYAVph\",\"ttl\":1209600,\"created\":\"2020-03-01T02:39:14.700Z\",\"userId\":3}",
+      "9uzbJZ3PEVaIKFV4hJvEcQkG5a4gKcmGxCo2A1mPyRWJgLpT35RGgcd5o7RQ2bz6": "{\"id\":\"9uzbJZ3PEVaIKFV4hJvEcQkG5a4gKcmGxCo2A1mPyRWJgLpT35RGgcd5o7RQ2bz6\",\"ttl\":1209600,\"created\":\"2020-03-02T03:22:20.255Z\",\"userId\":6}",
+      "x95p1XOgnyqrVToceScbWhY0Pghnb6AgNMyEm6yWFkARSZwp6mxJH07XYdjDxNxn": "{\"id\":\"x95p1XOgnyqrVToceScbWhY0Pghnb6AgNMyEm6yWFkARSZwp6mxJH07XYdjDxNxn\",\"ttl\":1209600,\"created\":\"2020-03-02T03:32:13.610Z\",\"userId\":10}",
+      "Fk3x93rva5Jvz4rZMITcxrAHMwc8TnEnZ1FjOXZYcTWXh3HyRpfdJqBPDJ5nTRC8": "{\"id\":\"Fk3x93rva5Jvz4rZMITcxrAHMwc8TnEnZ1FjOXZYcTWXh3HyRpfdJqBPDJ5nTRC8\",\"ttl\":1209600,\"created\":\"2020-03-02T03:38:32.261Z\",\"userId\":11}",
+      "S9C71w9QmRBAnqiiTALf2rhJAHBakEdQd3S61J7t1liEEP2z030GYElj6Kj3Arq1": "{\"id\":\"S9C71w9QmRBAnqiiTALf2rhJAHBakEdQd3S61J7t1liEEP2z030GYElj6Kj3Arq1\",\"ttl\":1209600,\"created\":\"2020-03-02T03:40:54.053Z\",\"userId\":12}",
+      "nVAAWbrxq6GNb2fK5sVFogMFWr0BTi2qrggTyI9s359DD0VgABHX6SjondFbWLM0": "{\"id\":\"nVAAWbrxq6GNb2fK5sVFogMFWr0BTi2qrggTyI9s359DD0VgABHX6SjondFbWLM0\",\"ttl\":1209600,\"created\":\"2020-03-03T00:38:52.878Z\",\"userId\":3}",
+      "5frxQiOxaYFC2PwnSWM89Q9W9BYPYGlyFwHHBrXZBkkihfN5YHck4mQeEAd5FWg4": "{\"id\":\"5frxQiOxaYFC2PwnSWM89Q9W9BYPYGlyFwHHBrXZBkkihfN5YHck4mQeEAd5FWg4\",\"ttl\":1209600,\"created\":\"2020-03-03T00:39:26.921Z\",\"userId\":13}",
+      "Cj1y2wbUTyRmUbwfxWrEvPnHBEHXUNUxQqhFl6HmiOgHznNWy6sg81wYpp4VyLL2": "{\"id\":\"Cj1y2wbUTyRmUbwfxWrEvPnHBEHXUNUxQqhFl6HmiOgHznNWy6sg81wYpp4VyLL2\",\"ttl\":1209600,\"created\":\"2020-03-03T00:40:53.558Z\",\"userId\":14}",
+      "MoNFJuywn0twwIyjYyh386xTZP6H82KnUaEpJ4jTV22erzOo5d5mDobfwy8C2Raa": "{\"id\":\"MoNFJuywn0twwIyjYyh386xTZP6H82KnUaEpJ4jTV22erzOo5d5mDobfwy8C2Raa\",\"ttl\":1209600,\"created\":\"2020-03-03T00:43:02.781Z\",\"userId\":15}",
+      "Rj97MKwJ5I570xjGUUYVpOrlMrEufhSM7hd75YGh9iW8mfaCuuXeSOvyUMY5tEIS": "{\"id\":\"Rj97MKwJ5I570xjGUUYVpOrlMrEufhSM7hd75YGh9iW8mfaCuuXeSOvyUMY5tEIS\",\"ttl\":1209600,\"created\":\"2020-03-03T00:44:06.177Z\",\"userId\":16}",
+      "ucjHZPIehiXVyEZwnihIA3gIP8A0sEXsVqKviuAivvCv1rXh2W0HOmQlRAHzEbRF": "{\"id\":\"ucjHZPIehiXVyEZwnihIA3gIP8A0sEXsVqKviuAivvCv1rXh2W0HOmQlRAHzEbRF\",\"ttl\":1209600,\"created\":\"2020-03-03T00:45:44.913Z\",\"userId\":17}",
+      "zPhCownQHfuhTTdCogDy5wqkxHRv0Q9KluF1MBIAP1cuuJIv19Vh7rhORh4eXTUU": "{\"id\":\"zPhCownQHfuhTTdCogDy5wqkxHRv0Q9KluF1MBIAP1cuuJIv19Vh7rhORh4eXTUU\",\"ttl\":1209600,\"created\":\"2020-03-03T00:51:07.230Z\",\"userId\":18}",
+      "KE9x5SGfRQeFPSJpaL6FRkcZX0Lna90vsOFEuvfS6RbjkzpXyxwCh5EfWTNx4d77": "{\"id\":\"KE9x5SGfRQeFPSJpaL6FRkcZX0Lna90vsOFEuvfS6RbjkzpXyxwCh5EfWTNx4d77\",\"ttl\":1209600,\"created\":\"2020-03-03T02:26:56.146Z\",\"userId\":3}",
+      "eylwHTknkUGLwYGoRaSE2odoVpuQmN2uHJizKv0D3nKFBKERwAVpENsEErBwXpmk": "{\"id\":\"eylwHTknkUGLwYGoRaSE2odoVpuQmN2uHJizKv0D3nKFBKERwAVpENsEErBwXpmk\",\"ttl\":1209600,\"created\":\"2020-03-04T00:11:00.148Z\",\"userId\":3}",
+      "vvlWJ7w1fsUSMYGxgorDaJ6n8SHFnzskhrQj899rkH7FMBubGxsBB6Du8d5AYu1l": "{\"id\":\"vvlWJ7w1fsUSMYGxgorDaJ6n8SHFnzskhrQj899rkH7FMBubGxsBB6Du8d5AYu1l\",\"ttl\":1209600,\"created\":\"2020-03-04T00:16:10.943Z\",\"userId\":3}",
+      "YYyYPi8IlcSszKsZ4HWsqnxEdF9hTXgwLqqwnEnCr3HoGlBgNsVlaYo6mQM54dSm": "{\"id\":\"YYyYPi8IlcSszKsZ4HWsqnxEdF9hTXgwLqqwnEnCr3HoGlBgNsVlaYo6mQM54dSm\",\"ttl\":1209600,\"created\":\"2020-03-04T00:27:33.399Z\",\"userId\":3}",
+      "9yT6mqWCJALrsuMIUsYuEXBjHEpgf7ZXM9tykHsXKPbSo3x6HNhBMBr2U6QQap82": "{\"id\":\"9yT6mqWCJALrsuMIUsYuEXBjHEpgf7ZXM9tykHsXKPbSo3x6HNhBMBr2U6QQap82\",\"ttl\":1209600,\"created\":\"2020-03-04T01:52:03.562Z\",\"userId\":17}",
+      "vIalITH78TmSLpudY2GkGlHOPe70Wy7C1p6txNJ9OyxIGYfxtGPftGHUI3Z7pEbj": "{\"id\":\"vIalITH78TmSLpudY2GkGlHOPe70Wy7C1p6txNJ9OyxIGYfxtGPftGHUI3Z7pEbj\",\"ttl\":1209600,\"created\":\"2020-03-04T17:05:44.741Z\",\"userId\":5}",
+      "ZXCA8prANiF5VVpbxGLBWX6Hd9LpdpPn4nlLm2DTAU0EF6v6zbGvNosP1FNHGtX6": "{\"id\":\"ZXCA8prANiF5VVpbxGLBWX6Hd9LpdpPn4nlLm2DTAU0EF6v6zbGvNosP1FNHGtX6\",\"ttl\":1209600,\"created\":\"2020-03-04T17:08:12.237Z\",\"userId\":19}",
+      "B2jBCS80j3C2Xx6Ilcw26NBVN6R0QAbgIR7FN1dXNG5zAChcymn7FTEhqCTYoHes": "{\"id\":\"B2jBCS80j3C2Xx6Ilcw26NBVN6R0QAbgIR7FN1dXNG5zAChcymn7FTEhqCTYoHes\",\"ttl\":1209600,\"created\":\"2020-03-04T17:08:49.980Z\",\"userId\":19}",
+      "yESUVEpFtmx6V6hyJmpdkYvIaXieFuJJKiIYaLpBGejZREG1RYGfa2YtonfRSVHu": "{\"id\":\"yESUVEpFtmx6V6hyJmpdkYvIaXieFuJJKiIYaLpBGejZREG1RYGfa2YtonfRSVHu\",\"ttl\":1209600,\"created\":\"2020-03-05T00:37:32.271Z\",\"userId\":18}",
+      "4q5Juy4EXogomYDsb4pGjnx5EHDlIJc4B7hMT5nLfsCEgD4JzsKtjhS7CIRzKYXT": "{\"id\":\"4q5Juy4EXogomYDsb4pGjnx5EHDlIJc4B7hMT5nLfsCEgD4JzsKtjhS7CIRzKYXT\",\"ttl\":1209600,\"created\":\"2020-03-05T00:39:00.264Z\",\"userId\":17}"
     },
     "ACL": {},
     "RoleMapping": {},
@@ -61,8 +101,8 @@
       "28": "{\"name\":\"TestGroup\",\"id\":28}",
       "29": "{\"name\":\"TestGroup\",\"id\":29}",
       "30": "{\"name\":\"MattTest\",\"id\":30}",
-      "31": "{\"name\":\"NewGrOUP\",\"id\":31}",
-      "32": "{\"name\":\"NewGrOUP\",\"id\":32}"
+      "31": "{\"name\":\"Work\",\"id\":31}",
+      "32": "{\"name\":\"David's Group\",\"id\":32}"
     },
     "groupMembers": {
       "1": "{\"userID\":3,\"groupID\":21,\"id\":1}",
@@ -74,8 +114,27 @@
       "7": "{\"userID\":3,\"groupID\":28,\"id\":7}",
       "8": "{\"userID\":3,\"groupID\":29,\"id\":8}",
       "9": "{\"userID\":5,\"groupID\":30,\"id\":9}",
-      "10": "{\"userID\":0,\"groupID\":31,\"id\":10}",
-      "11": "{\"userID\":0,\"groupID\":32,\"id\":11}"
+      "10": "{\"userID\":18,\"groupID\":31,\"id\":10}",
+      "11": "{\"userID\":17,\"groupID\":31,\"id\":11}",
+      "12": "{\"userID\":19,\"groupID\":32,\"id\":12}",
+      "13": "{\"userID\":17,\"groupID\":32,\"id\":13}",
+      "14": "{\"userID\":18,\"groupID\":32,\"id\":14}"
+    },
+    "username": {
+      "1": "{\"name\":\"matthew\",\"id\":1}",
+      "2": "{\"name\":\"smith\",\"id\":2}",
+      "3": "{\"name\":\"david\",\"id\":3}",
+      "4": "{\"name\":\"1234\",\"id\":4}",
+      "5": "{\"name\":\"PleaseWork\",\"useridnty\":17,\"id\":5}",
+      "6": "{\"name\":\"smis\",\"useridnty\":18,\"id\":6}",
+      "7": "{\"name\":\"David Smith\",\"useridnty\":19,\"id\":7}"
+    },
+    "location": {
+      "40": "{\"id\":40,\"userID\":5,\"lat\":48.476257499999996,\"lng\":-123.37650349999998}",
+      "41": "{\"id\":41,\"userID\":0,\"lat\":48.4762699,\"lng\":-123.3767448}",
+      "42": "{\"id\":42,\"userID\":19,\"lat\":48.4762497,\"lng\":-123.37669269999999}",
+      "43": "{\"id\":43,\"userID\":18,\"lat\":48.4762699,\"lng\":-123.3767448}",
+      "44": "{\"id\":44,\"userID\":17,\"lat\":48.464901399999995,\"lng\":-123.3786364}"
     }
   }
 }
