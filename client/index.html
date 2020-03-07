@@ -41,14 +41,15 @@
 		<div id="logo" class="col-sm-1">
 			<img src="https://image.flaticon.com/icons/svg/814/814587.svg" alt="logo">
 		</div>
-		<div class="col-sm-9">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-8">
 			<h1 class="text-center">Meet Map</h1>
 		</div>
 		<div class="col-sm-1">
-			<button id="btn1" class="btn btn-light">Profile</button>
+			<button id="btn1" class="btn btn-light text-nowrap ">Profile</button>
 		</div>
 		<div class="col-sm-1">
-			<button id="btn2" onclick="signOut()" class="btn btn-light">Sign Out</button>
+			<button id="btn2" onclick="signOut()" class="btn btn-light text-nowrap ">Sign Out</button>
 		</div>
 	</div>
 </div>
@@ -205,15 +206,16 @@
 </div>
 
 <!--Bootstrap Main Body-->
-<div class="container mw-90">
+<div class="container mw-90" id ="main">
 	<!--Space-->
 	<div id="separator" class="row"></div>
 
 	<div class="row">
-		<div class ="col-md-3 text text-center menu">
+		<div class ="col-md-3 text-center menu">
 			<h2>Locations</h2>
 		</div>
-		<div id="map" class ="col-md-6">
+
+		<div id="map" class ="col-md-6 map">
 			-
 		</div>
 		<div id="g" class="col-md-3 text-center menu">

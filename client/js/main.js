@@ -16,6 +16,7 @@ function loadPage () {
         group.style.display = "none";
         button1.style.display = "none"; 
         button2.style.display = "none"; 
+        document.getElementById("main").style.display = "none";
     } 
     //deleteLoc(); 
     showGroups();

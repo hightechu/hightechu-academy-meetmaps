@@ -6,7 +6,7 @@ body{
 .menu {
     display: inline-block;
     border: 1px solid #118A0F;
-    height: 50vh;
+    height: 50vh!important; 
     background-color: #118A0F;
 }
 .title {
@@ -41,7 +41,7 @@ body {
 
 #map {
     width: 100%; 
-    height: 400px; 
+    height: 50vh; 
 }
 
 #map img {
@@ -67,4 +67,16 @@ body {
 
 #invite {
     display: none; 
+}
+
+.margin {
+    margin-right: 1em!important;
+}
+
+.groupbtn {
+    margin: 0.5em;
+}
+
+.gHeader {
+    
 }
