@@ -1,9 +1,9 @@
 /* Add Styles Here */
-table {
+.Box {
     display: inline-block;
-    border: 1px solid green;
-    height: 50vh;
-    background-color: green
+    border: 1px solid #118A0F;
+    height: 50vh!important;
+    background-color: #118A0F;
 }
 .title {
     height: 10vh;
