@@ -35,7 +35,9 @@ function createAccount() {
       var jsonNameObj = new Object(); 
       jsonNameObj.name = document.getElementById("usernameRegister").value;
       jsonNameObj.useridnty = "{0}".format(response.userId); 
-      connectAPI("usernames", "POST", saveNewUser, jsonNameObj); 
+      connectAPI("usernames", "POST", saveNewUser, jsonNameObj);
+      
+      
       window.location = "/";
     }
   } // login response fxn

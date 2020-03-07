@@ -1,10 +1,13 @@
 var map;
 var currentPos;
 var allMarkers = new Array();
+var allMeetMarkers = new Array(); 
 var allPositions = new Array();
 var pos = new Array();
 var currentMemberPos = new Object();
 var middlePos = new Object();   
+var directionsService = new google.maps.DirectionsService();
+var directionsRenderer = new google.maps.DirectionsRenderer();
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -21,6 +24,14 @@ function getPos () {
             lat: position.coords.latitude,
             lng: position.coords.longitude
         };
+        midMarker = new google.maps.Marker({
+            position: currentPos,
+            labelContent: "Center",
+            icon: {                             
+                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            }
+        }); // new marker
+        midMarker.setMap(null); 
         saveLocation(); 
          //allMarkers[0] = new google.maps.Marker({position: currentPos, map: map});
          map.setCenter(currentPos);
@@ -51,14 +62,9 @@ function getMembersPositions() {
 function getAndPlotCenter() {
     pos = center(allPositions); 
     var middlePos = averagePoint(pos);
-    midMarker = new google.maps.Marker({
-        position: middlePos,
-        labelContent: "Center",
-        icon: {                             
-            url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-        }
-    }); // new marker
+    midMarker.setPosition(middlePos);  
     midMarker.setMap(map);
+    plotMeetSpots(); 
 } // getAndPlotCenter
 
 function handleLocationError(browserHasGeolocation, marker, currentPos) {
@@ -100,6 +106,7 @@ function saveLocation () {
     } // doesExist
     connectAPI('locations?filter={"where":{"userID":"' + getCookie("userId") + '"}}', "GET", doesExist);
 } // saveLocation
+
 
 function deleteLoc() {
     for (var i = 36; i <=39; i++) {
@@ -146,7 +153,8 @@ function getMembersLocations(groupid) {
             } // for
         } // else no error
     } // getGroup
-    connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup);  
+    connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup); 
+
 } // getMembersLocations
 
 function center (point) {
@@ -210,4 +218,70 @@ function averagePoint (point) {
         lng: pointsAverageX
     }; 
     return newPoint; 
+} // averagePoint 
+
+function plotMeetSpots () {
+    for (var i = 0; i < allMeetMarkers.length; i++) {
+        allMeetMarkers[i].setMap(null); 
+    }
+    var LatLng = {
+        lat: midMarker.getPosition().lat(), 
+        lng: midMarker.getPosition().lng() 
+    };
+    var request = {
+        location: LatLng,
+        radius: '1000',
+        type: ['restaurant']
+      };
+
+    callback = function(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            results.sort(function(a, b){
+                return b.rating-a.rating;
+            });
+            if (document.getElementsByClassName("meetButton")) {
+                $('.meetButton').remove();
+            }
+            for (var i = 0; i < 3; i++) {
+                //console.log(i + ": " + results[i].rating); 
+                allMeetMarkers.push(new google.maps.Marker({
+                    position: results[i].geometry.location,
+                    map: map, 
+                    icon: {                             
+                        url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+                    }
+                })); 
+                var meet = document.createElement("BUTTON");  //<button> element
+                var t = document.createTextNode(results[i].name); // Create a text node
+                meet.appendChild(t);
+                meet.setAttribute("id", "meet" + i); 
+                meet.addEventListener('click', function(){ directions(this.id)});
+                meet.className = "meetButton";
+                meetup.appendChild(meet);//to show on myView 
+            } // for
+        }
+    } // callback
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+} // plotMeetSpots
+
+
+function directions(end) { 
+    end = end.substring(4, end.length+1);
+    end = allMeetMarkers[end].getPosition(); 
+    var request = {
+        origin: currentPos,
+        destination: end,
+        travelMode: 'DRIVING'
+    };
+
+    directionsService.route(request, function(response, status) {
+        if (status === 'OK') {
+            directionsRenderer.setDirections(response);
+        } else {
+            window.alert('Directions request failed due to ' + status);
+        }
+    });
+    directionsRenderer.setMap(map);
 }
+
