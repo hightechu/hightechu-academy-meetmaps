@@ -160,8 +160,9 @@
 		</td>
 	</tr>
 </table> -->
-<section id="loginSignup">
-	<section>
+
+<div class="container"!important id="loginSignup">
+	<div>
 	  <h2>Register</h2>
 	  <p>Create an account :D</p>
   
@@ -180,8 +181,11 @@
 	
 		<button type="submit" onclick="createAccount()">Register</button>
 	  </div>
-	</section>
-// Login Form --
+	</div>
+	<!--Space-->
+	<div id="separator" class="row"></div>
+
+<!--Login Form -->
 	<section>
 	  <h2>Login</h2>
 	  <p>If you already have an account login here!</p>
@@ -195,19 +199,24 @@
 		<button type="submit" onclick="login()">Login</button>
 	  </div>
 	</section>
-</section>
+	<!--Space-->
+	<div id="separator" class="row"></div>
+
+</div>
+
 <!--Bootstrap Main Body-->
 <div class="container mw-90">
-	<div id="separator" class="row">
-	</div>
+	<!--Space-->
+	<div id="separator" class="row"></div>
+
 	<div class="row">
-		<div class ="col-md-3 text text-center">
+		<div class ="col-md-3 text text-center menu">
 			<h2>Locations</h2>
 		</div>
 		<div id="map" class ="col-md-6">
-			<!--<img src="https://images-na.ssl-images-amazon.com/images/I/51qbezyitbL._AC_.jpg"> --> 
+			-
 		</div>
-		<div id="g" class="col-md-3 text-center">
+		<div id="g" class="col-md-3 text-center menu">
 			<h2>Groups</h2>
 			<input id="groupName" type="text" placeholder="Enter Group Name" name="groupName" required>
 			<button onclick="createGroup()">Create Group</button>
@@ -223,6 +232,8 @@
 			</div>
 			</div>
 	</div>
+	<!--Space-->
+	<div id="separator" class="row"></div>
 </div>
 
 		</main>

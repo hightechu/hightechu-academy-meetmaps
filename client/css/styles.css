@@ -1,9 +1,13 @@
 /* Add Styles Here */
-table {
+body{
+    background-color: whitesmoke;
+}
+
+.menu {
     display: inline-block;
-    border: 1px solid green;
+    border: 1px solid #118A0F;
     height: 50vh;
-    background-color: green
+    background-color: #118A0F;
 }
 .title {
     height: 10vh;
@@ -16,10 +20,10 @@ body {
     width: 200px;
 }
 
-#loginSignup {
+/*#loginSignup {
     float: right; 
     display: block;
-}
+}*/
 
 #header {
     height: 5em;
