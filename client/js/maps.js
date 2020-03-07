@@ -1,7 +1,10 @@
 var map;
 var currentPos;
-var allMembersPos = new Array();
-var currentMemberPos = new Object();   
+var allMarkers = new Array();
+var allPositions = new Array();
+var pos = new Array();
+var currentMemberPos = new Object();
+var middlePos = new Object();   
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -15,12 +18,12 @@ function getPos () {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
         currentPos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      saveLocation(); 
-      var marker = new google.maps.Marker({position: currentPos, map: map});
-      map.setCenter(currentPos);
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        saveLocation(); 
+         //allMarkers[0] = new google.maps.Marker({position: currentPos, map: map});
+         map.setCenter(currentPos);
     }, function() {
       handleLocationError(true, marker, map.getCenter());
     });
@@ -29,6 +32,34 @@ function getPos () {
     handleLocationError(false, marker, map.getCenter());
   }
 } // getPos
+
+function plotMember (memberLoc) {
+        allMarkers.push(new google.maps.Marker({position: memberLoc, map: map}));
+} // plotMember
+
+function getMembersPositions() {
+    for (var i = 0; i < allMarkers.length; i++) {
+        allPositions[i] = {
+            lat: allMarkers[i].getPosition().lat(), 
+            lng: allMarkers[i].getPosition().lng()
+        }; 
+        console.log(allPositions[i]);  
+    } // for
+    getAndPlotCenter(); 
+} // getMemberLocations
+
+function getAndPlotCenter() {
+    pos = center(allPositions); 
+    var middlePos = averagePoint(pos);
+    midMarker = new google.maps.Marker({
+        position: middlePos,
+        labelContent: "Center",
+        icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+        }
+    }); // new marker
+    midMarker.setMap(map);
+} // getAndPlotCenter
 
 function handleLocationError(browserHasGeolocation, marker, currentPos) {
   marker.setPosition(currentPos);
@@ -86,13 +117,14 @@ function deleteLoc() {
 } // deleteLoc
 
 function getMembersLocations(groupid) {
-    allMembersPos.splice(0, allMembersPos.length); 
+    allMarkers.splice(0, allMarkers.length); 
     getGroup = function (usersInGroup, status) {
         if ('error' in response) {
         // Inform User of Error
             console.log("{0}: {1}".format(status, usersInGroup.error.message));
         }
         else {
+            var a = 0; 
             for (var i = 0; i < usersInGroup.length; i++) {
                 locOfUser = function(posit, status) {
                     if ('error' in posit) {
@@ -102,13 +134,80 @@ function getMembersLocations(groupid) {
                             lat: posit[0].lat, 
                             lng: posit[0].lng
                         }; 
-                        allMembersPos.push(currentMemberPos);  
+                        plotMember(currentMemberPos); 
+                        a++; 
+                        if (a == usersInGroup.length) {
+                            getMembersPositions(); 
+                        } 
                     } // if error
                 } // usersInGroup
                 console.log(usersInGroup[i].userID); 
-                connectAPI('locations?filter={"where":{"userID":"' + usersInGroup[i].userID + '"}}', "GET", locOfUser);
+                connectAPI('locations?filter={"where":{"userID":"' + usersInGroup[i].userID + '"}}', "GET", locOfUser);  
             } // for
         } // else no error
     } // getGroup
-    connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup);
+    connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup);  
 } // getMembersLocations
+
+function center (point) {
+    var newPoint = new Array();
+
+    var averagePointLength = 0.0; 
+    for (i = 0; i < point.length; i++) {
+        if (point.length == 1) {
+            return point; 
+        } else {
+            if (i+1 == point.length) {
+                averagePointLength += Math.sqrt(Math.pow(point[point.length-i].lat - point[i].lat, 2) + Math.pow(point[point.length-i].lng - point[i].lng, 2));
+            } else {
+                averagePointLength += Math.sqrt(Math.pow(point[i+1].lat - point[i].lat, 2) + Math.pow(point[i+1].lng - point[i].lng, 2));
+            } // if/else
+        } // if/else
+    } // for
+    averagePointLength = averagePointLength/point.length; 
+    for (i = 0; i < point.length; i++) {
+        if (point.length == 2) {
+            newPoint[i] = {
+                lat: (point[i].lat + point[i+1].lat) / 2, 
+                lng: (point[i].lng + point[i+1].lng) / 2
+            };
+            return newPoint;
+        } else if (averagePointLength < 0.00001) {
+            return point;
+        } else {
+            if (i+1 == point.length) {
+                newPoint[i] = {
+                    lat: (point[i].lat + point[point.length-i].lat) / 2, 
+                    lng: (point[i].lng + point[point.length-i].lng) / 2 
+                };
+            } else {
+                newPoint[i] = {
+                    lat: (point[i].lat + point[i+1].lat) / 2, 
+                    lng: (point[i].lng + point[i+1].lng) / 2
+                }; 
+            } // if/else
+        } // if/elseif/else
+    } // for
+    /*
+    for (var i = 0; i < newPoint.length; i++) {
+        console.log(newPoint[i].x + ", " + newPoint[i].y); 
+    } */
+    return center(newPoint); 
+} // center
+
+function averagePoint (point) {
+    var pointsAverageX = 0.0; 
+    var pointsAverageY = 0.0; 
+    for (var i = 0; i < point.length; i++) {
+        pointsAverageX += point[i].lng; 
+        pointsAverageY += point[i].lat; 
+    }
+    pointsAverageX = pointsAverageX / point.length; 
+    pointsAverageY = pointsAverageY / point.length;
+    var newPoint = new Object(); 
+    newPoint = {
+        lat: pointsAverageY,
+        lng: pointsAverageX
+    }; 
+    return newPoint; 
+}
