@@ -64,3 +64,7 @@ body {
 #invite {
     display: none; 
 }
+
+#m {
+    height: 60%; 
+}
