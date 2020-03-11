@@ -26,7 +26,7 @@ function createGroup() {
 
     // Connect to the API
     connectAPI("groups", "POST", newGroup, jsonObj);
-    
+    window.location = "/";
 } // createGroup
 
 function addUserToGroup(userAdd, groupAdd) {
@@ -51,7 +51,7 @@ function addUserToGroup(userAdd, groupAdd) {
     console.log(groupAdd); 
     console.log(JSON.stringify(jsonObj)); 
     connectAPI("groupMembers", "POST", responseStatus, jsonObj);
-
+    window.location = "/";
 } // addUserToGroup
 
 function showGroups() {

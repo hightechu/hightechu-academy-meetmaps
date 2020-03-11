@@ -80,3 +80,7 @@ body {
 .gHeader {
     font-size: x-large;
 }
+
+#m {
+    height: 60%; 
+}
