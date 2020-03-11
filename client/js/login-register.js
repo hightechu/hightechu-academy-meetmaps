@@ -57,6 +57,29 @@ function createAccount() {
 
   // Connect to the API
   connectAPI("users/login", "POST", login, loginObj);
+
+  var streetAddress = document.getElementById("defaultAddress").value;
+  geocoder.geocode({'address': streetAddress}, function(results, status) {
+    if (status === 'OK') {
+        alert(results[0].geometry.location.lat); 
+        var locObj = new Object(); 
+        locObj.userID = getCookie("userId");
+        locObj.lat = results[0].geometry.location.lat; 
+        locObj.lng = results[0].geometry.location.lng; 
+        saveDefLocation = function (a, b) {
+          if ('error' in a) {
+            // Inform User of Error
+            alert("{0}: {1}".format(b, a.error.message));
+          }
+          else {
+            alert("SAVED LOCATION"); 
+          } // else
+        } // saveDefLocation
+        connectAPI("locations/", "POST", saveDefLocation, locObj);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    } // else geocode
+  });
 } // create Account
 
 // login

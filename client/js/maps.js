@@ -1,5 +1,6 @@
 var map;
 var currentPos;
+var defMarker; 
 var allMarkers = new Array();
 var allMeetMarkers = new Array(); 
 var allPositions = new Array();
@@ -8,6 +9,7 @@ var currentMemberPos = new Object();
 var middlePos = new Object();   
 var directionsService = new google.maps.DirectionsService();
 var directionsRenderer = new google.maps.DirectionsRenderer();
+var geocoder = new google.maps.Geocoder();
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -33,6 +35,7 @@ function getPos () {
         }); // new marker
         midMarker.setMap(null); 
         saveLocation(); 
+
          //allMarkers[0] = new google.maps.Marker({position: currentPos, map: map});
          map.setCenter(currentPos);
     }, function() {
@@ -154,7 +157,6 @@ function getMembersLocations(groupid) {
         } // else no error
     } // getGroup
     connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup); 
-
 } // getMembersLocations
 
 function center (point) {
@@ -230,7 +232,7 @@ function plotMeetSpots () {
     };
     var request = {
         location: LatLng,
-        radius: '1000',
+        radius: '1500',
         type: ['restaurant']
       };
 

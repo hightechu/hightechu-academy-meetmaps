@@ -26,7 +26,7 @@ function createGroup() {
 
     // Connect to the API
     connectAPI("groups", "POST", newGroup, jsonObj);
-    window.location = "/";
+    loadPage(); 
 } // createGroup
 
 function addUserToGroup(userAdd, groupAdd) {
@@ -121,8 +121,9 @@ function inGroup(id) {
     } // showUsers
     id = id.substring(9, id.length+1); 
     console.log("Group: " + id); 
-    currentGroupId = id; 
+    currentGroupId = id;
     connectAPI('groupMembers?filter={"where":{"groupID":"' + id + '"}}', "GET", showUsers);
     document.getElementById("invite").style.display = "block";  
     getMembersLocations(id); 
+    getMembersPositions();
 } // inGroup
