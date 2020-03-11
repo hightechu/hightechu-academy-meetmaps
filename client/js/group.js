@@ -26,7 +26,7 @@ function createGroup() {
 
     // Connect to the API
     connectAPI("groups", "POST", newGroup, jsonObj);
-    loadPage(); 
+    window.location = "/";
 } // createGroup
 
 function addUserToGroup(userAdd, groupAdd) {
@@ -64,9 +64,11 @@ function showGroups() {
                 var group = document.createElement("BUTTON");  //<button> element
                 var t = document.createTextNode(response[i-1].groupID); // Create a text node
                 group.appendChild(t); 
+                group.className += "btn ";
+                group.className += "btn-light";
+                group.className += " groupbtn";
                 //group.onclick = function(){inGroup(response[i].groupID)};
                 group.addEventListener('click', function(){ inGroup(this.id)});
-                group.className = "groupButton";
                 group.setAttribute("id", "groupName" + response[i-1].groupID);
                 groups.appendChild(group);//to show on myView 
             } //for each group
@@ -93,6 +95,7 @@ function inGroup(id) {
                         gHeader.appendChild(t); 
                         gHeader.setAttribute("id", "groupTitle");
                         groups.appendChild(gHeader); 
+                        gHeader.className += "gHeader";
                     } // if element exists
                 } // if error
             } // groupName

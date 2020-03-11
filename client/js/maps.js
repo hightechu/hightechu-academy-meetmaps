@@ -35,7 +35,6 @@ function getPos () {
         }); // new marker
         midMarker.setMap(null); 
         saveLocation(); 
-
          //allMarkers[0] = new google.maps.Marker({position: currentPos, map: map});
          map.setCenter(currentPos);
     }, function() {
