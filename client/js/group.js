@@ -3,6 +3,7 @@
 function createGroup() {
     var userID;
     var groupID; 
+    var groupName; 
     // If the response has an error -> inform user
     // Else is successful -> inform user
     newGroup = function (response, status) {
@@ -15,8 +16,9 @@ function createGroup() {
             console.log("Group Created!");
             userID = getCookie("userId");
             groupID = "{0}".format(response.id);
+            groupName = "{0}".format(response.name);
             console.log(userID + " - " + groupID);
-            addUserToGroup(userID, groupID); 
+            addUserToGroup(userID, groupID, groupName); 
         }
     }
 
@@ -29,7 +31,7 @@ function createGroup() {
     window.location = "/";
 } // createGroup
 
-function addUserToGroup(userAdd, groupAdd) {
+function addUserToGroup(userAdd, groupAdd, nameAdd) {
         // If the response has an error -> inform user
     // Else is successful -> inform user
     responseStatus = function (response, status) {
@@ -46,6 +48,7 @@ function addUserToGroup(userAdd, groupAdd) {
     var jsonObj = new Object();
     jsonObj.userID = userAdd;
     jsonObj.groupID = groupAdd;
+    jsonObj.name = nameAdd;
     // Connect to the API
     console.log(userAdd); 
     console.log(groupAdd); 
@@ -62,7 +65,7 @@ function showGroups() {
         } else {
             for (var i = 1; i <= response.length; i++) {
                 var group = document.createElement("BUTTON");  //<button> element
-                var t = document.createTextNode(response[i-1].groupID); // Create a text node
+                var t = document.createTextNode(response[i-1].name); // Create a text node
                 group.appendChild(t); 
                 group.className += "btn ";
                 group.className += "btn-light";

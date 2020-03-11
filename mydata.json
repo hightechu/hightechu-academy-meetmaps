@@ -1,14 +1,14 @@
 {
   "ids": {
-    "User": 29,
-    "AccessToken": 45,
+    "User": 30,
+    "AccessToken": 47,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
-    "group": 46,
-    "groupMembers": 37,
-    "username": 17,
-    "location": 50
+    "group": 49,
+    "groupMembers": 41,
+    "username": 18,
+    "location": 51
   },
   "models": {
     "User": {
@@ -39,7 +39,8 @@
       "25": "{\"username\":\"Another\",\"password\":\"$2a$10$keowZpxPFt5Ag7poO4iqj.uwiPRFknBU8ZIPe2zjyk2dcHVDw9WMS\",\"email\":\"another@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd BC\",\"id\":25}",
       "26": "{\"username\":\"Plzzz\",\"password\":\"$2a$10$dz4jnDO5kn0DgD1bME6Pauc7ItGEJRxYPBnyWB8uHsZtbOlXJrq7i\",\"email\":\"cmon@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd BC\",\"id\":26}",
       "27": "{\"username\":\"UGG\",\"password\":\"$2a$10$V9q9XLUZ/qfnHCAbZ0pwuOkCl8Ve1CxC0YlNWXF6lHszEcyBQZJA2\",\"email\":\"ugg@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd, BC\",\"id\":27}",
-      "28": "{\"username\":\"PLZZ\",\"password\":\"$2a$10$IPuxsGXwm8FSCqqJNsGS7OdXp./AOuVwkKPHVXXGS3yOD3CsLCz96\",\"email\":\"LZ@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd\",\"id\":28}"
+      "28": "{\"username\":\"PLZZ\",\"password\":\"$2a$10$IPuxsGXwm8FSCqqJNsGS7OdXp./AOuVwkKPHVXXGS3yOD3CsLCz96\",\"email\":\"LZ@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd\",\"id\":28}",
+      "29": "{\"username\":\"Mat\",\"password\":\"$2a$10$jLfGnc6oZfQBqYk.Q8Jl3.KJUxFXjzGmGUnCN0HWqUgsVZhY1tUuC\",\"email\":\"group@gmail.com\",\"defaultAddress\":\"124\",\"id\":29}"
     },
     "AccessToken": {
       "KtRP2aopwSVLTF5qKjRLwB39CAhna3dOAbC08nnYsj7AReWhKjqzTGcZTO8elgmZ": "{\"id\":\"KtRP2aopwSVLTF5qKjRLwB39CAhna3dOAbC08nnYsj7AReWhKjqzTGcZTO8elgmZ\",\"ttl\":1209600,\"created\":\"2020-02-08T20:51:25.591Z\",\"userId\":1}",
@@ -85,7 +86,9 @@
       "u8vTQyKbo8W2yoCzssn12kHt93C81k80mwWOdiACRNBMoG1KWoD4McvukGIzOqyF": "{\"id\":\"u8vTQyKbo8W2yoCzssn12kHt93C81k80mwWOdiACRNBMoG1KWoD4McvukGIzOqyF\",\"ttl\":1209600,\"created\":\"2020-03-08T16:15:08.060Z\",\"userId\":26}",
       "1oGr2ppV9dE6bgjO13EHb3wFWsHYF9AyUxFsoHQDIKv6C4MQQCeF4yAjKxMIOJvf": "{\"id\":\"1oGr2ppV9dE6bgjO13EHb3wFWsHYF9AyUxFsoHQDIKv6C4MQQCeF4yAjKxMIOJvf\",\"ttl\":1209600,\"created\":\"2020-03-08T16:16:52.431Z\",\"userId\":27}",
       "COXBhdVuwyuXoJvkln8FVz9vKGqE2a2DHc0nj7yNFr7sYMPWxfDHdTlJ7dVmn4zP": "{\"id\":\"COXBhdVuwyuXoJvkln8FVz9vKGqE2a2DHc0nj7yNFr7sYMPWxfDHdTlJ7dVmn4zP\",\"ttl\":1209600,\"created\":\"2020-03-08T16:18:11.626Z\",\"userId\":28}",
-      "QRZyCq0yKJz6pgTwWfq3KPYSSd2w2AB8mB88HYbIcWGj7nZGrf5jdpHEliziEr7n": "{\"id\":\"QRZyCq0yKJz6pgTwWfq3KPYSSd2w2AB8mB88HYbIcWGj7nZGrf5jdpHEliziEr7n\",\"ttl\":1209600,\"created\":\"2020-03-10T02:43:07.237Z\",\"userId\":20}"
+      "QRZyCq0yKJz6pgTwWfq3KPYSSd2w2AB8mB88HYbIcWGj7nZGrf5jdpHEliziEr7n": "{\"id\":\"QRZyCq0yKJz6pgTwWfq3KPYSSd2w2AB8mB88HYbIcWGj7nZGrf5jdpHEliziEr7n\",\"ttl\":1209600,\"created\":\"2020-03-10T02:43:07.237Z\",\"userId\":20}",
+      "PM9XWZii9z42Bb0Rpx7qQAVpIMn8iHzK234QkIuY4mHAipPoNPsGBdUAf2mXq1BC": "{\"id\":\"PM9XWZii9z42Bb0Rpx7qQAVpIMn8iHzK234QkIuY4mHAipPoNPsGBdUAf2mXq1BC\",\"ttl\":1209600,\"created\":\"2020-03-11T01:39:00.401Z\",\"userId\":20}",
+      "E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M": "{\"id\":\"E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M\",\"ttl\":1209600,\"created\":\"2020-03-11T01:44:18.715Z\",\"userId\":29}"
     },
     "ACL": {},
     "RoleMapping": {},
@@ -135,7 +138,10 @@
       "42": "{\"name\":\"a\",\"id\":42}",
       "43": "{\"name\":\"b\",\"id\":43}",
       "44": "{\"name\":\"Test\",\"id\":44}",
-      "45": "{\"name\":\"Num 1\",\"id\":45}"
+      "45": "{\"name\":\"Num 1\",\"id\":45}",
+      "46": "{\"name\":\"Hello\",\"id\":46}",
+      "47": "{\"name\":\"Test\",\"id\":47}",
+      "48": "{\"name\":\"Mats Group\",\"id\":48}"
     },
     "groupMembers": {
       "1": "{\"userID\":3,\"groupID\":21,\"id\":1}",
@@ -173,7 +179,11 @@
       "33": "{\"userID\":20,\"groupID\":43,\"id\":33}",
       "34": "{\"userID\":23,\"groupID\":44,\"id\":34}",
       "35": "{\"userID\":19,\"groupID\":44,\"id\":35}",
-      "36": "{\"userID\":24,\"groupID\":45,\"id\":36}"
+      "36": "{\"userID\":24,\"groupID\":45,\"id\":36}",
+      "37": "{\"userID\":20,\"groupID\":47,\"name\":\"Test\",\"id\":37}",
+      "38": "{\"userID\":29,\"groupID\":48,\"name\":\"Mats Group\",\"id\":38}",
+      "39": "{\"userID\":20,\"groupID\":48,\"name\":\"null\",\"id\":39}",
+      "40": "{\"userID\":22,\"groupID\":48,\"name\":\"null\",\"id\":40}"
     },
     "username": {
       "1": "{\"name\":\"matthew\",\"id\":1}",
@@ -191,11 +201,12 @@
       "13": "{\"name\":\"Another\",\"useridnty\":25,\"id\":13}",
       "14": "{\"name\":\"Plzzz\",\"useridnty\":26,\"id\":14}",
       "15": "{\"name\":\"UGG\",\"useridnty\":27,\"id\":15}",
-      "16": "{\"name\":\"PLZZ\",\"useridnty\":28,\"id\":16}"
+      "16": "{\"name\":\"PLZZ\",\"useridnty\":28,\"id\":16}",
+      "17": "{\"name\":\"Mat\",\"useridnty\":29,\"id\":17}"
     },
     "location": {
       "40": "{\"id\":40,\"userID\":5,\"lat\":48.476257499999996,\"lng\":-123.37650349999998}",
-      "41": "{\"id\":41,\"userID\":0,\"lat\":48.47632790000001,\"lng\":-123.376611}",
+      "41": "{\"id\":41,\"userID\":0,\"lat\":48.4805588,\"lng\":-123.3994287}",
       "42": "{\"id\":42,\"userID\":19,\"lat\":48.463871999999995,\"lng\":-123.3027072}",
       "43": "{\"id\":43,\"userID\":18,\"lat\":48.4762699,\"lng\":-123.3767448}",
       "44": "{\"id\":44,\"userID\":17,\"lat\":48.464901399999995,\"lng\":-123.3786364}",
@@ -203,7 +214,8 @@
       "46": "{\"userID\":21,\"lat\":48.461052699999996,\"lng\":-123.3114252,\"id\":46}",
       "47": "{\"id\":47,\"userID\":20,\"lat\":48.4805588,\"lng\":-123.3994287}",
       "48": "{\"id\":48,\"userID\":22,\"lat\":48.47632790000001,\"lng\":-123.376611}",
-      "49": "{\"id\":49,\"userID\":23,\"lat\":48.4763355,\"lng\":-123.376665}"
+      "49": "{\"id\":49,\"userID\":23,\"lat\":48.4763355,\"lng\":-123.376665}",
+      "50": "{\"id\":50,\"userID\":29,\"lat\":48.4805588,\"lng\":-123.3994287}"
     }
   }
 }

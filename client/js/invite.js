@@ -8,7 +8,7 @@ function searchUser() {
                     var user = document.createElement("BUTTON");
                     var t = document.createTextNode("Click to add " + users[i-1].name); 
                     user.appendChild(t); 
-                    user.addEventListener('click', function(){ addUserToGroup(this.id.substring(4, this.id.length+1), currentGroupId)});
+                    user.addEventListener('click', function(){ addUserToGroup(this.id.substring(4, this.id.length+1), currentGroupId, "null")});
                     user.setAttribute("id", "user" + users[i-1].useridnty); 
                     userFind.appendChild(user); 
             } // for
