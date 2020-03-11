@@ -84,3 +84,7 @@ body {
 #m {
     height: 60%; 
 }
+
+.spacer {
+    height: 30vh!important;
+}
