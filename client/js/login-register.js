@@ -57,7 +57,7 @@ function createAccount() {
 
   // Connect to the API
   connectAPI("users/login", "POST", login, loginObj);
-/*
+
   var streetAddress = document.getElementById("defaultAddress").value;
   geocoder.geocode({'address': streetAddress}, function(results, status) {
     if (status === 'OK') {
@@ -80,7 +80,6 @@ function createAccount() {
       alert('Geocode was not successful for the following reason: ' + status);
     } // else geocode
   });
-  */
 } // create Account
 
 // login

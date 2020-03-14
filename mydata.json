@@ -1,14 +1,14 @@
 {
   "ids": {
-    "User": 34,
-    "AccessToken": 54,
+    "User": 30,
+    "AccessToken": 50,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
-    "group": 61,
-    "groupMembers": 52,
-    "username": 22,
-    "location": 55
+    "group": 56,
+    "groupMembers": 50,
+    "username": 18,
+    "location": 52
   },
   "models": {
     "User": {
@@ -40,11 +40,7 @@
       "26": "{\"username\":\"Plzzz\",\"password\":\"$2a$10$dz4jnDO5kn0DgD1bME6Pauc7ItGEJRxYPBnyWB8uHsZtbOlXJrq7i\",\"email\":\"cmon@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd BC\",\"id\":26}",
       "27": "{\"username\":\"UGG\",\"password\":\"$2a$10$V9q9XLUZ/qfnHCAbZ0pwuOkCl8Ve1CxC0YlNWXF6lHszEcyBQZJA2\",\"email\":\"ugg@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd, BC\",\"id\":27}",
       "28": "{\"username\":\"PLZZ\",\"password\":\"$2a$10$IPuxsGXwm8FSCqqJNsGS7OdXp./AOuVwkKPHVXXGS3yOD3CsLCz96\",\"email\":\"LZ@gmail.com\",\"defaultAddress\":\"3440 Saanich Rd\",\"id\":28}",
-      "29": "{\"username\":\"Mat\",\"password\":\"$2a$10$jLfGnc6oZfQBqYk.Q8Jl3.KJUxFXjzGmGUnCN0HWqUgsVZhY1tUuC\",\"email\":\"group@gmail.com\",\"defaultAddress\":\"124\",\"id\":29}",
-      "30": "{\"username\":\"MattSmith1\",\"password\":\"$2a$10$O6rscv7zP0XScHN1TMg17OkNSHFm6eGw/MgGj4S6VstVlGKvU0poq\",\"email\":\"NewAccount@gmail.com\",\"defaultAddress\":\"1999\",\"id\":30}",
-      "31": "{\"username\":\"Doug\",\"password\":\"$2a$10$VGlursNwW/YFz.HxstEigeg1JZxzueCCM/HW6Qj62vUwxlX1sV0.m\",\"email\":\"Doug@gmail.com\",\"defaultAddress\":\"1111\",\"id\":31}",
-      "32": "{\"username\":\"Mattt\",\"password\":\"$2a$10$HHlfMuGT.tsgu3khZJbPAukoFLtHkdp31Mt0Z15.xJzQ0ZBAvFpmy\",\"email\":\"m@m.com\",\"defaultAddress\":\"1234\",\"id\":32}",
-      "33": "{\"username\":\"KateS\",\"password\":\"$2a$10$GROpQ1FzHAScl2FpCwkgruY3ZIaPymgXRLnejVZEZNVEJIXJWmC7e\",\"email\":\"Kate@Smith.ca\",\"defaultAddress\":\"1982\",\"id\":33}"
+      "29": "{\"username\":\"Mat\",\"password\":\"$2a$10$jLfGnc6oZfQBqYk.Q8Jl3.KJUxFXjzGmGUnCN0HWqUgsVZhY1tUuC\",\"email\":\"group@gmail.com\",\"defaultAddress\":\"124\",\"id\":29}"
     },
     "AccessToken": {
       "KtRP2aopwSVLTF5qKjRLwB39CAhna3dOAbC08nnYsj7AReWhKjqzTGcZTO8elgmZ": "{\"id\":\"KtRP2aopwSVLTF5qKjRLwB39CAhna3dOAbC08nnYsj7AReWhKjqzTGcZTO8elgmZ\",\"ttl\":1209600,\"created\":\"2020-02-08T20:51:25.591Z\",\"userId\":1}",
@@ -94,12 +90,8 @@
       "PM9XWZii9z42Bb0Rpx7qQAVpIMn8iHzK234QkIuY4mHAipPoNPsGBdUAf2mXq1BC": "{\"id\":\"PM9XWZii9z42Bb0Rpx7qQAVpIMn8iHzK234QkIuY4mHAipPoNPsGBdUAf2mXq1BC\",\"ttl\":1209600,\"created\":\"2020-03-11T01:39:00.401Z\",\"userId\":20}",
       "E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M": "{\"id\":\"E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M\",\"ttl\":1209600,\"created\":\"2020-03-11T01:44:18.715Z\",\"userId\":29}",
       "8181NkbZB3y4AagZnkEYRCFWSQqG1ZasCH7Bd3C85FdvByHy5Dc20d9jyNXnjkZZ": "{\"id\":\"8181NkbZB3y4AagZnkEYRCFWSQqG1ZasCH7Bd3C85FdvByHy5Dc20d9jyNXnjkZZ\",\"ttl\":1209600,\"created\":\"2020-03-11T03:57:09.182Z\",\"userId\":29}",
-      "wrB2bsUgxOtgjSAdcu1ymKhDR55Zo7TO9zomUJWZVBJ9P1K4W5QJHaQdHwrQpVBY": "{\"id\":\"wrB2bsUgxOtgjSAdcu1ymKhDR55Zo7TO9zomUJWZVBJ9P1K4W5QJHaQdHwrQpVBY\",\"ttl\":1209600,\"created\":\"2020-03-14T17:49:24.279Z\",\"userId\":30}",
-      "jQXVmnpJqB62oQ5hyBeVvz1tOmty9zA3g5PnlqBSP8JaAt0jbNSQhgpQw41kf5Pm": "{\"id\":\"jQXVmnpJqB62oQ5hyBeVvz1tOmty9zA3g5PnlqBSP8JaAt0jbNSQhgpQw41kf5Pm\",\"ttl\":1209600,\"created\":\"2020-03-14T17:53:02.707Z\",\"userId\":30}",
-      "NK1wHUe7nbQaZTk1CpS8Fai6oNL5GmVERYs0yfWKiLddj7g5cPJR53vWOF5Yopw1": "{\"id\":\"NK1wHUe7nbQaZTk1CpS8Fai6oNL5GmVERYs0yfWKiLddj7g5cPJR53vWOF5Yopw1\",\"ttl\":1209600,\"created\":\"2020-03-14T18:03:37.689Z\",\"userId\":31}",
-      "nITopWMM2o4W3lcZsODGYvy481JPmqtuDWv8CA70uQfpZIJhCI11u206nrgnGUYR": "{\"id\":\"nITopWMM2o4W3lcZsODGYvy481JPmqtuDWv8CA70uQfpZIJhCI11u206nrgnGUYR\",\"ttl\":1209600,\"created\":\"2020-03-14T18:08:42.655Z\",\"userId\":32}",
-      "DGYV2jTeL58S4nsEC2sj4UQjwFe0ZDh2bROE86Bk24wx1zwpLjymn1WN9Q2dbRI0": "{\"id\":\"DGYV2jTeL58S4nsEC2sj4UQjwFe0ZDh2bROE86Bk24wx1zwpLjymn1WN9Q2dbRI0\",\"ttl\":1209600,\"created\":\"2020-03-14T18:16:15.431Z\",\"userId\":33}",
-      "0fE0Oe5PpjBtLwk6x3wv36P8s004QGCuCf37b64rWwbQmBMoT6ValFHS3qAFvMhA": "{\"id\":\"0fE0Oe5PpjBtLwk6x3wv36P8s004QGCuCf37b64rWwbQmBMoT6ValFHS3qAFvMhA\",\"ttl\":1209600,\"created\":\"2020-03-14T18:16:30.443Z\",\"userId\":33}"
+      "GkT1M6ocE5arkwfGZkwNonCm6atFY7uyokhDtHoAYsHHSJ0VP3pUl0ew5P2nmost": "{\"id\":\"GkT1M6ocE5arkwfGZkwNonCm6atFY7uyokhDtHoAYsHHSJ0VP3pUl0ew5P2nmost\",\"ttl\":1209600,\"created\":\"2020-03-14T17:38:36.364Z\",\"userId\":2}",
+      "Va5eH9H9z8FMhmOQzaFULCDbtd7718drXWi3t7UyWF0i56dlS5Y9OmJptcgqVp4U": "{\"id\":\"Va5eH9H9z8FMhmOQzaFULCDbtd7718drXWi3t7UyWF0i56dlS5Y9OmJptcgqVp4U\",\"ttl\":1209600,\"created\":\"2020-03-14T18:50:51.023Z\",\"userId\":2}"
     },
     "ACL": {},
     "RoleMapping": {},
@@ -153,18 +145,13 @@
       "46": "{\"name\":\"Hello\",\"id\":46}",
       "47": "{\"name\":\"Test\",\"id\":47}",
       "48": "{\"name\":\"Mats Group\",\"id\":48}",
-      "49": "{\"name\":\"New Group\",\"id\":49}",
-      "50": "{\"name\":\"Matt Group\",\"id\":50}",
-      "51": "{\"name\":\"Group\",\"id\":51}",
-      "52": "{\"name\":\"Mat\",\"id\":52}",
-      "53": "{\"name\":\"TEst\",\"id\":53}",
-      "54": "{\"name\":\"Another Group\",\"id\":54}",
-      "55": "{\"name\":\"Dougs Group\",\"id\":55}",
-      "56": "{\"name\":\"Other Group\",\"id\":56}",
-      "57": "{\"name\":\"Matttt\",\"id\":57}",
-      "58": "{\"name\":\"Ma\",\"id\":58}",
-      "59": "{\"name\":\"Dougg\",\"id\":59}",
-      "60": "{\"name\":\"Kates Friends\",\"id\":60}"
+      "49": "{\"name\":\"Group2\",\"id\":49}",
+      "50": "{\"name\":\"Group1\",\"id\":50}",
+      "51": "{\"name\":\"Group2\",\"id\":51}",
+      "52": "{\"name\":\"gabes group\",\"id\":52}",
+      "53": "{\"name\":\"group\",\"id\":53}",
+      "54": "{\"name\":\"group\",\"id\":54}",
+      "55": "{\"name\":\"group\",\"id\":55}"
     },
     "groupMembers": {
       "1": "{\"userID\":3,\"groupID\":21,\"id\":1}",
@@ -208,16 +195,14 @@
       "39": "{\"userID\":20,\"groupID\":48,\"name\":\"null\",\"id\":39}",
       "40": "{\"userID\":22,\"groupID\":48,\"name\":\"null\",\"id\":40}",
       "41": "{\"userID\":19,\"groupID\":48,\"name\":\"null\",\"id\":41}",
-      "42": "{\"userID\":30,\"groupID\":53,\"name\":\"TEst\",\"id\":42}",
-      "43": "{\"userID\":22,\"groupID\":53,\"name\":\"null\",\"id\":43}",
-      "44": "{\"userID\":31,\"groupID\":55,\"name\":\"Dougs Group\",\"id\":44}",
-      "45": "{\"userID\":20,\"groupID\":55,\"name\":\"null\",\"id\":45}",
-      "46": "{\"userID\":32,\"groupID\":57,\"name\":\"Matttt\",\"id\":46}",
-      "47": "{\"userID\":32,\"groupID\":58,\"name\":\"Ma\",\"id\":47}",
-      "48": "{\"userID\":32,\"groupID\":59,\"name\":\"Dougg\",\"id\":48}",
-      "49": "{\"userID\":33,\"groupID\":60,\"name\":\"Kates Friends\",\"id\":49}",
-      "50": "{\"userID\":20,\"groupID\":60,\"name\":\"null\",\"id\":50}",
-      "51": "{\"userID\":22,\"groupID\":60,\"name\":\"null\",\"id\":51}"
+      "42": "{\"userID\":2,\"groupID\":50,\"name\":\"Group1\",\"id\":42}",
+      "43": "{\"userID\":20,\"groupID\":50,\"name\":\"null\",\"id\":43}",
+      "44": "{\"userID\":21,\"groupID\":50,\"name\":\"null\",\"id\":44}",
+      "45": "{\"userID\":22,\"groupID\":50,\"name\":\"null\",\"id\":45}",
+      "46": "{\"userID\":23,\"groupID\":50,\"name\":\"null\",\"id\":46}",
+      "47": "{\"userID\":25,\"groupID\":50,\"name\":\"null\",\"id\":47}",
+      "48": "{\"userID\":29,\"groupID\":50,\"name\":\"null\",\"id\":48}",
+      "49": "{\"userID\":24,\"groupID\":50,\"name\":\"null\",\"id\":49}"
     },
     "username": {
       "1": "{\"name\":\"matthew\",\"id\":1}",
@@ -236,15 +221,11 @@
       "14": "{\"name\":\"Plzzz\",\"useridnty\":26,\"id\":14}",
       "15": "{\"name\":\"UGG\",\"useridnty\":27,\"id\":15}",
       "16": "{\"name\":\"PLZZ\",\"useridnty\":28,\"id\":16}",
-      "17": "{\"name\":\"Mat\",\"useridnty\":29,\"id\":17}",
-      "18": "{\"name\":\"MattSmith1\",\"useridnty\":30,\"id\":18}",
-      "19": "{\"name\":\"Doug\",\"useridnty\":31,\"id\":19}",
-      "20": "{\"name\":\"Mattt\",\"useridnty\":32,\"id\":20}",
-      "21": "{\"name\":\"KateS\",\"useridnty\":33,\"id\":21}"
+      "17": "{\"name\":\"Mat\",\"useridnty\":29,\"id\":17}"
     },
     "location": {
       "40": "{\"id\":40,\"userID\":5,\"lat\":48.476257499999996,\"lng\":-123.37650349999998}",
-      "41": "{\"id\":41,\"userID\":0,\"lat\":48.4739163,\"lng\":-123.350383}",
+      "41": "{\"id\":41,\"userID\":0,\"lat\":48.463871999999995,\"lng\":-123.3027072}",
       "42": "{\"id\":42,\"userID\":19,\"lat\":48.463871999999995,\"lng\":-123.3027072}",
       "43": "{\"id\":43,\"userID\":18,\"lat\":48.4762699,\"lng\":-123.3767448}",
       "44": "{\"id\":44,\"userID\":17,\"lat\":48.464901399999995,\"lng\":-123.3786364}",
@@ -254,10 +235,7 @@
       "48": "{\"id\":48,\"userID\":22,\"lat\":48.47632790000001,\"lng\":-123.376611}",
       "49": "{\"id\":49,\"userID\":23,\"lat\":48.4763355,\"lng\":-123.376665}",
       "50": "{\"id\":50,\"userID\":29,\"lat\":48.4805588,\"lng\":-123.3994287}",
-      "51": "{\"id\":51,\"userID\":30,\"lat\":48.4739163,\"lng\":-123.350383}",
-      "52": "{\"id\":52,\"userID\":31,\"lat\":48.4739163,\"lng\":-123.350383}",
-      "53": "{\"id\":53,\"userID\":32,\"lat\":48.4739163,\"lng\":-123.350383}",
-      "54": "{\"id\":54,\"userID\":33,\"lat\":48.4739163,\"lng\":-123.350383}"
+      "51": "{\"id\":51,\"userID\":2,\"lat\":48.463871999999995,\"lng\":-123.3027072}"
     }
   }
 }
