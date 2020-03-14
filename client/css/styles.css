@@ -78,6 +78,14 @@ body {
 }
 
 
+.gHeader {
+    font-size: x-large;
+}
+
 #m {
     height: 60%; 
+}
+
+.spacer {
+    height: 30vh!important;
 }
