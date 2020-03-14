@@ -64,7 +64,6 @@ function showGroups() {
             console.log("{0}: {1}".format(status, response.error.message));
         } else {
             for (var i = 1; i <= response.length; i++) {
-                alert("Group!!!");
                 var group = document.createElement("BUTTON");  //<button> element
                 var t = document.createTextNode(response[i-1].name); // Create a text node
                 group.appendChild(t); 
