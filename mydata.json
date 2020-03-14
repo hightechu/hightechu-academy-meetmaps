@@ -1,12 +1,12 @@
 {
   "ids": {
     "User": 30,
-    "AccessToken": 47,
+    "AccessToken": 48,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
     "group": 49,
-    "groupMembers": 41,
+    "groupMembers": 42,
     "username": 18,
     "location": 51
   },
@@ -88,7 +88,8 @@
       "COXBhdVuwyuXoJvkln8FVz9vKGqE2a2DHc0nj7yNFr7sYMPWxfDHdTlJ7dVmn4zP": "{\"id\":\"COXBhdVuwyuXoJvkln8FVz9vKGqE2a2DHc0nj7yNFr7sYMPWxfDHdTlJ7dVmn4zP\",\"ttl\":1209600,\"created\":\"2020-03-08T16:18:11.626Z\",\"userId\":28}",
       "QRZyCq0yKJz6pgTwWfq3KPYSSd2w2AB8mB88HYbIcWGj7nZGrf5jdpHEliziEr7n": "{\"id\":\"QRZyCq0yKJz6pgTwWfq3KPYSSd2w2AB8mB88HYbIcWGj7nZGrf5jdpHEliziEr7n\",\"ttl\":1209600,\"created\":\"2020-03-10T02:43:07.237Z\",\"userId\":20}",
       "PM9XWZii9z42Bb0Rpx7qQAVpIMn8iHzK234QkIuY4mHAipPoNPsGBdUAf2mXq1BC": "{\"id\":\"PM9XWZii9z42Bb0Rpx7qQAVpIMn8iHzK234QkIuY4mHAipPoNPsGBdUAf2mXq1BC\",\"ttl\":1209600,\"created\":\"2020-03-11T01:39:00.401Z\",\"userId\":20}",
-      "E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M": "{\"id\":\"E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M\",\"ttl\":1209600,\"created\":\"2020-03-11T01:44:18.715Z\",\"userId\":29}"
+      "E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M": "{\"id\":\"E2UYuYG8VMjjmQtdy8rNpz2UN3C70Y496Qpaj38lMV78Tao2ulevioMHRwXVgH4M\",\"ttl\":1209600,\"created\":\"2020-03-11T01:44:18.715Z\",\"userId\":29}",
+      "8181NkbZB3y4AagZnkEYRCFWSQqG1ZasCH7Bd3C85FdvByHy5Dc20d9jyNXnjkZZ": "{\"id\":\"8181NkbZB3y4AagZnkEYRCFWSQqG1ZasCH7Bd3C85FdvByHy5Dc20d9jyNXnjkZZ\",\"ttl\":1209600,\"created\":\"2020-03-11T03:57:09.182Z\",\"userId\":29}"
     },
     "ACL": {},
     "RoleMapping": {},
@@ -183,7 +184,8 @@
       "37": "{\"userID\":20,\"groupID\":47,\"name\":\"Test\",\"id\":37}",
       "38": "{\"userID\":29,\"groupID\":48,\"name\":\"Mats Group\",\"id\":38}",
       "39": "{\"userID\":20,\"groupID\":48,\"name\":\"null\",\"id\":39}",
-      "40": "{\"userID\":22,\"groupID\":48,\"name\":\"null\",\"id\":40}"
+      "40": "{\"userID\":22,\"groupID\":48,\"name\":\"null\",\"id\":40}",
+      "41": "{\"userID\":19,\"groupID\":48,\"name\":\"null\",\"id\":41}"
     },
     "username": {
       "1": "{\"name\":\"matthew\",\"id\":1}",
@@ -206,7 +208,7 @@
     },
     "location": {
       "40": "{\"id\":40,\"userID\":5,\"lat\":48.476257499999996,\"lng\":-123.37650349999998}",
-      "41": "{\"id\":41,\"userID\":0,\"lat\":48.4805588,\"lng\":-123.3994287}",
+      "41": "{\"id\":41,\"userID\":0,\"lat\":48.4762936,\"lng\":-123.3765551}",
       "42": "{\"id\":42,\"userID\":19,\"lat\":48.463871999999995,\"lng\":-123.3027072}",
       "43": "{\"id\":43,\"userID\":18,\"lat\":48.4762699,\"lng\":-123.3767448}",
       "44": "{\"id\":44,\"userID\":17,\"lat\":48.464901399999995,\"lng\":-123.3786364}",

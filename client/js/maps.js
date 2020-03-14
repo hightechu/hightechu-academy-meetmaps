@@ -109,22 +109,6 @@ function saveLocation () {
     connectAPI('locations?filter={"where":{"userID":"' + getCookie("userId") + '"}}', "GET", doesExist);
 } // saveLocation
 
-
-function deleteLoc() {
-    for (var i = 36; i <=39; i++) {
-        responseStatus = function (response, status) {
-            if ('error' in response) {
-            // Inform User of Error
-                console.log("{0}: {1}".format(status, response.error.message));
-            }
-            else {
-                console.log("location deleted"); 
-            }
-        }
-        connectAPI("locations/{0}".format(i), "DELETE", responseStatus);
-    } // for
-} // deleteLoc
-
 function getMembersLocations(groupid) {
     allMarkers.splice(0, allMarkers.length); 
     getGroup = function (usersInGroup, status) {
