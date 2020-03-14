@@ -1,8 +1,12 @@
 /* Add Styles Here */
-.Box {
+body{
+    background-color: whitesmoke;
+}
+
+.menu {
     display: inline-block;
     border: 1px solid #118A0F;
-    height: 50vh!important;
+    height: 50vh!important; 
     background-color: #118A0F;
 }
 .title {
@@ -16,10 +20,10 @@ body {
     width: 200px;
 }
 
-#loginSignup {
+/*#loginSignup {
     float: right; 
     display: block;
-}
+}*/
 
 #header {
     height: 5em;
@@ -33,6 +37,11 @@ body {
 #logo img {
     margin: 10px;
     height: 59px;
+}
+
+#map {
+    width: 100%; 
+    height: 50vh; 
 }
 
 #map img {
@@ -54,4 +63,29 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#invite {
+    display: none; 
+}
+
+.margin {
+    margin-right: 1em!important;
+}
+
+.groupbtn {
+    margin: 0.5em;
+}
+
+
+.gHeader {
+    font-size: x-large;
+}
+
+#m {
+    height: 60%; 
+}
+
+.spacer {
+    height: 30vh!important;
 }
