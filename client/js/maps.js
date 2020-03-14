@@ -1,5 +1,6 @@
 var map;
 var currentPos;
+var defMarker; 
 var allMarkers = new Array();
 var allMeetMarkers = new Array(); 
 var allPositions = new Array();
@@ -8,6 +9,7 @@ var currentMemberPos = new Object();
 var middlePos = new Object();   
 var directionsService = new google.maps.DirectionsService();
 var directionsRenderer = new google.maps.DirectionsRenderer();
+var geocoder = new google.maps.Geocoder();
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -107,22 +109,6 @@ function saveLocation () {
     connectAPI('locations?filter={"where":{"userID":"' + getCookie("userId") + '"}}', "GET", doesExist);
 } // saveLocation
 
-
-function deleteLoc() {
-    for (var i = 36; i <=39; i++) {
-        responseStatus = function (response, status) {
-            if ('error' in response) {
-            // Inform User of Error
-                console.log("{0}: {1}".format(status, response.error.message));
-            }
-            else {
-                console.log("location deleted"); 
-            }
-        }
-        connectAPI("locations/{0}".format(i), "DELETE", responseStatus);
-    } // for
-} // deleteLoc
-
 function getMembersLocations(groupid) {
     allMarkers.splice(0, allMarkers.length); 
     getGroup = function (usersInGroup, status) {
@@ -154,7 +140,6 @@ function getMembersLocations(groupid) {
         } // else no error
     } // getGroup
     connectAPI('groupMembers?filter={"where":{"groupID":"' + groupid + '"}}', "GET", getGroup); 
-
 } // getMembersLocations
 
 function center (point) {
@@ -230,7 +215,7 @@ function plotMeetSpots () {
     };
     var request = {
         location: LatLng,
-        radius: '1000',
+        radius: '1500',
         type: ['restaurant']
       };
 
