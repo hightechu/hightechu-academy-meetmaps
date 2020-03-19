@@ -77,7 +77,6 @@ body {
     margin: 0.5em;
 }
 
-
 #m {
     height: 500px !important; 
 }
@@ -88,4 +87,12 @@ body {
 
 #map {
     height: 500px; 
+}
+
+.gHeader {
+    font-size: x-large;
+}
+
+.spacer {
+    height: 30vh!important;
 }
