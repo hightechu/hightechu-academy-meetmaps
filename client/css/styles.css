@@ -79,5 +79,13 @@ body {
 
 
 #m {
-    height: 60%; 
+    height: 500px !important; 
+}
+
+#g {
+    height: 500px !important; 
+}
+
+#map {
+    height: 500px; 
 }
