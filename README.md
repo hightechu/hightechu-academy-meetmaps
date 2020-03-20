@@ -2,41 +2,49 @@
 
 HighTechU Group Project
 
-## [REPLACE ME WITH YOUR GROUP PROJECT NAME]
+## MeetMaps
 
 ### Website :star:
 
-[DELETE ME - ADD YOUR LIVE DEMO URL HERE]
-
-[Live Demo]()
+[Live Demo](https://meetmaps.herokuapp.com/)
 
 ### Mini Pitch :ghost:
 
-[DELETE ME - ADD YOUR PITCH HERE]
+MeetMap is a social map service that lets you start and join friend groups and find fun places to meet with the least amount of travel from the group. Our software uses the Google Maps API to find all the members of the group (or a default address) and gives you selection of the top 5 most popular locations for teens in order of how close they are to the members of the group. Select a location and the map will show directions for each member of the group from their current location to the destination. No more racking your brain for where to meet and how everyone is going to get there. With an easily buildable MVP in 7 weeks, this project also allows for tons of expansion. It is now easier than ever to get together with your friends and WE do all the work.
 
 ### Problem Statment :mega:
 
-[DELETE ME - ADD YOUR PROBLEM STATMEMENT HERE]
+People spend too long deciding on a place to meet that is close enough to all group members, sometimes to an extent that the meetup doesn't even occur. 
 
 ### User Stories :snowboarder:
 
-[DELETE ME - ADD YOUR USER STORIES HERE]
+I want my users to be able to see a default page on my website.
 
-* EXAMPLE - I want my users to be able to see a default page on my website.
-* EXAMPLE - I want my users to be able to login to my website.
+I want my users to be able to create an account for my website.
+
+I want my users to be able to login to my website.
+
+I want my users to be able to logout of my website.
+
+I want my users to be able to create a group. 
+
+I want my users to be able to add other users to their group. 
+
+I want my users to be able to switch between mulitple groups. 
+
+I want my users to be able to be shown the top three closest locations to meet. 
+
+I want my users to be able to select a location and be directed to it. 
 
 ### Website Pages :speedboat:
 
-[DELETE ME - ADD YOUR WEBSITE PAGES HERE]
-
-* EXAMPLE - Landing Page -> `index.html`
-* EXAMPLE - Login / Register Page -> `login-register.html`
+Landing Page -> `index.html`
 
 ### Promo :grinning:
 
-[DELETE ME - ADD YOUR WEBSITE PROMO IMAGES HERE]
-
-![Example: Promo 1]()
+![Landing Page](img/Landing.PNG)
+![Map 1 Page](img/Map1.PNG)
+![Map 2 Page](img/Map2.PNG)
 
 ## Getting Started :thinking:
 

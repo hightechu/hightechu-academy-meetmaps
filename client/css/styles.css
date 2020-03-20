@@ -77,13 +77,20 @@ body {
     margin: 0.5em;
 }
 
+#m {
+    height: 500px !important; 
+}
+
+#g {
+    height: 500px !important; 
+}
+
+#map {
+    height: 500px; 
+}
 
 .gHeader {
     font-size: x-large;
-}
-
-#m {
-    height: 60%; 
 }
 
 .spacer {
