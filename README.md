@@ -42,8 +42,9 @@ Landing Page -> `index.html`
 
 ### Promo :grinning:
 
-<img src="Promo Images/Map1.PNG">
-Signed In -> `Promo Images/Map1.PNG`
+![Landing Page](img/Landing.PNG)
+![Map 1 Page](img/Map1.PNG)
+![Map 2 Page](img/Map2.PNG)
 
 ## Getting Started :thinking:
 
