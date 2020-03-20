@@ -6,7 +6,7 @@ HighTechU Group Project
 
 ### Website :star:
 
-https://meetmaps.herokuapp.com/
+[Live Demo](https://meetmaps.herokuapp.com/)
 
 ### Mini Pitch :ghost:
 
