@@ -1,4 +1,4 @@
-# :iphone: MeetMaps :mask:
+# :walking: MeetMaps :bike:
 
 **A Project Created during Cohort 1 of the 2020 HighTechU Computer Science Skills Academy** 
 
