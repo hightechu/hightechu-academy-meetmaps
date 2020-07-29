@@ -1,12 +1,10 @@
-# Hightechu Academy Group Project :metal:
+# :iphone: MeetMaps :mask:
 
-HighTechU Group Project
+**A Project Created during the 2020 HighTechU ECE Virtual Skills Academy Pilot** 
 
-## MeetMaps
+---
 
-### Website :star:
-
-[Live Demo](https://meetmaps.herokuapp.com/)
+[Live Demo](https://meetmaps.herokuapp.com/) | [Download Source](/releases)
 
 ### Mini Pitch :ghost:
 
