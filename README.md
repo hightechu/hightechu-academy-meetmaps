@@ -10,6 +10,14 @@
 
 MeetMap is a social map service that lets you start and join friend groups and find fun places to meet with the least amount of travel from the group. Our software uses the Google Maps API to find all the members of the group (or a default address) and gives you selection of the top 5 most popular locations for teens in order of how close they are to the members of the group. Select a location and the map will show directions for each member of the group from their current location to the destination. No more racking your brain for where to meet and how everyone is going to get there. With an easily buildable MVP in 7 weeks, this project also allows for tons of expansion. It is now easier than ever to get together with your friends and WE do all the work.
 
+### </> on :computer: using
+[GitHub](https://www.github.com), [Visual Studio Code](https://code.visualstudio.com/), [Slack](https://slack.com/), and [Heroku](https://www.heroku.com/)
+
+### :hammer: with :heart: by
+Matt, Anjali, and Gabe
+
+---
+
 ### Problem Statment :mega:
 
 People spend too long deciding on a place to meet that is close enough to all group members, sometimes to an extent that the meetup doesn't even occur. 
