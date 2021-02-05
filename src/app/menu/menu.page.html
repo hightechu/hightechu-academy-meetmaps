@@ -1,9 +1,47 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- MENU -->
+<ion-menu menuId="main-menu" content-id="main">
+  <ion-content id="main">
+
+    <ion-menu-toggle>
+      <ion-button class="menu-item" expand="full">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="navigate-outline" slot="start"></ion-icon>
+        Groups
+      </ion-button>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-button class="menu-item" text-align="left" expand="full">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        Inbox
+      </ion-button>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-button class="menu-item" text-align="left" expand="full">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        Profile
+      </ion-button>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-button class="menu-item" text-align="left" expand="full">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="exit-outline" slot="start"></ion-icon>
+        Sign Out
+      </ion-button>
+    </ion-menu-toggle>
+
+  </ion-content>
+</ion-menu>
+<!--Button to open menu-->
+<ion-button class="menuButton" slot="start" color="primary">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+</ion-button>
 
 <ion-content>
   <app-group-list></app-group-list>
 </ion-content>
+
