@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-auth-popup',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./auth-popup.component.scss'],
 })
 export class AuthPopupComponent implements OnInit {
-  @Input() popup;
+  @Input() popover;
   @Input() type;
 
   username: string;
@@ -14,8 +15,9 @@ export class AuthPopupComponent implements OnInit {
   password: string;
   confirmPassword: string;
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }
