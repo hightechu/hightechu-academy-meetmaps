@@ -10,8 +10,8 @@ import { PopoverController } from '@ionic/angular';
 })
 export class UserAuthPage implements OnInit {
 
-  loginPopup = null;
   signUpPopup = null;
+  loginPopup = null;
 
   constructor(public popoverController: PopoverController) {}
 
@@ -25,7 +25,7 @@ export class UserAuthPage implements OnInit {
       this.signUpPopup = await this.popoverController.create({
         component: AuthPopupComponent,
         componentProps: {
-          popup: this.loginPopup,
+          popover: this.signUpPopup,
           type: 'Sign Up'
         },
         cssClass: 'my-custom-popup',
@@ -37,7 +37,7 @@ export class UserAuthPage implements OnInit {
       this.loginPopup = await this.popoverController.create({
         component: AuthPopupComponent,
         componentProps: {
-          popup: this.loginPopup,
+          popover: this.loginPopup,
           type: 'Log In'
         },
         cssClass: 'my-custom-popup',
