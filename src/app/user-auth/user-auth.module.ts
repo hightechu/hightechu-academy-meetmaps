@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { UserAuthPageRoutingModule } from './user-auth-routing.module';
 
 import { UserAuthPage } from './user-auth.page';
+import { AuthPopupComponent } from './auth-popup/auth-popup.component';
+
+
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { UserAuthPage } from './user-auth.page';
     IonicModule,
     UserAuthPageRoutingModule
   ],
-  declarations: [UserAuthPage]
+  declarations: [UserAuthPage, AuthPopupComponent]
 })
 export class UserAuthPageModule {}
