@@ -1,0 +1,7 @@
+{
+  "name": "MeetMaps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
