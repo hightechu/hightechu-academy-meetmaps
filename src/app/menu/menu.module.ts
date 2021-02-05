@@ -8,6 +8,12 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
 
+import { GroupListComponent } from './group-list/group-list.component';
+import { GroupMapComponent } from './group-map/group-map.component';
+import { InboxComponent } from './inbox/inbox.component';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +21,6 @@ import { MenuPage } from './menu.page';
     IonicModule,
     MenuPageRoutingModule
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage, GroupMapComponent, GroupListComponent, InboxComponent]
 })
 export class MenuPageModule {}
