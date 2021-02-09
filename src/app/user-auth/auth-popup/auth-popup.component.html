@@ -8,25 +8,25 @@
 <!-- Username (just sign up)-->
   <ion-row *ngIf="type == 'Sign Up'">
     <ion-col>
-      <ion-label>Username: </ion-label><ion-input type="text" placeholder="Username" [(ngModel)]="username" required></ion-input>
+      <ion-label>Username: </ion-label><ion-input ngDefaultControl type="text" placeholder="Username" [(ngModel)]="username" required></ion-input>
     </ion-col>
   </ion-row>
   <!-- Email (both popups)-->
   <ion-row>
     <ion-col>
-      <ion-label>Email: </ion-label><ion-input type="email" placeholder="Email" [(ngModel)]="email" required></ion-input>
+      <ion-label>Email: </ion-label><ion-input ngDefaultControl type="email" placeholder="Email" [(ngModel)]="email" required></ion-input>
     </ion-col>
   </ion-row>
   <!-- Password (both popups)-->
   <ion-row>
     <ion-col>
-      <ion-label>Password: </ion-label><ion-input type="password" placeholder="Password" [(ngModel)]="password" required></ion-input>
+      <ion-label>Password: </ion-label><ion-input ngDefaultControl type="password" placeholder="Password" [(ngModel)]="password" required></ion-input>
     </ion-col>
   </ion-row>
   <!-- Confirm Password (only sign up)-->
   <ion-row *ngIf="type == 'Sign Up'">
     <ion-col>
-      <ion-label>Confirm Password: </ion-label><ion-input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" required></ion-input>
+      <ion-label>Confirm Password: </ion-label><ion-input ngDefaultControl type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" required></ion-input>
     </ion-col>
   </ion-row>
   <ion-row>
