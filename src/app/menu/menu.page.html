@@ -3,7 +3,7 @@
   <ion-content id="main">
 
     <ion-menu-toggle>
-      <ion-button class="menu-item" expand="full">
+      <ion-button class="menu-item" expand="full" (click)="changePage('groupList')">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="navigate-outline" slot="start"></ion-icon>
         Groups
@@ -11,7 +11,7 @@
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-      <ion-button class="menu-item" text-align="left" expand="full">
+      <ion-button class="menu-item" text-align="left" expand="full" (click)="changePage('inbox')">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="mail-outline" slot="start"></ion-icon>
         Inbox
@@ -27,7 +27,7 @@
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-      <ion-button class="menu-item" text-align="left" expand="full">
+      <ion-button class="menu-item" text-align="left" expand="full" (click)="AuthService.LogOut()">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="exit-outline" slot="start"></ion-icon>
         Sign Out
@@ -53,7 +53,11 @@
   </ion-grid>
 </ion-header>
 
+
 <ion-content>
-  <app-group-list></app-group-list>
+
+  <app-group-list *ngIf="page == 'groupList'"></app-group-list>
+  <app-inbox *ngIf="page == 'inbox'"></app-inbox>
+
 </ion-content>
 

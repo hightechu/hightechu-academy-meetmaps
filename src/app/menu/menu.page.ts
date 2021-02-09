@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from '../services/user-data.service';
+
+import { UserDataService } from 'src/app/services/user-data.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,10 +10,16 @@ import { UserDataService } from '../services/user-data.service';
 })
 export class MenuPage implements OnInit {
 
-  constructor(public userDataService: UserDataService) { }
+  constructor(public UserDataService: UserDataService, public AuthService: AuthService) { }
+
+  page: string = "groupList";
 
   ngOnInit() {
-    this.userDataService.subscribeToDB(); 
+   this.userDataService.subscribeToDB(); 
+  }
+
+  changePage(page: string) {
+    this.page = page;
   }
 
 }

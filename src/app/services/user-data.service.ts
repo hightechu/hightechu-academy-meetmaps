@@ -31,7 +31,7 @@ export class UserDataService {
         console.log(this.user);
       });
 
-        this.firestore.collection("groupMembers", ref => ref.where('user', '==', this.authService.currentUserId()))
+      this.firestore.collection("groupMembers", ref => ref.where('user', '==', this.authService.currentUserId()))
         .valueChanges()
         .subscribe((query: groupMembers[]) => {
           this.groups = query;
