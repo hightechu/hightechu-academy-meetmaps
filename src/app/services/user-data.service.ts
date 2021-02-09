@@ -21,8 +21,8 @@ export class UserDataService {
         this.user = ref;
         console.log(this.user);
       });
-    } else {
+    } /*else {
       this.router.navigate(['/', 'user-auth']);
-    }
+    }*/
   }
 }
