@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MenuPage implements OnInit {
 
-  constructor(public UserDataService: UserDataService, public AuthService: AuthService) { }
+  constructor(public userDataService: UserDataService, public AuthService: AuthService) { }
 
   page: string = "groupList";
 
