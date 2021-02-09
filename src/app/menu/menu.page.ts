@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { UserDataService } from 'src/app/services/user-data.service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,7 +14,9 @@ export class MenuPage implements OnInit {
 
   page: string = "groupList";
 
-  ngOnInit() {}
+  ngOnInit() {
+   this.userDataService.subscribeToDB(); 
+  }
 
   changePage(page: string) {
     this.page = page;

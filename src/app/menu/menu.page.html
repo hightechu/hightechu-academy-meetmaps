@@ -1,5 +1,5 @@
-<!-- MENU -->
-<ion-menu menuId="main-menu" content-id="main">
+ <!-- MENU -->
+ <ion-menu menuId="main-menu" content-id="main">
   <ion-content id="main">
 
     <ion-menu-toggle>
@@ -35,12 +35,24 @@
     </ion-menu-toggle>
 
   </ion-content>
-</ion-menu>
+  </ion-menu>
 
-<!--Button to open menu-->
-<ion-button class="menuButton" slot="start" color="primary">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-</ion-button>
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+          <!--Button to open menu-->
+        <ion-button class="menuButton" color="primary">
+          <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <ion-title>Group Menu</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
 
 <ion-content>
 
