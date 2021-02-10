@@ -12,6 +12,11 @@ ion-col {
   //border: 4px #FF00FF solid;
 }
 
-ion-button {
-  width: 120px;
+.user-auth-buttons {
+  border:var(--ion-color-apptheme-contrast) 3px solid;
+    --color: var(--ion-color-apptheme-contrast);
+    --background: var(--ion-color-apptheme);
+    --border-radius: 0px;
+    --background-activated: var(--ion-color-apptheme-shade);
+    width: 50%;
 }

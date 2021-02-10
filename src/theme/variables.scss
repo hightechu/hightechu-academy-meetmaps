@@ -74,6 +74,18 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Custom Theme **/
+  --ion-color-apptheme: #23af66;
+  --ion-color-apptheme-rgb: 35,175,102;
+  --ion-color-apptheme-contrast: #ffffff;
+  --ion-color-apptheme-contrast-rgb: 255,255,255;
+  --ion-color-apptheme-shade: #1f9a5a;
+  --ion-color-apptheme-tint: #39b775;
+
+  --ion-background-color: var(--ion-color-apptheme);
+  --ion-text-color: var(--ion-color-apptheme-contrast);
+  --ion-border-color: var(--ion-color-apptheme-contrast);
 }
 
 @media (prefers-color-scheme: dark) {
