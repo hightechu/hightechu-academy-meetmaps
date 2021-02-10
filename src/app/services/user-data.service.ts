@@ -38,9 +38,9 @@ export class UserDataService {
           console.log(this.groups)
         });
 
-    } else {
+    } /*else {
       this.router.navigate(['/', 'user-auth']);
-    }
+    }*/
   }
 
   // creates a new group and then adds the current user to the group through a relationship in the "groupMembers" collection
