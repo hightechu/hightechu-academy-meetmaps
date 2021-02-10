@@ -12,6 +12,7 @@ import { GroupListComponent } from './group-list/group-list.component';
 import { GroupMapComponent } from './group-map/group-map.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { MenuPopupComponent } from './menu-popup/menu-popup.component';
+import { InvitePopupComponent } from './group-map/invite-popup/invite-popup.component';
 
 
 
@@ -22,6 +23,6 @@ import { MenuPopupComponent } from './menu-popup/menu-popup.component';
     IonicModule,
     MenuPageRoutingModule
   ],
-  declarations: [MenuPage, GroupMapComponent, GroupListComponent, InboxComponent, MenuPopupComponent]
+  declarations: [MenuPage, GroupMapComponent, GroupListComponent, InboxComponent, MenuPopupComponent, InvitePopupComponent]
 })
 export class MenuPageModule {}

@@ -22,7 +22,7 @@ export class UserDataService {
 
   currentComponent: string = 'group-list';
 
-  currentGroup: groups = null; 
+  currentGroup: groups = null;
 
   constructor(private firestore: AngularFirestore, private authService: AuthService, public router: Router) {} // constructor
 
@@ -70,5 +70,30 @@ export class UserDataService {
         console.error("Error adding document: ", error);
     });
   } // create group
+
+  async searchForUser(searchKey: string) {
+    let isUserExist= false;
+    console.log(searchKey)
+    if (searchKey == undefined) {
+      return false;
+    }
+    //INVALID PERMISSIONS ---------------------------------------
+    /*
+    await this.firestore.collection('users', ref => ref.where('username', '==', searchKey))
+    .valueChanges()
+    .subscribe((query) => {
+      if (query.length != 0) {
+        isUserExist = true;
+      }
+    });
+    */
+    // search for user in name
+    return isUserExist;
+  }
+
+  inviteUser(user: string, popup) {
+    // add
+    popup.dismiss().then(() => { popup = null; });
+  }
 
 } // user-data-service CLASS

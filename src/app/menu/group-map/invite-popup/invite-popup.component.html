@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ type }}</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>{{ error }}</ion-text>
+        <ion-input *ngIf="type == 'Invite'" placeholder="Username" [(ngModel)]="invitedUser"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button *ngIf="type == 'Invite'" (click)="inviteUser()">Invite User</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
