@@ -1,6 +1,19 @@
-
-.menu-item {
+.menu-buttons {
+  border:var(--ion-color-apptheme-contrast) 3px solid;
+    --color: var(--ion-color-apptheme-contrast);
+    --background: var(--ion-color-apptheme);
+    --border-radius: 0px;
+    --background-activated: var(--ion-color-apptheme-shade);
   margin-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.menu-toggle-button {
+  border:var(--ion-color-apptheme-contrast) 3px solid;
+    --color: var(--ion-color-apptheme-contrast);
+    --background: var(--ion-color-apptheme);
+    --border-radius: 0px;
+    --background-activated: var(--ion-color-apptheme-shade);
+  width: 60%;
 }

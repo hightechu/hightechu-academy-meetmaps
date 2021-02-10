@@ -4,6 +4,7 @@
 
     <ion-menu-toggle>
       <ion-button class="menu-item" expand="full" (click)="changePage('group-list')">
+
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="navigate-outline" slot="start"></ion-icon>
         Groups
@@ -11,7 +12,7 @@
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-      <ion-button class="menu-item" text-align="left" expand="full" (click)="changePage('inbox')">
+      <ion-button class="menu-buttons" text-align="left" expand="full" (click)="changePage('inbox')">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="mail-outline" slot="start"></ion-icon>
         Inbox
@@ -19,7 +20,7 @@
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-      <ion-button class="menu-item" text-align="left" expand="full">
+      <ion-button class="menu-buttons" text-align="left" expand="full">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="person-outline" slot="start"></ion-icon>
         Profile
@@ -27,7 +28,7 @@
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-      <ion-button class="menu-item" text-align="left" expand="full" (click)="AuthService.LogOut()">
+      <ion-button class="menu-buttons" text-align="left" expand="full" (click)="AuthService.LogOut()">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="exit-outline" slot="start"></ion-icon>
         Sign Out
@@ -40,14 +41,11 @@
 <ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col size="4">
+      <ion-col size="2">
           <!--Button to open menu-->
-        <ion-button class="menuButton" color="primary">
+        <ion-button class="menu-toggle-button">
           <ion-menu-button menu="main-menu"></ion-menu-button>
       </ion-button>
-      </ion-col>
-      <ion-col size="8">
-        <ion-title>Group Menu</ion-title>
       </ion-col>
     </ion-row>
   </ion-grid>
