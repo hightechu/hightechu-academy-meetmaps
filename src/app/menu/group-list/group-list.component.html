@@ -10,7 +10,7 @@
       <ion-col>
         <ion-title>My Groups</ion-title>
         <div *ngFor="let group of userDataService.groups">
-          <ion-button>{{ "group: " + userDataService.getGroupName(group.group) }}</ion-button>
+          <ion-button (click)="navToGroup(group.groupUid)">{{ group.name }}</ion-button>
         </div>
       </ion-col>
     </ion-row>

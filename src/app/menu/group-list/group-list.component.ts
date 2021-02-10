@@ -16,6 +16,11 @@ export class GroupListComponent implements OnInit {
 
   ngOnInit() {}
 
+  navToGroup(groupUid: string) {
+    this.userDataService.currentComponent = 'group-map';
+    this.userDataService.currentGroup = this.userDataService.getGroupFromUid(groupUid); 
+  }
+
   popop = async function presentPopover(type: string) {
     if (type == "Create Group") {
       this.createGroupPopup = await this.popoverController.create({

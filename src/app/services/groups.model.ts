@@ -1,3 +1,5 @@
 export interface groups {
-  name: string
+  groupUid: string, 
+  name: string,
+  users: string[]
 }
