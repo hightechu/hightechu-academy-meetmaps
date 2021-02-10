@@ -12,14 +12,12 @@ export class MenuPage implements OnInit {
 
   constructor(public userDataService: UserDataService, public AuthService: AuthService) { }
 
-  page: string = "groupList";
-
   ngOnInit() {
-   this.userDataService.subscribeToDB(); 
+   this.userDataService.subscribeToDB();
   }
 
   changePage(page: string) {
-    this.page = page;
+    this.userDataService.currentComponent = page;
   }
 
 }

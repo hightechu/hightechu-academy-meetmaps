@@ -3,7 +3,8 @@
   <ion-content id="main">
 
     <ion-menu-toggle>
-      <ion-button class="menu-buttons" expand="full" (click)="changePage('groupList')">
+      <ion-button class="menu-item" expand="full" (click)="changePage('group-list')">
+
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="navigate-outline" slot="start"></ion-icon>
         Groups
@@ -53,8 +54,9 @@
 
 <ion-content>
 
-  <app-group-list *ngIf="page == 'groupList'"></app-group-list>
-  <app-inbox *ngIf="page == 'inbox'"></app-inbox>
+  <app-group-list *ngIf="userDataService.currentComponent == 'group-list'"></app-group-list>
+  <app-group-map *ngIf="userDataService.currentComponent == 'group-map'"></app-group-map>
+  <app-inbox *ngIf="userDataService.currentComponent == 'inbox'"></app-inbox>
 
 </ion-content>
 

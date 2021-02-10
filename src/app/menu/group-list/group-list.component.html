@@ -13,7 +13,12 @@
 
     <ion-row>
       <ion-col>
-        <ion-button class="group-list-buttons" (click)="popop('Create Group')">Create Group</ion-button>
+
+        <ion-title>My Groups</ion-title>
+        <div *ngFor="let group of userDataService.groups">
+          <ion-button (click)="navToGroup(group.groupUid)">{{ group.name }}</ion-button>
+        </div>
+
       </ion-col>
     </ion-row>
 
