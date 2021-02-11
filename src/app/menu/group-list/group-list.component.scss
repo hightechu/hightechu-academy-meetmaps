@@ -18,11 +18,15 @@ ion-row {
   padding-bottom: 5%;
 }
 
+ion-content {
+  --ion-background-color: var(--ion-color-apptheme-contrast);
+  --ion-text-color: var(--ion-color-apptheme);
+}
+
 .group-list-buttons {
-  border:var(--ion-color-apptheme-contrast) 3px solid;
     --color: var(--ion-color-apptheme-contrast);
     --background: var(--ion-color-apptheme);
-    --border-radius: 0px;
+    --border-radius: 25px;
     --background-activated: var(--ion-color-apptheme-shade);
 }
 

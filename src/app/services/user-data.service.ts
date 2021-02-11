@@ -44,9 +44,9 @@ export class UserDataService {
           this.groups = query;
           console.log(this.groups)
         });
-    } else {
+    } /*else {
       this.router.navigate(['/', 'user-auth']);
-    }
+    }*/
   } // subscribeToDB
 
   getGroupFromUid(groupUid: string): groups {
