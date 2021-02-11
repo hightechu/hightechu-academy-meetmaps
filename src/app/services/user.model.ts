@@ -1,3 +1,4 @@
 export interface user {
-  username: string;
+  userUid: string,
+  username: string
 }

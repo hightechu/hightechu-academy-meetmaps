@@ -34,7 +34,8 @@ export class AuthService {
       .then(async (result) => {
         // save user doc in users collection in firestore
         await this.firestore.collection('users').doc(result.user.uid).set({
-          username: username
+          username: username,
+          uid: result.user.uid
         });
         this.Login(email, password, popup);
       }).catch((error) => {
