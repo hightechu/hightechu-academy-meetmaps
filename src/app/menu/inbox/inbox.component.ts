@@ -12,12 +12,5 @@ export class InboxComponent implements OnInit {
 
   ngOnInit() {}
 
-  acceptInvite(groupUid: string) {
-
-  }
-
-  declineInvite(groupUid: string) {
-
-  }
 
 }

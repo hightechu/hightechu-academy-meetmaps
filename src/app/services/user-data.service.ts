@@ -58,7 +58,7 @@ export class UserDataService {
         this.invites = query;
         console.log("invites: ", this.invites)
       });
-      
+
     } else {
       this.router.navigate(['/', 'user-auth']);
     }
@@ -114,9 +114,26 @@ export class UserDataService {
       fromUser: this.user.username,
       fromGroupUid: this.currentGroup.groupUid,
       fromGroupName: this.currentGroup.name
+    }).then(async (docRef) => {
+      await this.firestore.collection('invites').doc(docRef.id).update({inviteUid: docRef.id});
+      popup.dismiss().then(() => { popup = null; });
     });
+  } // inviteUser
 
-    popup.dismiss().then(() => { popup = null; });
-  }
+  async inviteAction(invite: invites, action: string) {
+    if (action == "accept") {
+      let usersArray = await this.firestore.collection('groups').doc<groups>(invite.fromGroupUid).get().toPromise().then((docRef) => {
+        return docRef.data().users;
+      });
+      usersArray.push(this.authService.currentUserId());
+
+      this.firestore.collection('groups').doc<groups>(invite.fromGroupUid).update({
+        users: usersArray
+      });
+    } // if we're accepting invite
+
+   this.firestore.collection('invites').doc(invite.inviteUid).delete();
+
+  } // inviteAction
 
 } // user-data-service CLASS
