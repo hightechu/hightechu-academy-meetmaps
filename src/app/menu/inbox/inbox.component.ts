@@ -8,8 +8,16 @@ import { UserDataService } from 'src/app/services/user-data.service';
 })
 export class InboxComponent implements OnInit {
 
-  constructor(public UserDataService: UserDataService) { }
+  constructor(public userDataService: UserDataService) { }
 
   ngOnInit() {}
+
+  acceptInvite(groupUid: string) {
+
+  }
+
+  declineInvite(groupUid: string) {
+
+  }
 
 }

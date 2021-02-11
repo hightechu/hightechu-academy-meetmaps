@@ -15,17 +15,19 @@ export class InvitePopupComponent implements OnInit {
 
   error = "";
 
-  constructor(public userDataService: UserDataService) { }
+  constructor(public userDataService: UserDataService) {}
 
   ngOnInit() {}
 
     // function that invites a user based on name
-  async inviteUser() {
-    if (await this.userDataService.searchForUser(this.invitedUser)) {
-      this.userDataService.inviteUser(this.invitedUser, this.popover);
-    } else {
-      this.error = "User does not exist"; 
-    }
+  inviteUser() {
+    this.userDataService.searchForUser(this.invitedUser).then((res) => {
+      if (res != false) {
+        this.userDataService.inviteUser(res, this.popover);
+      } else {
+        this.error = "User does not exist";
+      }
+    });
   } // inviteUser
 
 }

@@ -4,8 +4,11 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
+// services
 import { AuthService } from './auth.service';
-import { groupMembers } from './groupMembers.model';
+
+// data models
+import { invites } from './invites.model';
 import { groups } from './groups.model';
 import { user } from './user.model';
 
@@ -15,10 +18,13 @@ import { user } from './user.model';
 export class UserDataService {
 
   user: user = {
+    userUid: "",
     username: ""
   };
 
   groups: groups[] = [];
+
+  invites: invites[] = [];
 
   currentComponent: string = 'group-list';
 
@@ -34,7 +40,7 @@ export class UserDataService {
       // listen for changes in the current users document, and updated the local user based on those changes
       this.firestore.collection('users').doc<user>(this.authService.currentUserId()).valueChanges().subscribe((ref) => {
         this.user = ref;
-        console.log(this.user);
+        console.log("current user", this.user);
       });
 
       // listen for changes in the groups collection, and update the local groups array based on firestore changes
@@ -42,8 +48,17 @@ export class UserDataService {
         .valueChanges()
         .subscribe((query: groups[]) => {
           this.groups = query;
-          console.log(this.groups)
+          console.log("groups: ", this.groups)
         });
+
+        // listen for changes in the invites collection, and update the invites based on firestore changes
+      this.firestore.collection("invites", ref => ref.where('toUser', '==', this.authService.currentUserId()))
+      .valueChanges()
+      .subscribe((query: invites[]) => {
+        this.invites = query;
+        console.log("invites: ", this.invites)
+      });
+
     } else {
       this.router.navigate(['/', 'user-auth']);
     }
@@ -72,27 +87,35 @@ export class UserDataService {
   } // create group
 
   async searchForUser(searchKey: string) {
-    let isUserExist= false;
-    console.log(searchKey)
+
     if (searchKey == undefined) {
       return false;
     }
-    //INVALID PERMISSIONS ---------------------------------------
-    /*
-    await this.firestore.collection('users', ref => ref.where('username', '==', searchKey))
-    .valueChanges()
-    .subscribe((query) => {
-      if (query.length != 0) {
-        isUserExist = true;
+    // searches users collection for username equal to search key
+    let query = await this.firestore.collection('users', ref => ref.where('username', '==', searchKey))
+    .get()
+    .toPromise()
+    .then((res) => {
+      if (!res.empty) {
+        return res.docs[0].ref.id;
+      } else {
+        return false;
       }
     });
-    */
-    // search for user in name
-    return isUserExist;
-  }
+
+    return query;
+  } // searchForUser
 
   inviteUser(user: string, popup) {
-    // add
+    console.log("InviteUser" + user);
+
+    this.firestore.collection("invites").add({
+      toUser: user,
+      fromUser: this.user.username,
+      fromGroupUid: this.currentGroup.groupUid,
+      fromGroupName: this.currentGroup.name
+    });
+
     popup.dismiss().then(() => { popup = null; });
   }
 
