@@ -10,18 +10,18 @@ ion-label {
   text-align: center;
 }
 
-ion-list {
-  border: 2px solid #dedede;
-}
-
 ion-row {
   padding-bottom: 5%;
 }
 
+ion-content {
+  --ion-background-color: var(--ion-color-apptheme-contrast);
+  --ion-text-color: var(--ion-color-apptheme);
+}
+
 .invite-confirm-buttons {
-  border:var(--ion-color-apptheme-contrast) 3px solid;
-    --color: var(--ion-color-apptheme-contrast);
-    --background: var(--ion-color-apptheme);
-    --border-radius: 0px;
-    --background-activated: var(--ion-color-apptheme-shade);
+  --color: var(--ion-color-apptheme-contrast);
+  --background: var(--ion-color-apptheme);
+  --border-radius: 25px;
+  --background-activated: var(--ion-color-apptheme-shade);
 }

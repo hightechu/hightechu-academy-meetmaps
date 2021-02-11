@@ -58,7 +58,7 @@ export class UserDataService {
         this.invites = query;
         console.log("invites: ", this.invites)
       });
-
+      
     } else {
       this.router.navigate(['/', 'user-auth']);
     }

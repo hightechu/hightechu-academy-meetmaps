@@ -13,10 +13,15 @@ ion-col {
 }
 
 .user-auth-buttons {
-  border:var(--ion-color-apptheme-contrast) 3px solid;
-    --color: var(--ion-color-apptheme-contrast);
-    --background: var(--ion-color-apptheme);
-    --border-radius: 0px;
-    --background-activated: var(--ion-color-apptheme-shade);
+  --color: var(--ion-color-apptheme-contrast);
+  --background: var(--ion-color-apptheme);
+  --border-radius: 25px;
+  --background-activated: var(--ion-color-apptheme-shade);
     width: 50%;
+}
+
+ion-content {
+  text-align: center;
+  --ion-background-color: var(--ion-color-apptheme-contrast);
+  --ion-text-color: var(--ion-color-apptheme);
 }
