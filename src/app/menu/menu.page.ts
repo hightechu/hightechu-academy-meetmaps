@@ -29,7 +29,6 @@ export class MenuPage implements OnInit {
   Logout() {
     this.userDataService.reset();
     this.AuthService.LogOut();
-    console.log(this.AuthService.authState);
   }
 
 }
