@@ -19,7 +19,6 @@ export class AuthPopupComponent implements OnInit {
   constructor(public authService: AuthService, public userDataService: UserDataService) { }
 
   ngOnInit() {
-    //console.log(this.authService.authState);
   }
 
   async userAuth(username: string, email: string, password: string, popover, action: string) {
