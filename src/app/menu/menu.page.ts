@@ -13,11 +13,16 @@ export class MenuPage implements OnInit {
   constructor(public userDataService: UserDataService, public AuthService: AuthService) { }
 
   ngOnInit() {
-   this.userDataService.subscribeToDB();
   }
 
   changePage(page: string) {
     this.userDataService.currentComponent = page;
+  }
+
+  Logout() {
+    this.userDataService.reset();
+    this.AuthService.LogOut();
+    console.log(this.AuthService.authState);
   }
 
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthPopupComponent } from './auth-popup/auth-popup.component';
 
 import { PopoverController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -13,7 +15,10 @@ export class UserAuthPage implements OnInit {
   signUpPopup = null;
   loginPopup = null;
 
-  constructor(public popoverController: PopoverController) {}
+  constructor(public popoverController: PopoverController, public userDataService: UserDataService) {
+    //console.log(this.authService.authState);
+
+  }
 
   ngOnInit() {
   }

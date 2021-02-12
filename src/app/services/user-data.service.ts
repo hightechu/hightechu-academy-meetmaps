@@ -11,6 +11,8 @@ import { AuthService } from './auth.service';
 import { invites } from './invites.model';
 import { groups } from './groups.model';
 import { user } from './user.model';
+import { Subscription } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -30,21 +32,53 @@ export class UserDataService {
 
   currentGroup: groups = null;
 
-  constructor(private firestore: AngularFirestore, private authService: AuthService, public router: Router) {} // constructor
+  userSubscription: Subscription = null;
+  groupSubscription: Subscription = null;
+  inviteSubscription: Subscription = null;
+
+  authState;
+
+  constructor(private firestore: AngularFirestore,
+    public router: Router,
+    private auth: AngularFireAuth) {
+      this.subscribeToAuthState();
+    } // constructor
+
+  subscribeToAuthState() {
+    this.auth.authState.subscribe( authState => {
+      this.authState = authState;
+      console.log(this.authState);
+      if (this.isAuthenticated()) {
+        this.subscribeToDB();
+      }
+    });
+  }
+
+  isAuthenticated(): boolean {
+    return this.authState !== null;
+  }
+
+  currentUserId(): string {
+    return this.isAuthenticated ? this.authState.uid : null;
+  }
 
   subscribeToDB() {
+    //console.log("Is signed in: " + this.authService.isAuthenticated());
+
     // listen for changes to firestore if a user is signed in, and route them to the sign in page if they aren't
-    if (this.authService.isAuthenticated()) {
+    if (this.isAuthenticated()) {
       console.log("subscribing")
 
       // listen for changes in the current users document, and updated the local user based on those changes
-      this.firestore.collection('users').doc<user>(this.authService.currentUserId()).valueChanges().subscribe((ref) => {
+      this.userSubscription = this.firestore.collection('users').doc<user>(this.currentUserId())
+      .valueChanges()
+      .subscribe((ref) => {
         this.user = ref;
         console.log("current user", this.user);
       });
 
       // listen for changes in the groups collection, and update the local groups array based on firestore changes
-      this.firestore.collection("groups", ref => ref.where('users', 'array-contains-any', [this.authService.currentUserId()]))
+      this.groupSubscription = this.firestore.collection("groups", ref => ref.where('users', 'array-contains-any', [this.currentUserId()]))
         .valueChanges()
         .subscribe((query: groups[]) => {
           this.groups = query;
@@ -52,13 +86,14 @@ export class UserDataService {
         });
 
         // listen for changes in the invites collection, and update the invites based on firestore changes
-      this.firestore.collection("invites", ref => ref.where('toUser', '==', this.authService.currentUserId()))
+      this.inviteSubscription = this.firestore.collection("invites", ref => ref.where('toUser', '==', this.currentUserId()))
       .valueChanges()
       .subscribe((query: invites[]) => {
         this.invites = query;
         console.log("invites: ", this.invites)
       });
 
+      this.router.navigate(['/', 'menu']);
     } else {
       this.router.navigate(['/', 'user-auth']);
     }
@@ -77,7 +112,7 @@ export class UserDataService {
     // adds the entered name, current user, and groupUid to a new group document in the firestore collection "groups"
     this.firestore.collection("groups").add({
       name: groupName,
-      users: [this.authService.currentUserId()]
+      users: [this.currentUserId()]
     }).then(async (docRef) => {
       await this.firestore.collection('groups').doc(docRef.id).update({groupUid: docRef.id});
       popup.dismiss().then(() => { popup = null; });
@@ -125,7 +160,7 @@ export class UserDataService {
       let usersArray = await this.firestore.collection('groups').doc<groups>(invite.fromGroupUid).get().toPromise().then((docRef) => {
         return docRef.data().users;
       });
-      usersArray.push(this.authService.currentUserId());
+      usersArray.push(this.currentUserId());
 
       this.firestore.collection('groups').doc<groups>(invite.fromGroupUid).update({
         users: usersArray
@@ -135,5 +170,23 @@ export class UserDataService {
    this.firestore.collection('invites').doc(invite.inviteUid).delete();
 
   } // inviteAction
+
+  // resets all variables
+  reset() {
+    this.userSubscription.unsubscribe();
+    this.groupSubscription.unsubscribe();
+    this.inviteSubscription.unsubscribe();
+
+    this.user= {
+      userUid: "",
+      username: ""
+    };
+
+    this.groups = [];
+    this.invites= [];
+    this.currentComponent = 'group-list';
+    this.currentGroup = null;
+
+  } //reset
 
 } // user-data-service CLASS
