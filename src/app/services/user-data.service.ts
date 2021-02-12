@@ -58,10 +58,10 @@ export class UserDataService {
         this.invites = query;
         console.log("invites: ", this.invites)
       });
-      
-    } else {
+
+    } /*else {
       this.router.navigate(['/', 'user-auth']);
-    }
+    }*/
   } // subscribeToDB
 
   getGroupFromUid(groupUid: string): groups {
