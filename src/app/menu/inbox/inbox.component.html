@@ -8,8 +8,8 @@
         <ion-item lines="full">
           <ion-label>
             {{ invite.fromUser + " invited you to join " + invite.fromGroupName}} <br>
-            <ion-button class="invite-confirm-buttons" (click)="acceptInvite(invite.fromGroupUid)"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
-            <ion-button class="invite-confirm-buttons" (click)="declineInvite(invite.fromGroupUid)"><ion-icon name="close-outline"></ion-icon></ion-button>
+            <ion-button class="invite-confirm-buttons" (click)="userDataService.inviteAction(invite, 'accept')"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+            <ion-button class="invite-confirm-buttons" (click)="userDataService.inviteAction(invite, 'decline')"><ion-icon name="close-outline"></ion-icon></ion-button>
           </ion-label>
         </ion-item>
       </div>

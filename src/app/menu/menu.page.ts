@@ -15,7 +15,6 @@ export class MenuPage implements OnInit {
   constructor(public userDataService: UserDataService, public AuthService: AuthService) { }
 
   ngOnInit() {
-   this.userDataService.subscribeToDB();
   }
 
   changePage(page: string) {
@@ -25,6 +24,12 @@ export class MenuPage implements OnInit {
       case "group-map": this.pageName = this.userDataService.currentGroup.name; break;
       default: this.pageName = "My Groups";
     }
+  }
+
+  Logout() {
+    this.userDataService.reset();
+    this.AuthService.LogOut();
+    console.log(this.AuthService.authState);
   }
 
 }

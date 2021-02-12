@@ -32,8 +32,8 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button class="auth-popup-buttons" *ngIf="type == 'Sign Up'" (click)="authService.SignUp(username, email, password, popover)">Create Account</ion-button>
-        <ion-button class="auth-popup-buttons" *ngIf="type == 'Log In'" (click)="authService.Login(email, password, popover)">Log In</ion-button>
+        <ion-button class="auth-popup-buttons" *ngIf="type == 'Sign Up'" (click)="userAuth(username, email, password, popover, 'signup')">Create Account</ion-button>
+        <ion-button class="auth-popup-buttons" *ngIf="type == 'Log In'" (click)="userAuth(username, email, password, popover, 'login')">Log In</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
