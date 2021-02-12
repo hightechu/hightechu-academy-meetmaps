@@ -18,5 +18,10 @@ ion-content {
   --background: var(--ion-color-apptheme-contrast);
   --border-radius: 25px;
   --background-activated: var(--ion-color-apptheme-contrastShade);
-  width: 60%;
+  width: 130%;
+}
+
+ion-title {
+  text-align: center;
+  font-size: 38px;
 }

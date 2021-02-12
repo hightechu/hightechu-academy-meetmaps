@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MenuPage implements OnInit {
 
+  pageName: string = "My Groups";
+
   constructor(public userDataService: UserDataService, public AuthService: AuthService) { }
 
   ngOnInit() {
@@ -17,6 +19,11 @@ export class MenuPage implements OnInit {
 
   changePage(page: string) {
     this.userDataService.currentComponent = page;
+    switch (page) {
+      case "inbox": this.pageName = "Pending Invites"; break;
+      case "group-map": this.pageName = this.userDataService.currentGroup.name; break;
+      default: this.pageName = "My Groups";
+    }
   }
 
   Logout() {

@@ -94,7 +94,7 @@ export class UserDataService {
       });
 
       this.router.navigate(['/', 'menu']);
-    } else {
+    }  else {
       this.router.navigate(['/', 'user-auth']);
     }
   } // subscribeToDB
