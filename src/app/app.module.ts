@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyDFs6WGEiVEL5jdSo_cjNh2sgeTINE7bQA",
   authDomain: "meetmaps-202e1.firebaseapp.com",

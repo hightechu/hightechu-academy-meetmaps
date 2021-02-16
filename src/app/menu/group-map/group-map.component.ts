@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+import { MapsService } from 'src/app/services/maps.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { InvitePopupComponent } from './invite-popup/invite-popup.component';
+
 
 @Component({
   selector: 'app-group-map',
@@ -12,9 +14,12 @@ export class GroupMapComponent implements OnInit {
 
   invitePopup = null;
 
-  constructor(public userDataService: UserDataService, public popoverController: PopoverController) {}
+  constructor(public userDataService: UserDataService, public popoverController: PopoverController, public mapService: MapsService) {}
 
-  ngOnInit() {}
+
+  ngOnInit() {
+
+  }
 
   popop = async function presentPopover(type: string) {
 

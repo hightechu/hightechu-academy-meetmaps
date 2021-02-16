@@ -14,14 +14,16 @@ import { InboxComponent } from './inbox/inbox.component';
 import { MenuPopupComponent } from './menu-popup/menu-popup.component';
 import { InvitePopupComponent } from './group-map/invite-popup/invite-popup.component';
 
-
+// google maps imports
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuPageRoutingModule
+    MenuPageRoutingModule,
+    GoogleMapsModule
   ],
   declarations: [MenuPage, GroupMapComponent, GroupListComponent, InboxComponent, MenuPopupComponent, InvitePopupComponent]
 })
