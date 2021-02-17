@@ -3,7 +3,6 @@ import { PopoverController } from '@ionic/angular';
 import { MapsService } from 'src/app/services/maps.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { InvitePopupComponent } from './invite-popup/invite-popup.component';
-import { Loader } from "@googlemaps/js-api-loader"
 import { FilterPopupComponent } from './filter-popup/filter-popup.component';
 import { VotingPopupComponent } from './voting-popup/voting-popup.component';
 
@@ -25,6 +24,7 @@ export class GroupMapComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
   popop = async function presentPopover(type: string) {
 

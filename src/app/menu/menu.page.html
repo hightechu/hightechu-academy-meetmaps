@@ -3,6 +3,7 @@
   <ion-content id="main">
 
     <ion-menu-toggle>
+      <ion-text>{{ "Hello " + userDataService.user.username }}</ion-text>
       <ion-button class="menu-buttons" expand="full" (click)="changePage('group-list')">
         <ion-icon name="navigate-outline" slot="start"></ion-icon>
         Groups

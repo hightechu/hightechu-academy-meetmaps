@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+import { MapsService } from 'src/app/services/maps.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { MenuPopupComponent } from '../menu-popup/menu-popup.component';
 
@@ -12,14 +13,16 @@ export class GroupListComponent implements OnInit {
 
   createGroupPopup = null;
 
-  constructor(public userDataService: UserDataService, private popoverController: PopoverController) { }
+  constructor(public userDataService: UserDataService, private popoverController: PopoverController, public mapService: MapsService) { }
 
   ngOnInit() {}
 
   navToGroup(groupUid: string) {
     this.userDataService.currentComponent = 'group-map';
     this.userDataService.currentGroup = this.userDataService.getGroupFromUid(groupUid);
-    this.userDataService.SubscribeToGroupMembers(); 
+    this.userDataService.SubscribeToGroupMembers();
+    this.mapService.addMarker(this.userDataService.user.pos, 'red', this.userDataService.user.username);
+
   }
 
   popop = async function presentPopover(type: string) {

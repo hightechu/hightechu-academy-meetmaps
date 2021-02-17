@@ -19,7 +19,7 @@
             <ion-icon name="stats-chart-outline"></ion-icon>
           </ion-button>
 
-          <ion-button class="invite-button">Let's Meet</ion-button>
+          <ion-button class="invite-button" (click)="mapService.meetup(userDataService.currentGroupMembers)">Let's Meet</ion-button>
 
         </ion-header>
       </ion-col>
@@ -27,7 +27,11 @@
 
     <ion-row>
       <ion-col>
-        <google-map>
+        <google-map
+        height="55vh"
+        [zoom]="mapService.zoom"
+        [center]="mapService.center"
+        [options]="mapService.options">
           <map-marker
             *ngFor="let marker of mapService.markers"
             [position]="marker.position"
@@ -42,11 +46,8 @@
       <ion-col>
         <ion-button class="invite-button" (click)="popop('Invite')">Invite Member</ion-button>
       </ion-col>
-    </ion-row>
-
-    <ion-row>
       <ion-col>
-        <ion-button class="invite-button">Leave Group</ion-button>
+        <ion-button class="invite-button" (click)="userDataService.leaveGroup()">Leave Group</ion-button>
       </ion-col>
     </ion-row>
 
