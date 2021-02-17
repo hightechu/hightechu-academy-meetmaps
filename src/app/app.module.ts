@@ -23,6 +23,9 @@ const firebaseConfig = {
   measurementId: "G-N2XSB5D4Z4"
 };
 
+// google maps imports
+import { GoogleMapsModule } from '@angular/google-maps';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -32,7 +35,8 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule],
+    AngularFireAuthModule,
+    GoogleMapsModule],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

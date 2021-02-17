@@ -1,4 +1,8 @@
 export interface user {
   userUid: string,
-  username: string
+  username: string,
+  pos: {
+    lat: number,
+    lng: number
+  }
 }
