@@ -18,7 +18,8 @@ export class GroupListComponent implements OnInit {
 
   navToGroup(groupUid: string) {
     this.userDataService.currentComponent = 'group-map';
-    this.userDataService.currentGroup = this.userDataService.getGroupFromUid(groupUid); 
+    this.userDataService.currentGroup = this.userDataService.getGroupFromUid(groupUid);
+    this.userDataService.SubscribeToGroupMembers(); 
   }
 
   popop = async function presentPopover(type: string) {

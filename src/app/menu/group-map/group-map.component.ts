@@ -6,6 +6,7 @@ import { InvitePopupComponent } from './invite-popup/invite-popup.component';
 import { Loader } from "@googlemaps/js-api-loader"
 
 
+
 @Component({
   selector: 'app-group-map',
   templateUrl: './group-map.component.html',

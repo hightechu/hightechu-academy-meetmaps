@@ -21,7 +21,11 @@ export class UserDataService {
 
   user: user = {
     userUid: "",
-    username: ""
+    username: "",
+    pos: {
+      lat: 0,
+      lng: 0
+    }
   };
 
   groups: groups[] = [];
@@ -31,9 +35,11 @@ export class UserDataService {
   currentComponent: string = 'group-list';
 
   currentGroup: groups = null;
+  currentGroupMembers: user[] = null;
 
   userSubscription: Subscription = null;
   groupSubscription: Subscription = null;
+  groupMembersSubscriptions: Subscription[] = [];
   inviteSubscription: Subscription = null;
 
   authState;
@@ -69,6 +75,9 @@ export class UserDataService {
     if (this.isAuthenticated()) {
       console.log("subscribing")
 
+      // get's the users position and updates it in the firebase
+      this.getUserPos();
+
       // listen for changes in the current users document, and updated the local user based on those changes
       this.userSubscription = this.firestore.collection('users').doc<user>(this.currentUserId())
       .valueChanges()
@@ -98,6 +107,47 @@ export class UserDataService {
       this.router.navigate(['/', 'user-auth']);
     }
   } // subscribeToDB
+
+  // get's the current users position and updates the firebase
+  getUserPos() {
+    if (navigator.geolocation) {
+      try {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+            console.log("Lat: "+ pos.lat + " Lng: " + pos.lng);
+            this.firestore.collection('users').doc(this.currentUserId()).update({pos: pos});
+          }
+        );
+      } catch (error) {
+        alert("Encourered Error:" + error);
+      }
+    } else {
+      // Browser doesn't support Geolocation
+      alert("Your browser doesn't support Geolocation")
+    } // if/else
+  } // getUserPos
+
+  // once a currentgroup exists, a subscription is made to the members of the group
+  SubscribeToGroupMembers() {
+    if (this.currentGroup !== null) {
+      this.currentGroupMembers = [];
+      // listen for changes in the current groups users data and updates the currentGroupMembers array accordingly.
+      for (let i = 0; i < this.currentGroup.users.length; i++) {
+        this.groupMembersSubscriptions[i] = this.firestore.collection('users').doc<user>(this.currentGroup.users[i])
+        .valueChanges()
+        .subscribe((ref) => {
+          this.currentGroupMembers.push(ref);
+          console.log("user " + i + ": " + ref.username);
+        });
+      } // for each user in the group
+    } // if current group is defined
+
+    console.log("groupMembers: ", this.currentGroupMembers);
+  } // subscribeToGroupMembers
 
   getGroupFromUid(groupUid: string): groups {
     for (var i=0; i < this.groups.length; i++) {
@@ -179,7 +229,11 @@ export class UserDataService {
 
     this.user= {
       userUid: "",
-      username: ""
+      username: "",
+      pos: {
+        lat: 0,
+        lng: 0
+      }
     };
 
     this.groups = [];
