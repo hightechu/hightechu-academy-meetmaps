@@ -11,11 +11,11 @@
 
         <ion-header>
 
-          <ion-button class="invite-button">
+          <ion-button class="invite-button" (click)="popop('Filters')">
             <ion-icon name="options-outline"></ion-icon>
           </ion-button>
 
-          <ion-button class="invite-button">
+          <ion-button class="invite-button" (click)="popop('Voting')">
             <ion-icon name="stats-chart-outline"></ion-icon>
           </ion-button>
 
@@ -27,7 +27,14 @@
 
     <ion-row>
       <ion-col>
-        <google-map></google-map>
+        <google-map>
+          <map-marker
+            *ngFor="let marker of mapService.markers"
+            [position]="marker.position"
+            [label]="marker.label"
+            [title]="marker.title"
+            [options]="marker.options"></map-marker>
+        </google-map>
       </ion-col>
     </ion-row>
 
@@ -36,5 +43,12 @@
         <ion-button class="invite-button" (click)="popop('Invite')">Invite Member</ion-button>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button class="invite-button">Leave Group</ion-button>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 </ion-content>

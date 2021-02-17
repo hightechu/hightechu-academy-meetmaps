@@ -16,6 +16,8 @@ import { InvitePopupComponent } from './group-map/invite-popup/invite-popup.comp
 
 // google maps imports
 import { GoogleMapsModule } from '@angular/google-maps';
+import { FilterPopupComponent } from './group-map/filter-popup/filter-popup.component';
+import { VotingPopupComponent } from './group-map/voting-popup/voting-popup.component';
 
 @NgModule({
   imports: [
@@ -25,6 +27,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MenuPageRoutingModule,
     GoogleMapsModule
   ],
-  declarations: [MenuPage, GroupMapComponent, GroupListComponent, InboxComponent, MenuPopupComponent, InvitePopupComponent]
+  declarations: [MenuPage, GroupMapComponent, GroupListComponent, InboxComponent, MenuPopupComponent, InvitePopupComponent, FilterPopupComponent, VotingPopupComponent]
 })
 export class MenuPageModule {}
