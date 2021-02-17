@@ -32,12 +32,12 @@ export class AuthService {
 
   // Sign in with email/password
   Login(email, password, popup) {
+    popup.dismiss().then(() => { popup = null; });
     return this.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         // navigate to dashboard
          //this.router.navigate(['/', 'menu']);
          // close popup
-         popup.dismiss().then(() => { popup = null; });
          console.log("Logged In")
       }).catch((error) => {
         window.alert("login error: " + error.message)

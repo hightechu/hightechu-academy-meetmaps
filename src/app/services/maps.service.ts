@@ -10,7 +10,7 @@ import { user } from './user.model';
 export class MapsService {
 
   // map settings
-  zoom = 14;
+  zoom = 12;
   center: pos;
   options = {};
 
@@ -35,7 +35,7 @@ export class MapsService {
 
   meetup (membersList: user[]) {
     let center: pos = this.findCenterPos(membersList);
-    this.center = center; 
+    this.center = center;
     this.addMarker(center, 'yellow', 'Center');
   } // meetup
 

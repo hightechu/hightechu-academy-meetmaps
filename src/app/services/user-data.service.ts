@@ -200,7 +200,7 @@ export class UserDataService {
     return query;
   } // searchForUser
 
-  inviteUser(user: string, popup) {
+  inviteUser(user: string) {
     console.log("InviteUser" + user);
 
     this.firestore.collection("invites").add({
@@ -210,7 +210,7 @@ export class UserDataService {
       fromGroupName: this.currentGroup.name
     }).then(async (docRef) => {
       await this.firestore.collection('invites').doc(docRef.id).update({inviteUid: docRef.id});
-      popup.dismiss().then(() => { popup = null; });
+
     });
   } // inviteUser
 
@@ -246,7 +246,7 @@ export class UserDataService {
     this.firestore.collection('groups').doc<groups>(this.currentGroup.groupUid).update({
       users: usersArray
     }).then(() => {
-      this.currentComponent = 'group-list'; 
+      this.currentComponent = 'group-list';
     });
   } // leave group
 
