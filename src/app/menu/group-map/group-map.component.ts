@@ -16,7 +16,7 @@ import { GoogleMap } from '@angular/google-maps';
 })
 export class GroupMapComponent implements OnInit {
 
-  @ViewChild(GoogleMap) map: GoogleMap;
+  @ViewChild('myMap') map: GoogleMap;
 
   invitePopup = null;
   mapFiltersPopup = null;
@@ -26,6 +26,11 @@ export class GroupMapComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  meetup() {
+    this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);
+    console.log(this.map.getMapTypeId());
   }
 
 

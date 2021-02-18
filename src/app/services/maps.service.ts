@@ -34,7 +34,7 @@ export class MapsService {
     });
   } // add marker
 
-  async meetup (membersList: user[], map) {
+  async meetup (membersList: user[], map: GoogleMap) {
     let center: pos = this.findCenterPos(membersList);
     this.center = center;
     this.addMarker(center, 'yellow', 'Center');
@@ -63,10 +63,9 @@ export class MapsService {
 
   } // findcenterpos
 
-  async requestPlaces(map) {
-    console.log("the map is: ", map)
-    const map1 = new google.maps.Map(document.querySelector('#map'));
-    const service = new google.maps.places.PlacesService(map1);
+  async requestPlaces(map: GoogleMap) {
+    console.log("the map is: ", map.googleMap);
+    const service = new google.maps.places.PlacesService(map.googleMap);
 
     const request = {
       location: this.center,
