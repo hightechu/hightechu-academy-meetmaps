@@ -13,6 +13,7 @@ import { groups } from './groups.model';
 import { user } from './user.model';
 import { Subscription } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MapsService } from './maps.service';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,8 @@ export class UserDataService {
 
   constructor(private firestore: AngularFirestore,
     public router: Router,
-    private auth: AngularFireAuth) {
+    private auth: AngularFireAuth,
+    private mapService: MapsService) {
       this.subscribeToAuthState();
     } // constructor
 
@@ -119,6 +121,7 @@ export class UserDataService {
               lng: position.coords.longitude,
             };
             console.log("Lat: "+ pos.lat + " Lng: " + pos.lng);
+            this.mapService.center = pos;
             this.firestore.collection('users').doc(this.currentUserId()).update({pos: pos});
           }
         );
@@ -134,7 +137,9 @@ export class UserDataService {
   // once a currentgroup exists, a subscription is made to the members of the group
   SubscribeToGroupMembers() {
     if (this.currentGroup !== null) {
+      // empty out groupmembers and markers
       this.currentGroupMembers = [];
+      this.mapService.markers = [];
       // listen for changes in the current groups users data and updates the currentGroupMembers array accordingly.
       for (let i = 0; i < this.currentGroup.users.length; i++) {
         this.groupMembersSubscriptions[i] = this.firestore.collection('users').doc<user>(this.currentGroup.users[i])
@@ -142,6 +147,10 @@ export class UserDataService {
         .subscribe((ref) => {
           this.currentGroupMembers.push(ref);
           console.log("user " + i + ": " + ref.username);
+          // add marker to map for user
+          if (ref.username !== this.user.username) {
+            this.mapService.addMarker(ref.pos, 'green', ref.username);
+          }
         });
       } // for each user in the group
     } // if current group is defined
@@ -191,7 +200,7 @@ export class UserDataService {
     return query;
   } // searchForUser
 
-  inviteUser(user: string, popup) {
+  inviteUser(user: string) {
     console.log("InviteUser" + user);
 
     this.firestore.collection("invites").add({
@@ -201,7 +210,7 @@ export class UserDataService {
       fromGroupName: this.currentGroup.name
     }).then(async (docRef) => {
       await this.firestore.collection('invites').doc(docRef.id).update({inviteUid: docRef.id});
-      popup.dismiss().then(() => { popup = null; });
+
     });
   } // inviteUser
 
@@ -220,6 +229,26 @@ export class UserDataService {
    this.firestore.collection('invites').doc(invite.inviteUid).delete();
 
   } // inviteAction
+
+  // removes the current member from the group
+  async leaveGroup() {
+    let usersArray = await this.firestore.collection('groups').doc<groups>(this.currentGroup.groupUid).get().toPromise().then((docRef) => {
+      return docRef.data().users;
+    });
+    let index = usersArray.indexOf(this.currentUserId());
+    // if user exists
+    if (index > -1) {
+      usersArray.splice(index, 1);
+    } else {
+      alert("cannot leave group");
+    }
+
+    this.firestore.collection('groups').doc<groups>(this.currentGroup.groupUid).update({
+      users: usersArray
+    }).then(() => {
+      this.currentComponent = 'group-list';
+    });
+  } // leave group
 
   // resets all variables
   reset() {
