@@ -19,7 +19,7 @@
             <ion-icon name="stats-chart-outline"></ion-icon>
           </ion-button>
 
-          <ion-button class="invite-button" (click)="mapService.meetup(userDataService.currentGroupMembers)">Let's Meet</ion-button>
+          <ion-button class="invite-button" (click)="mapService.meetup(userDataService.currentGroupMembers, map)">Let's Meet</ion-button>
 
         </ion-header>
       </ion-col>
@@ -37,8 +37,10 @@
             [position]="marker.position"
             [label]="marker.label"
             [title]="marker.title"
-            [options]="marker.options"></map-marker>
+            [options]="marker.options">
+          </map-marker>
         </google-map>
+        <div id="map"></div>
       </ion-col>
     </ion-row>
 

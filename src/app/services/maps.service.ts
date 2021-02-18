@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { GoogleMap } from '@angular/google-maps';
 import { groupMembers } from './groupMembers.model';
 import { pos } from './pos.model';
 import { user } from './user.model';
@@ -33,10 +34,12 @@ export class MapsService {
     });
   } // add marker
 
-  meetup (membersList: user[]) {
+  async meetup (membersList: user[], map) {
     let center: pos = this.findCenterPos(membersList);
     this.center = center;
     this.addMarker(center, 'yellow', 'Center');
+    await this.requestPlaces(map);
+    console.log("FINISHED");
   } // meetup
 
   findCenterPos (membersList: user[]): pos {
@@ -60,8 +63,34 @@ export class MapsService {
 
   } // findcenterpos
 
-  requestPlaces() {
-    fetch("https://maps.googleapis.com/maps/api/place/nearbysearch/json?AIzaSyDFs6WGEiVEL5jdSo_cjNh2sgeTINE7bQA&")
-  }
+  async requestPlaces(map) {
+    console.log("the map is: ", map)
+    const map1 = new google.maps.Map(document.querySelector('#map'));
+    const service = new google.maps.places.PlacesService(map1);
+
+    const request = {
+      location: this.center,
+      radius: 2000,
+      rankby: 'distance',
+      type: 'restaurant',
+      field: ['name', 'location']
+    }
+
+    await service.nearbySearch(
+      request,
+      (
+        results: google.maps.places.PlaceResult[] | null,
+        status: google.maps.places.PlacesServiceStatus
+      ) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+          for (let i = 0; i < results.length; i++) {
+            console.log(results[i].name);
+          }
+        }
+      }
+    );
+    console.log("DONE PLACES QUERY");
+
+  } // requestPlaces
 
 } // Class
