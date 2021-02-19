@@ -1,0 +1,13 @@
+.location-popup-button {
+  --color: var(--ion-color-apptheme);
+  --background: var(--ion-color-apptheme-contrast);
+  --border-radius: 25px;
+  --background-activated: var(--ion-color-apptheme-contrastShade);
+}
+ion-content {
+  --ion-background-color: var(--ion-color-apptheme);
+  --ion-text-color: var(--ion-color-apptheme-contrast);
+}
+.centeredText {
+  text-align: center;
+}

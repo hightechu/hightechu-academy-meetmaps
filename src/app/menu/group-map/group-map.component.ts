@@ -6,6 +6,7 @@ import { InvitePopupComponent } from './invite-popup/invite-popup.component';
 import { FilterPopupComponent } from './filter-popup/filter-popup.component';
 import { VotingPopupComponent } from './voting-popup/voting-popup.component';
 import { GoogleMap } from '@angular/google-maps';
+import { LocationInfoPopupComponent } from './location-info-popup/location-info-popup.component';
 
 
 
@@ -21,6 +22,8 @@ export class GroupMapComponent implements OnInit {
   invitePopup = null;
   mapFiltersPopup = null;
   leaveGroupPopup = null;
+  votingPopup = null;
+  locationInfoPopup = null;
 
   constructor(public userDataService: UserDataService, public popoverController: PopoverController, public mapService: MapsService) {}
 
@@ -83,6 +86,18 @@ export class GroupMapComponent implements OnInit {
         backdropDismiss: true
       });
       return await this.leaveGroupPopup.present();
+    } else if (type == "Location") {
+      this.locationInfoPopup = await this.popoverController.create({
+        component: LocationInfoPopupComponent,
+        componentProps: {
+          popover: this.locationInfoPopup,
+          type: 'Location'
+        },
+        cssClass: 'my-custom-popup',
+        translucent: true,
+        backdropDismiss: true
+      });
+      return await this.locationInfoPopup.present();
     }
   } // popup
 
