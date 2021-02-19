@@ -11,11 +11,11 @@
 
         <ion-header>
 
-          <ion-button class="invite-button" (click)="popop('Filters')">
+          <ion-button class="invite-button" (click)="popup('Filters')">
             <ion-icon slot="start" name="options-outline"></ion-icon>Filters
           </ion-button>
 
-          <ion-button class="invite-button" (click)="popop('Voting')">
+          <ion-button class="invite-button" (click)="popup('Voting')">
             <ion-icon slot="start" name="stats-chart-outline"></ion-icon>Vote
             <ion-badge slot="end">1</ion-badge>
           </ion-button>
@@ -40,7 +40,7 @@
             [label]="marker.label"
             [options]="marker.options"
             [clickable]="true"
-            (mapClick)="popop('Location')">
+            (mapClick)="showLocationInfo(marker.color, marker.label.text)">
           </map-marker>
         </google-map>
       </ion-col>
@@ -48,13 +48,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button class="invite-button" (click)="popop('Location')">Test Location Info Popup</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button class="invite-button" (click)="popop('Invite')">Invite Member</ion-button>
+        <ion-button class="invite-button" (click)="popup('Invite')">Invite Member</ion-button>
       </ion-col>
       <ion-col>
         <ion-button class="invite-button" (click)="userDataService.leaveGroup()">Leave Group</ion-button>

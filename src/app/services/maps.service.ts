@@ -23,6 +23,8 @@ export class MapsService {
   votes: number[] = [0, 0, 0, 0, 0];
   hasVoted: boolean = false;
 
+  currentlyMeeting = false;
+
   constructor() {}
 
 
