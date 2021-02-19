@@ -6,11 +6,11 @@
       </ion-col>
     </ion-row>
 
-    <ion-row  *ngIf="mapService.hasVoted == true">
-      <ion-col  *ngIf="mapService.hasVoted == true">
+    <ion-row  *ngIf="hasVoted() == true">
+      <ion-col  *ngIf="hasVoted() == true">
         <ion-text class="titleText">Possible Locations</ion-text>
       </ion-col>
-      <ion-col  *ngIf="mapService.hasVoted == true">
+      <ion-col  *ngIf="hasVoted() == true">
         <ion-text class="titleText">Number of Votes</ion-text>
       </ion-col>
     </ion-row>
@@ -32,7 +32,7 @@
           </ion-item>
         </ion-list>
       </ion-col>
-      <ion-col *ngIf="mapService.hasVoted == true">
+      <ion-col *ngIf="hasVoted() == true">
         <ion-list>
           <ion-item *ngFor="let place of mapService.currentPlaces">
             <ion-label>{{place.totalVotes}}</ion-label>
