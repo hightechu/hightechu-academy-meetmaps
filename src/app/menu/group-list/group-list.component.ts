@@ -22,6 +22,7 @@ export class GroupListComponent implements OnInit {
     this.userDataService.currentGroup = this.userDataService.getGroupFromUid(groupUid);
     this.userDataService.SubscribeToGroupMembers();
     this.mapService.addMarker(this.userDataService.user.pos, 'red', this.userDataService.user.username);
+    this.mapService.zoom = 11; 
 
   }
 

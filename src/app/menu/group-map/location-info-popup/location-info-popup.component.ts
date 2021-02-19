@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MapsService } from 'src/app/services/maps.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-location-info-popup',
@@ -10,8 +12,9 @@ export class LocationInfoPopupComponent implements OnInit {
   @Input() popover;
   @Input() type;
   @Input() data;
+  @Input() map;
 
-  constructor() { }
+  constructor(public mapService: MapsService, public userDataService: UserDataService) { }
 
   ngOnInit() {}
 
@@ -20,7 +23,12 @@ export class LocationInfoPopupComponent implements OnInit {
     for (let i = 0; i < this.data.price; i++) {
       dollar += "$";
     }
-    return dollar; 
+    return dollar;
+  }
+
+  directMe() {
+    this.mapService.directions(this.userDataService.user.pos, this.data.pos, this.map);
+    this.popover.dismiss().then(() => { this.popover = null; });
   }
 
 }

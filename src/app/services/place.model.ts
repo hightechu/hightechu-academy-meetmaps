@@ -1,4 +1,4 @@
-export interface places {
+export interface place {
   data: any,
   voted: boolean,
   totalVotes: number
