@@ -2,13 +2,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-title class="centeredText">{{ type }}</ion-title>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        {{'Name: ' + data.name }}
+        <ion-title class="centeredText">{{ data.name }}</ion-title>
       </ion-col>
     </ion-row>
 
@@ -26,7 +20,7 @@
 
     <ion-row>
       <ion-col>
-        <a href="{{data.website}}">{{data.website}}</a>
+        <ion-button class="location-popup-button" (click)="directMe()">Direct Me There!</ion-button>
       </ion-col>
     </ion-row>
 

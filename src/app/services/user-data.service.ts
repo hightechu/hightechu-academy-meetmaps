@@ -250,16 +250,17 @@ export class UserDataService {
     });
   } // leave group
 
+  /*
   updateVotes() {
     this.firestore.collection('groups').doc<groups>(this.currentGroup.groupUid).update({
-      votes: this.mapService.votes
+      locations: this.mapService.votes
     });
   } // updateLocations
 
   hasVoted() {
 
   }
-
+*/
   // resets all variables
   reset() {
     this.userSubscription.unsubscribe();

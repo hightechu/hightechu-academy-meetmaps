@@ -7,6 +7,7 @@ import { FilterPopupComponent } from './filter-popup/filter-popup.component';
 import { VotingPopupComponent } from './voting-popup/voting-popup.component';
 import { GoogleMap } from '@angular/google-maps';
 import { LocationInfoPopupComponent } from './location-info-popup/location-info-popup.component';
+import { pos } from 'src/app/services/pos.model';
 
 
 
@@ -26,7 +27,10 @@ export class GroupMapComponent implements OnInit {
   locationInfoPopup = null;
 
   currentLocationName = "";
-  currentWebsite = "";
+  currentPos: pos = {
+    lat: 0,
+    lng: 0
+  };
   currentRating = 0;
   currentPrice = 0;
 
@@ -34,7 +38,6 @@ export class GroupMapComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.mapService.votes);
   }
 
   meetup() {
@@ -43,8 +46,10 @@ export class GroupMapComponent implements OnInit {
     //setTimeout(()=> {this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);}, (300))
     // End of TechDebt
 
-    document.querySelector('ion-badge').style.display = 'block';
+    //document.querySelector('ion-badge').style.display = 'block';
     console.log("Current Places: ", this.mapService.currentPlaces);
+    this.mapService.zoom = 14;
+    //this.popup('Voting');
   }
 
   showLocationInfo(color, name) {
@@ -52,7 +57,10 @@ export class GroupMapComponent implements OnInit {
       this.currentLocationName = name;
       this.mapService.currentPlaces.forEach(element => {
         if (element.data.name == name) {
-          this.currentWebsite = element.data.website;
+          this.currentPos = {
+            lat: element.data.geometry.lat,
+            lng: element.data.geometry.lng
+          }
           this.currentRating = element.data.rating;
           this.currentPrice = element.data.price_level;
         }
@@ -119,10 +127,11 @@ export class GroupMapComponent implements OnInit {
           type: 'Location',
           data: {
             name: this.currentLocationName,
-            website: this.currentWebsite,
+            pos: this.currentPos,
             price: this.currentPrice,
             rating: this.currentRating
-          }
+          },
+          map: this.map
         },
         cssClass: 'my-custom-popup',
         translucent: true,
