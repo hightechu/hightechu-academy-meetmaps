@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
 import { groupMembers } from './groupMembers.model';
+import { places } from './places.model';
 import { pos } from './pos.model';
 import { user } from './user.model';
 
@@ -11,14 +12,16 @@ import { user } from './user.model';
 export class MapsService {
 
   // map settings
-  zoom = 12;
+  zoom = 11;
   center: pos;
   options = {};
 
   // array of all markers on the map
   markers = [];
 
-  currentPlaces = [];
+  currentPlaces: places[] = [];
+  votes: number[] = [0, 0, 0, 0, 0];
+  hasVoted: boolean = false;
 
   constructor() {}
 
@@ -31,8 +34,14 @@ export class MapsService {
         text: name,
       },
       options: { icon: "http://maps.google.com/mapfiles/ms/icons/" + color + "-dot.png" },
+      color: color
     });
+    console.log("added marker: " + name)
   } // add marker
+
+  removeMarker(color: string) {
+    this.markers = this.removeByKey(this.markers, color);
+  }
 
   async meetup (membersList: user[], map: GoogleMap) {
     let center: pos = this.findCenterPos(membersList);
@@ -69,27 +78,46 @@ export class MapsService {
 
     const request = {
       location: this.center,
-      radius: 2000,
-      rankby: 'distance',
+      rankBy: google.maps.places.RankBy.DISTANCE,
       type: 'restaurant',
-      field: ['name', 'location']
+      field: ['name', 'location', 'price', 'website', 'rating']
     }
 
-    await service.nearbySearch(
+    // remove all current places markers
+    this.markers = this.removeByKey(this.markers, 'blue');
+    this.currentPlaces = [];
+
+    service.nearbySearch(
       request,
-      (
+       (
         results: google.maps.places.PlaceResult[] | null,
         status: google.maps.places.PlacesServiceStatus
       ) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-          for (let i = 0; i < results.length; i++) {
-            console.log(results[i].name);
-          }
-        }
-      }
+          for (let i = 0; i < 5; i++) {
+            let pos: pos = {
+              lat: results[i].geometry.location.lat(),
+              lng: results[i].geometry.location.lng()
+            }
+            console.log(results[i].name + " -- ", pos);
+            this.addMarker(pos, 'blue', results[i].name);
+            this.currentPlaces.push({
+              data: results[i],
+              voted: false,
+              totalVotes: 0
+            });
+          } // for the 5 places
+        } // if status is OK and there are valid results
+      } // callback
     );
     console.log("DONE PLACES QUERY");
 
   } // requestPlaces
+
+  removeByKey(arr, propertyValue) {
+
+    return arr.filter(item => item.color !== propertyValue);
+
+  } // removeByKey
 
 } // Class

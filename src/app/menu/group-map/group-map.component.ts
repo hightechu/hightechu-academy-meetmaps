@@ -26,11 +26,17 @@ export class GroupMapComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.mapService.votes);
   }
 
   meetup() {
     this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);
-    console.log(this.map.getMapTypeId());
+    // Start of TechDebt
+    //setTimeout(()=> {this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);}, (300))
+    // End of TechDebt
+
+    document.querySelector('ion-badge').style.display = 'block';
+    console.log("Current Places: ", this.mapService.currentPlaces);
   }
 
 

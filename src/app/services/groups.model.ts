@@ -1,5 +1,8 @@
+import { places } from "./places.model";
+
 export interface groups {
-  groupUid: string, 
+  groupUid: string,
   name: string,
-  users: string[]
+  users: string[],
+  votes: number[]
 }
