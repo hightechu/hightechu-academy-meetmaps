@@ -7,6 +7,7 @@ import { FilterPopupComponent } from './filter-popup/filter-popup.component';
 import { VotingPopupComponent } from './voting-popup/voting-popup.component';
 import { GoogleMap } from '@angular/google-maps';
 import { LocationInfoPopupComponent } from './location-info-popup/location-info-popup.component';
+import { pos } from 'src/app/services/pos.model';
 
 
 
@@ -25,11 +26,18 @@ export class GroupMapComponent implements OnInit {
   votingPopup = null;
   locationInfoPopup = null;
 
+  currentLocationName = "";
+  currentPos: pos = {
+    lat: 0,
+    lng: 0
+  };
+  currentRating = 0;
+  currentPrice = 0;
+
   constructor(public userDataService: UserDataService, public popoverController: PopoverController, public mapService: MapsService) {}
 
 
   ngOnInit() {
-    console.log(this.mapService.votes);
   }
 
   meetup() {
@@ -38,12 +46,31 @@ export class GroupMapComponent implements OnInit {
     //setTimeout(()=> {this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);}, (300))
     // End of TechDebt
 
-    document.querySelector('ion-badge').style.display = 'block';
+    //document.querySelector('ion-badge').style.display = 'block';
     console.log("Current Places: ", this.mapService.currentPlaces);
+    this.mapService.zoom = 14;
+    //this.popup('Voting');
+  }
+
+  showLocationInfo(color, name) {
+    if (color == 'blue') {
+      this.currentLocationName = name;
+      this.mapService.currentPlaces.forEach(element => {
+        if (element.data.name == name) {
+          this.currentPos = {
+            lat: element.data.geometry.lat,
+            lng: element.data.geometry.lng
+          }
+          this.currentRating = element.data.rating;
+          this.currentPrice = element.data.price_level;
+        }
+      });
+      this.popup('Location');
+    }
   }
 
 
-  popop = async function presentPopover(type: string) {
+  popup = async function presentPopover(type: string) {
 
     if (type == "Invite") {
       this.invitePopup = await this.popoverController.create({
@@ -97,7 +124,14 @@ export class GroupMapComponent implements OnInit {
         component: LocationInfoPopupComponent,
         componentProps: {
           popover: this.locationInfoPopup,
-          type: 'Location'
+          type: 'Location',
+          data: {
+            name: this.currentLocationName,
+            pos: this.currentPos,
+            price: this.currentPrice,
+            rating: this.currentRating
+          },
+          map: this.map
         },
         cssClass: 'my-custom-popup',
         translucent: true,

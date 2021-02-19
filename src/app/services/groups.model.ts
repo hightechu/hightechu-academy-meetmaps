@@ -1,4 +1,4 @@
-import { places } from "./places.model";
+import { places } from "./place.model";
 
 export interface groups {
   groupUid: string,

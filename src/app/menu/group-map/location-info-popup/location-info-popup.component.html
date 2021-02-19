@@ -2,31 +2,25 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-title class="centeredText">{{ type }}</ion-title>
+        <ion-title class="centeredText">{{ data.name }}</ion-title>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        Name:
+        {{'Rating: ' + data.rating + "/5" }}
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        Address:
+        {{'Price: ' + toDollar() }}
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        Today's Hours:
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        Telephone:
+        <ion-button class="location-popup-button" (click)="directMe()">Direct Me There!</ion-button>
       </ion-col>
     </ion-row>
 

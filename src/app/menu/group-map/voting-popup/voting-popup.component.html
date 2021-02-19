@@ -16,7 +16,8 @@
     </ion-row>
 
     <ion-row>
-      <ion-col *ngIf="mapService.hasVoted == false">
+
+      <ion-col *ngIf="hasVoted() == false">
         <ion-list>
           <ion-item *ngFor="let place of mapService.currentPlaces">
             <ion-label>{{place.data.name}}</ion-label>
@@ -24,7 +25,7 @@
           </ion-item>
         </ion-list>
       </ion-col>
-      <ion-col *ngIf="mapService.hasVoted == true">
+      <ion-col *ngIf="hasVoted() == true">
         <ion-list>
           <ion-item *ngFor="let place of mapService.currentPlaces">
             <ion-label>{{place.data.name}}</ion-label>
@@ -41,10 +42,10 @@
     </ion-row>
 
     <ion-row>
-      <ion-col *ngIf="mapService.hasVoted == false">
+      <ion-col *ngIf="hasVoted() == false">
         <ion-button class="voting-popup-button" (click)="submitVote('submit')">Submit Vote</ion-button>
       </ion-col>
-      <ion-col *ngIf="mapService.hasVoted == true">
+      <ion-col *ngIf="hasVoted() == true">
         <ion-button class="voting-popup-button" (click)="submitVote('change')">Change Vote</ion-button>
       </ion-col>
     </ion-row>

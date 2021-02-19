@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
 import { groupMembers } from './groupMembers.model';
-import { places } from './places.model';
+import { place } from './place.model';
 import { pos } from './pos.model';
 import { user } from './user.model';
 
@@ -19,9 +19,7 @@ export class MapsService {
   // array of all markers on the map
   markers = [];
 
-  currentPlaces: places[] = [];
-  votes: number[] = [0, 0, 0, 0, 0];
-  hasVoted: boolean = false;
+  currentPlaces: place[] = [];
 
   constructor() {}
 
@@ -119,5 +117,28 @@ export class MapsService {
     return arr.filter(item => item.color !== propertyValue);
 
   } // removeByKey
+
+
+  directions(startPos, endPos, map: GoogleMap) {
+    /* DIRECTIONS FEATURE DISABLED
+    const request = {
+      origin: startPos,
+      destination: endPos,
+      travelMode: 'DRIVING'
+  };
+
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+
+  directionsService.route(request, function(response, status) {
+      if (status === 'OK') {
+          directionsRenderer.setDirections(response);
+      } else {
+          window.alert('Directions request failed due to ' + status);
+      }
+  });
+  directionsRenderer.setMap(map.googleMap);
+  */
+  }
 
 } // Class

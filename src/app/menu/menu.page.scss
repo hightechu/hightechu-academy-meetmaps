@@ -33,3 +33,9 @@ ion-title {
   text-align: center;
   font-size: 16px;
 }
+
+.back-button {
+  --color: var(--ion-color-apptheme);
+  --background: var(--ion-color-apptheme-contrast);
+  --border-radius: 25px;
+}
