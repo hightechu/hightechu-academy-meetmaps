@@ -9,9 +9,18 @@ export class LocationInfoPopupComponent implements OnInit {
 
   @Input() popover;
   @Input() type;
+  @Input() data;
 
   constructor() { }
 
   ngOnInit() {}
+
+  toDollar(): string {
+    let dollar = "";
+    for (let i = 0; i < this.data.price; i++) {
+      dollar += "$";
+    }
+    return dollar; 
+  }
 
 }

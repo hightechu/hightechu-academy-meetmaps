@@ -25,6 +25,11 @@ export class GroupMapComponent implements OnInit {
   votingPopup = null;
   locationInfoPopup = null;
 
+  currentLocationName = "";
+  currentWebsite = "";
+  currentRating = 0;
+  currentPrice = 0;
+
   constructor(public userDataService: UserDataService, public popoverController: PopoverController, public mapService: MapsService) {}
 
 
@@ -42,8 +47,22 @@ export class GroupMapComponent implements OnInit {
     console.log("Current Places: ", this.mapService.currentPlaces);
   }
 
+  showLocationInfo(color, name) {
+    if (color == 'blue') {
+      this.currentLocationName = name;
+      this.mapService.currentPlaces.forEach(element => {
+        if (element.data.name == name) {
+          this.currentWebsite = element.data.website;
+          this.currentRating = element.data.rating;
+          this.currentPrice = element.data.price_level;
+        }
+      });
+      this.popup('Location');
+    }
+  }
 
-  popop = async function presentPopover(type: string) {
+
+  popup = async function presentPopover(type: string) {
 
     if (type == "Invite") {
       this.invitePopup = await this.popoverController.create({
@@ -97,7 +116,13 @@ export class GroupMapComponent implements OnInit {
         component: LocationInfoPopupComponent,
         componentProps: {
           popover: this.locationInfoPopup,
-          type: 'Location'
+          type: 'Location',
+          data: {
+            name: this.currentLocationName,
+            website: this.currentWebsite,
+            price: this.currentPrice,
+            rating: this.currentRating
+          }
         },
         cssClass: 'my-custom-popup',
         translucent: true,

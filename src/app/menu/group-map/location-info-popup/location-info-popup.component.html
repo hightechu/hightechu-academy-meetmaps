@@ -8,25 +8,25 @@
 
     <ion-row>
       <ion-col>
-        Name:
+        {{'Name: ' + data.name }}
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        Address:
+        {{'Rating: ' + data.rating + "/5" }}
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        Today's Hours:
+        {{'Price: ' + toDollar() }}
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        Telephone:
+        <a href="{{data.website}}">{{data.website}}</a>
       </ion-col>
     </ion-row>
 
