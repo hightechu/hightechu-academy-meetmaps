@@ -29,3 +29,10 @@ ion-content {
 #map {
   height: 100%;
 }
+
+ion-badge {
+  --background: var(--ion-color-warning);
+  margin-bottom: 5px;
+  margin-left: 5px;
+  display: none;
+}
