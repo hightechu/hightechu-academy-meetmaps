@@ -1,5 +1,3 @@
-import { places } from "./place.model";
-
 export interface groups {
   groupUid: string,
   name: string,
