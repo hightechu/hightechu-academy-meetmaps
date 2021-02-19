@@ -38,10 +38,18 @@
             [position]="marker.position"
             [label]="marker.label"
             [title]="marker.title"
-            [options]="marker.options">
+            [options]="marker.options"
+            [clickable]="true"
+            (mapClick)="popop('Location')">
           </map-marker>
         </google-map>
         <div id="map"></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button class="invite-button" (click)="popop('Location')">Test Location Info Popup</ion-button>
       </ion-col>
     </ion-row>
 
