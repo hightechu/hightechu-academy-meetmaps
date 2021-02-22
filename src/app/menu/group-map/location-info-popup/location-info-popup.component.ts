@@ -27,7 +27,9 @@ export class LocationInfoPopupComponent implements OnInit {
   }
 
   directMe() {
+    console.log("data pos", this.data.pos);
     this.mapService.directions(this.userDataService.user.pos, this.data.pos, this.map);
+
     this.popover.dismiss().then(() => { this.popover = null; });
   }
 

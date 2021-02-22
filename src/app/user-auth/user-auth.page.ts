@@ -16,7 +16,7 @@ export class UserAuthPage implements OnInit {
   loginPopup = null;
 
   constructor(public popoverController: PopoverController, public userDataService: UserDataService) {
-    //console.log(this.authService.authState);
+    console.log(this.userDataService.authState);
 
   }
 

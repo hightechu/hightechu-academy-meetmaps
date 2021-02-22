@@ -119,12 +119,11 @@ export class MapsService {
   } // removeByKey
 
 
-  directions(startPos, endPos, map: GoogleMap) {
-    /* DIRECTIONS FEATURE DISABLED
+  directions(startPos: pos, endPos: pos, map: GoogleMap) {
     const request = {
       origin: startPos,
       destination: endPos,
-      travelMode: 'DRIVING'
+      travelMode: google.maps.TravelMode.DRIVING
   };
 
   const directionsService = new google.maps.DirectionsService();
@@ -138,7 +137,8 @@ export class MapsService {
       }
   });
   directionsRenderer.setMap(map.googleMap);
-  */
+  return directionsRenderer;
+
   }
 
 } // Class

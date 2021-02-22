@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { AlertController, PopoverController } from '@ionic/angular';
 import { MapsService } from 'src/app/services/maps.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { InvitePopupComponent } from './invite-popup/invite-popup.component';
@@ -35,7 +35,11 @@ export class GroupMapComponent implements OnInit {
   currentRating = 0;
   currentPrice = 0;
 
-  constructor(public userDataService: UserDataService, public popoverController: PopoverController, public mapService: MapsService) {}
+  constructor(
+    public userDataService: UserDataService,
+    public popoverController: PopoverController,
+    public mapService: MapsService,
+    public alertCtrl: AlertController) {}
 
 
   ngOnInit() {
@@ -47,9 +51,9 @@ export class GroupMapComponent implements OnInit {
     //setTimeout(()=> {this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);}, (300))
     // End of TechDebt
 
-    //document.querySelector('ion-badge').style.display = 'block';
+    document.getElementById('clickPin').style.display = 'block';
     console.log("Current Places: ", this.mapService.currentPlaces);
-    this.mapService.zoom = 14;
+    this.mapService.zoom = 13;
     //this.popup('Voting');
   }
 
@@ -59,9 +63,10 @@ export class GroupMapComponent implements OnInit {
       this.mapService.currentPlaces.forEach(element => {
         if (element.data.name == name) {
           this.currentPos = {
-            lat: element.data.geometry.lat,
-            lng: element.data.geometry.lng
+            lat: element.data.geometry.location.lat(),
+            lng: element.data.geometry.location.lng()
           }
+          console.log("current Pos", this.currentPos)
           this.currentRating = element.data.rating;
           this.currentPrice = element.data.price_level;
         }
@@ -153,5 +158,30 @@ export class GroupMapComponent implements OnInit {
       return await this.locationInfoPopup.present();
     }
   } // popup
+
+  leaveGroup() {
+    this.alertCtrl
+    .create({
+      header: 'Leave Group',
+      message: 'Are you sure you want to leave?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel'
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.userDataService.leaveGroup(); 
+          }
+        }
+      ]
+    })
+    .then(alertEl => {
+      alertEl.present();
+    });
+    return false;
+  }
+
 
 }
