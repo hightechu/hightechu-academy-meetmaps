@@ -26,6 +26,12 @@
       </ion-col>
     </ion-row>
 
+    <ion-row id="clickPin">
+      <ion-col>
+        <ion-text>Click the blue pins to learn more!</ion-text>
+      </ion-col>
+    </ion-row>
+
     <ion-row>
       <ion-col>
         <google-map
@@ -51,7 +57,7 @@
         <ion-button class="invite-button" (click)="popup('Invite')">Invite Member</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="invite-button" (click)="userDataService.leaveGroup()">Leave Group</ion-button>
+        <ion-button class="invite-button" (click)="leaveGroup()">Leave Group</ion-button>
       </ion-col>
     </ion-row>
 

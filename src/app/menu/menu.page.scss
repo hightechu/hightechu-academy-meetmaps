@@ -39,3 +39,14 @@ ion-title {
   --background: var(--ion-color-apptheme-contrast);
   --border-radius: 25px;
 }
+
+ion-badge {
+  --padding-end: 3px;
+  margin-left: 5px;
+  width: 15px;
+}
+
+.menu-badge {
+  margin-left: -5px;
+  padding: 3px; 
+}

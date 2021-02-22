@@ -225,6 +225,7 @@ export class UserDataService {
         users: usersArray
       });
     } // if we're accepting invite
+  this.currentComponent = 'group-list'; 
 
    this.firestore.collection('invites').doc(invite.inviteUid).delete();
 
