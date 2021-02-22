@@ -1,0 +1,24 @@
+<ion-content>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ type }}</ion-title>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <div *ngFor="let member of userDataService.currentGroupMembers">
+          <ion-item lines="full">
+            <ion-label>
+              {{ member.username }} <br>
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
