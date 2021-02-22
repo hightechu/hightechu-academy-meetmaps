@@ -8,6 +8,7 @@ import { VotingPopupComponent } from './voting-popup/voting-popup.component';
 import { GoogleMap } from '@angular/google-maps';
 import { LocationInfoPopupComponent } from './location-info-popup/location-info-popup.component';
 import { pos } from 'src/app/services/pos.model';
+import { GroupMembersPopupComponent } from './group-members-popup/group-members-popup.component';
 
 
 
@@ -101,6 +102,18 @@ export class GroupMapComponent implements OnInit {
         backdropDismiss: true
       });
       return await this.mapFiltersPopup.present();
+    } else if (type == "Members") {
+      this.groupMembersPopup = await this.popoverController.create({
+        component: GroupMembersPopupComponent,
+        componentProps: {
+          popover: this.groupMembersPopup,
+          type: 'Group Members'
+        },
+        cssClass: 'my-custom-popup',
+        translucent: true,
+        backdropDismiss: true
+      });
+      return await this.groupMembersPopup.present();
     } else if (type == "Voting") {
       this.votingPopup = await this.popoverController.create({
         component: VotingPopupComponent,
