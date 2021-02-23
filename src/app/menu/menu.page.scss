@@ -44,9 +44,10 @@ ion-badge {
   --padding-end: 3px;
   margin-left: 5px;
   width: 15px;
+  z-index:100;
 }
 
 .menu-badge {
   margin-left: -5px;
-  padding: 3px; 
+  padding: 3px;
 }
