@@ -27,6 +27,15 @@ export class UserAuthPage implements OnInit {
   ngOnInit() {
   }
 
+  login() {
+
+    if (this.userDataService.authState == null) {
+      this.popop('Log In');
+    } else {
+      this.router.navigate(['/', 'menu']);
+    }
+  }
+
 
   popop = async function presentPopover(type: string) {
 

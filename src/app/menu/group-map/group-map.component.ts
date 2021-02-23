@@ -162,8 +162,8 @@ export class GroupMapComponent implements OnInit {
   leaveGroup() {
     this.alertCtrl
     .create({
-      header: 'Leave Group',
-      message: 'Are you sure you want to leave?',
+      header: 'Remove Group',
+      message: 'Are you sure you want to permanently remove this group from your list?',
       buttons: [
         {
           text: 'No',
@@ -172,7 +172,7 @@ export class GroupMapComponent implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.userDataService.leaveGroup(); 
+            this.userDataService.leaveGroup();
           }
         }
       ]

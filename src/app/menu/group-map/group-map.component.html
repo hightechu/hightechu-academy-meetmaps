@@ -8,6 +8,7 @@
 
     <ion-row>
       <ion-col>
+
           <ion-select multiple="true" placeholder="Location Type" [value]="['restaurant']" [(ngModel)]='mapService.locationType'>
             <ion-select-option value="restaurant">Restaurants</ion-select-option>
             <ion-select-option value="park">Parks</ion-select-option>
@@ -38,9 +39,10 @@
     </ion-row>
 
     <ion-row>
-      <ion-col>
+      <ion-col id="mapCol">
         <google-map
         #myMap="googleMap"
+        width='100vw'
         height="55vh"
         [zoom]="mapService.zoom"
         [center]="mapService.center"
@@ -67,7 +69,7 @@
       </ion-col>
       <ion-col>
 
-        <ion-button class="invite-button" (click)="leaveGroup()">Leave Group</ion-button>
+        <ion-button class="invite-button" (click)="leaveGroup()">Remove Group</ion-button>
 
       </ion-col>
     </ion-row>
