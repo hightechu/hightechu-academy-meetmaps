@@ -25,3 +25,8 @@ ion-content {
   --ion-background-color: var(--ion-color-apptheme-contrast);
   --ion-text-color: var(--ion-color-apptheme);
 }
+
+ion-title {
+  font-family: 'main';
+  font-size: 50px;
+}

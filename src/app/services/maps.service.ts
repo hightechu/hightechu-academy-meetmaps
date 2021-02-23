@@ -121,6 +121,9 @@ export class MapsService {
   } // removeByKey
 
 
+  directionRenderer = new google.maps.DirectionsRenderer();
+  directionsService = new google.maps.DirectionsService();
+
   directions(startPos: pos, endPos: pos, map: GoogleMap) {
     const request = {
       origin: startPos,
@@ -128,18 +131,18 @@ export class MapsService {
       travelMode: google.maps.TravelMode.DRIVING
   };
 
-  const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer();
 
-  directionsService.route(request, function(response, status) {
+
+  this.directionRenderer.setMap(null);
+
+  this.directionsService.route(request, (response, status) => {
       if (status === 'OK') {
-          directionsRenderer.setDirections(response);
+        this.directionRenderer.setDirections(response);
       } else {
           window.alert('Directions request failed due to ' + status);
       }
   });
-  directionsRenderer.setMap(map.googleMap);
-  return directionsRenderer;
+  this.directionRenderer.setMap(map.googleMap);
 
   }
 

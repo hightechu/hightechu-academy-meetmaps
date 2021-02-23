@@ -19,11 +19,19 @@ ion-content {
   --ion-text-color: var(--ion-color-apptheme);
 }
 
+ion-grid {
+  padding: 0px;
+}
+
 .invite-button {
   --color: var(--ion-color-apptheme-contrast);
   --background: var(--ion-color-apptheme);
   --border-radius: 25px;
   --background-activated: var(--ion-color-apptheme-shade);
+}
+
+#mapCol {
+  padding: 0px;
 }
 
 #map {
