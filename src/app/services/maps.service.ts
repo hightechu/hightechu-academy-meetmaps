@@ -16,6 +16,8 @@ export class MapsService {
   center: pos;
   options = {};
 
+  locationType = 'restaurant';
+
   // array of all markers on the map
   markers = [];
 
@@ -34,7 +36,7 @@ export class MapsService {
       options: { icon: "http://maps.google.com/mapfiles/ms/icons/" + color + "-dot.png" },
       color: color
     });
-    console.log("added marker: " + name)
+    //console.log("added marker: " + name)
   } // add marker
 
   removeMarker(color: string) {
@@ -77,7 +79,7 @@ export class MapsService {
     const request = {
       location: this.center,
       rankBy: google.maps.places.RankBy.DISTANCE,
-      type: 'restaurant',
+      type: this.locationType,
       field: ['name', 'location', 'price', 'website', 'rating']
     }
 

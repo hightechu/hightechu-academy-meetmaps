@@ -10,14 +10,20 @@
 
     <ion-row>
       <ion-col>
-        <ion-select placeholder="Location Type">
-          <ion-select-option value="parks">Parks</ion-select-option>
-          <ion-select-option value="restaurants">Restaurants</ion-select-option>
-          <ion-select-option value="cafes">Cafés</ion-select-option>
+        <ion-select placeholder="Location Type" [(ngModel)]='mapsService.locationType'>
+          <ion-select-option value="restaurant">Restaurants</ion-select-option>
+          <ion-select-option value="park">Parks</ion-select-option>
+          <ion-select-option value="cafe">Cafés</ion-select-option>
+          <ion-select-option value="bar">Bars</ion-select-option>
+          <ion-select-option value="gym">Gym</ion-select-option>
+          <ion-select-option value="movie_theater">Movie Theatre</ion-select-option>
+          <ion-select-option value="museum">Museum</ion-select-option>
+          <ion-select-option value="shopping_mall">Shopping Mall</ion-select-option>
+          <ion-select-option value="tourist_attraction">Tourist Attraction</ion-select-option>
         </ion-select>
       </ion-col>
     </ion-row>
-
+<!--
     <ion-row>
       <ion-col>
         <ion-select placeholder="Sort By">
@@ -27,6 +33,6 @@
         </ion-select>
       </ion-col>
     </ion-row>
-
+-->
   </ion-grid>
 </ion-content>

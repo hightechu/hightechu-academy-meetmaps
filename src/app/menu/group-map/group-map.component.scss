@@ -41,3 +41,10 @@ ion-badge {
   display: none;
 }
 
+ion-select {
+  --color: var(--ion-color-apptheme-contrast);
+  --background: var(--ion-color-apptheme);
+  --border-radius: 25px;
+  --background-activated: var(--ion-color-apptheme-shade);
+}
+

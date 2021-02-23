@@ -9,20 +9,27 @@
     <ion-row>
       <ion-col>
 
-        <ion-header>
-
-          <ion-button class="invite-button" (click)="popup('Filters')">
-            <ion-icon slot="start" name="options-outline"></ion-icon>Filters
-          </ion-button>
+        
+          <ion-select placeholder="Location Type" [(ngModel)]='mapService.locationType'>
+            <ion-select-option value="restaurant">Restaurants</ion-select-option>
+            <ion-select-option value="park">Parks</ion-select-option>
+            <ion-select-option value="cafe">Cafés</ion-select-option>
+            <ion-select-option value="bar">Bars</ion-select-option>
+            <ion-select-option value="gym">Gym</ion-select-option>
+            <ion-select-option value="movie_theater">Movie Theatre</ion-select-option>
+            <ion-select-option value="museum">Museum</ion-select-option>
+            <ion-select-option value="shopping_mall">Shopping Mall</ion-select-option>
+            <ion-select-option value="tourist_attraction">Tourist Attraction</ion-select-option>
+          </ion-select>
+      </ion-col>
 <!--
           <ion-button class="invite-button" (click)="popup('Voting')">
             <ion-icon slot="start" name="stats-chart-outline"></ion-icon>Vote
             <ion-badge slot="end">1</ion-badge>
           </ion-button>
 -->
+      <ion-col>
           <ion-button class="invite-button" (click)="meetup()">Let's Meet</ion-button>
-
-        </ion-header>
       </ion-col>
     </ion-row>
 

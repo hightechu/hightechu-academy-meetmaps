@@ -145,11 +145,13 @@ export class UserDataService {
         this.groupMembersSubscriptions[i] = this.firestore.collection('users').doc<user>(this.currentGroup.users[i])
         .valueChanges()
         .subscribe((ref) => {
-          this.currentGroupMembers.push(ref);
-          console.log("user " + i + ": " + ref.username);
-          // add marker to map for user
-          if (ref.username !== this.user.username) {
-            this.mapService.addMarker(ref.pos, 'green', ref.username);
+          if (!this.currentGroupMembers.includes(ref)) {
+            this.currentGroupMembers.push(ref);
+            console.log("user " + i + ": " + ref.username);
+            // add marker to map for user
+            if (ref.username !== this.user.username) {
+              this.mapService.addMarker(ref.pos, 'green', ref.username);
+            }
           }
         });
       } // for each user in the group
@@ -225,7 +227,7 @@ export class UserDataService {
         users: usersArray
       });
     } // if we're accepting invite
-  this.currentComponent = 'group-list'; 
+  this.currentComponent = 'group-list';
 
    this.firestore.collection('invites').doc(invite.inviteUid).delete();
 
