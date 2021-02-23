@@ -8,18 +8,16 @@
 
     <ion-row>
       <ion-col>
-
-        
-          <ion-select placeholder="Location Type" [(ngModel)]='mapService.locationType'>
+          <ion-select multiple="true" placeholder="Location Type" [value]="['restaurant']" [(ngModel)]='mapService.locationType'>
             <ion-select-option value="restaurant">Restaurants</ion-select-option>
             <ion-select-option value="park">Parks</ion-select-option>
             <ion-select-option value="cafe">Cafés</ion-select-option>
             <ion-select-option value="bar">Bars</ion-select-option>
-            <ion-select-option value="gym">Gym</ion-select-option>
-            <ion-select-option value="movie_theater">Movie Theatre</ion-select-option>
-            <ion-select-option value="museum">Museum</ion-select-option>
-            <ion-select-option value="shopping_mall">Shopping Mall</ion-select-option>
-            <ion-select-option value="tourist_attraction">Tourist Attraction</ion-select-option>
+            <ion-select-option value="gym">Gyms</ion-select-option>
+            <ion-select-option value="movie_theater">Movie Theatres</ion-select-option>
+            <ion-select-option value="museum">Museums</ion-select-option>
+            <ion-select-option value="shopping_mall">Shopping Malls</ion-select-option>
+            <ion-select-option value="tourist_attraction">Tourist Attractions</ion-select-option>
           </ion-select>
       </ion-col>
 <!--
