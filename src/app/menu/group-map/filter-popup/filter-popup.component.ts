@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MapsService } from 'src/app/services/maps.service';
 
 @Component({
   selector: 'app-filter-popup',
@@ -10,7 +11,7 @@ export class FilterPopupComponent implements OnInit {
   @Input() popover;
   @Input() type;
 
-  constructor() { }
+  constructor(public mapsService: MapsService) { }
 
   ngOnInit() {}
 }

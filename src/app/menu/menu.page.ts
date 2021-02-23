@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserDataService } from 'src/app/services/user-data.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,11 @@ export class MenuPage implements OnInit {
 
   pageName: string = "My Groups";
 
-  constructor(public userDataService: UserDataService, public AuthService: AuthService) { }
+  constructor(public userDataService: UserDataService, public AuthService: AuthService, public router: Router) {
+    if (userDataService.authState == null) {
+      this.router.navigate(['/', 'user-auth']);
+    }
+  }
 
   ngOnInit() {
   }
@@ -27,6 +32,7 @@ export class MenuPage implements OnInit {
   }
 
   Logout() {
+    this.userDataService.authState = null; 
     this.userDataService.reset();
     this.AuthService.LogOut();
   }

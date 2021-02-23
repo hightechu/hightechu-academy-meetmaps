@@ -4,6 +4,7 @@ import { AuthPopupComponent } from './auth-popup/auth-popup.component';
 import { PopoverController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { UserDataService } from '../services/user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-auth',
@@ -15,8 +16,11 @@ export class UserAuthPage implements OnInit {
   signUpPopup = null;
   loginPopup = null;
 
-  constructor(public popoverController: PopoverController, public userDataService: UserDataService) {
-    console.log(this.userDataService.authState);
+  constructor(public popoverController: PopoverController, public userDataService: UserDataService, public router: Router) {
+    console.log(userDataService.authState);
+    if (userDataService.authState != null) {
+      this.router.navigate(['/', 'menu']);
+    }
 
   }
 
