@@ -47,7 +47,7 @@
             <!--Button to open menu-->
           <ion-button *ngIf="userDataService.currentComponent != 'group-map'" class="menu-toggle-button">
             <ion-menu-button menu="main-menu"></ion-menu-button>
-            <ion-badge class="menu-badge" color="danger" *ngIf="this.userDataService.invites.length != 0" slot="end">{{this.userDataService.invites.length}}</ion-badge>
+            <!--<ion-badge class="menu-badge" color="danger" *ngIf="this.userDataService.invites.length != 0" slot="end">{{this.userDataService.invites.length}}</ion-badge>-->
           </ion-button>
 
           <ion-button *ngIf="userDataService.currentComponent == 'group-map'" class="back-button" (click)="changePage('group-list')">
