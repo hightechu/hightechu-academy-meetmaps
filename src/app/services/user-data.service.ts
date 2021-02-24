@@ -160,6 +160,7 @@ export class UserDataService {
     console.log("groupMembers: ", this.currentGroupMembers);
   } // subscribeToGroupMembers
 
+  // returns a group object based on the uid submitted
   getGroupFromUid(groupUid: string): groups {
     for (var i=0; i < this.groups.length; i++) {
       if (this.groups[i].groupUid === groupUid) {
@@ -168,7 +169,7 @@ export class UserDataService {
     } // loop through each element of groups
   } // getGroupFromUid
 
-
+  // creates a group and adds the current member to the group
   createGroup(groupName: string, popup) {
     // adds the entered name, current user, and groupUid to a new group document in the firestore collection "groups"
     this.firestore.collection("groups").add({
@@ -182,8 +183,8 @@ export class UserDataService {
     });
   } // create group
 
+  // searches for a user based on username and returns false if not found or undefined, and returns the user UID if found
   async searchForUser(searchKey: string) {
-
     if (searchKey == undefined) {
       return false;
     }
@@ -198,13 +199,11 @@ export class UserDataService {
         return false;
       }
     });
-
     return query;
   } // searchForUser
 
+  // invites user by adding an invite object to the firebase invites collection
   inviteUser(user: string) {
-    console.log("InviteUser" + user);
-
     this.firestore.collection("invites").add({
       toUser: user,
       fromUser: this.user.username,
@@ -212,10 +211,10 @@ export class UserDataService {
       fromGroupName: this.currentGroup.name
     }).then(async (docRef) => {
       await this.firestore.collection('invites').doc(docRef.id).update({inviteUid: docRef.id});
-
     });
   } // inviteUser
 
+  // either accepts a users incoming invite or declines based on the action submitted.
   async inviteAction(invite: invites, action: string) {
     if (action == "accept") {
       let usersArray = await this.firestore.collection('groups').doc<groups>(invite.fromGroupUid).get().toPromise().then((docRef) => {
@@ -225,12 +224,13 @@ export class UserDataService {
 
       this.firestore.collection('groups').doc<groups>(invite.fromGroupUid).update({
         users: usersArray
+      }).then(() => {
+        this.currentComponent = 'group-list';
       });
     } // if we're accepting invite
-  this.currentComponent = 'group-list';
 
-   this.firestore.collection('invites').doc(invite.inviteUid).delete();
-
+    // delete invite in all cases
+    this.firestore.collection('invites').doc(invite.inviteUid).delete();
   } // inviteAction
 
   // removes the current member from the group
@@ -264,11 +264,14 @@ export class UserDataService {
 
   }
 */
-  // resets all variables
+  // resets all variables and unsubscribes to all listeners
   reset() {
     this.userSubscription.unsubscribe();
     this.groupSubscription.unsubscribe();
     this.inviteSubscription.unsubscribe();
+    this.groupMembersSubscriptions.forEach(element => {
+      element.unsubscribe();
+    });
 
     this.user= {
       userUid: "",
