@@ -1,6 +1,6 @@
 # 🧭 MeetMaps
 
-![badge](https://img.shields.io/badge/Release-v1.1-beta-blue)
+![badge](https://img.shields.io/badge/Release-v1.1-blue)
 ![badge](https://img.shields.io/badge/Status-In_Development-red)
 ![licence](https://img.shields.io/badge/Licence-MIT-green)
 
