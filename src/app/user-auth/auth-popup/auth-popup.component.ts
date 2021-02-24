@@ -21,6 +21,7 @@ export class AuthPopupComponent implements OnInit {
   ngOnInit() {
   }
 
+  // either logs the user in or creates an account based on the action
   async userAuth(username: string, email: string, password: string, popover, action: string) {
     let signedIn;
     let loggedIn;

@@ -18,6 +18,7 @@ export class LocationInfoPopupComponent implements OnInit {
 
   ngOnInit() {}
 
+  // returns number of dollar signs based on number
   toDollar(): string {
     let dollar = "";
     for (let i = 0; i < this.data.price; i++) {
@@ -26,10 +27,10 @@ export class LocationInfoPopupComponent implements OnInit {
     return dollar;
   }
 
+  // renders directions to clicked location and closes popup
   directMe() {
     console.log("data pos", this.data.pos);
     this.mapService.directions(this.userDataService.user.pos, this.data.pos, this.map);
-
     this.popover.dismiss().then(() => { this.popover = null; });
   }
 

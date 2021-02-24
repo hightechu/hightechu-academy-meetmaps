@@ -19,14 +19,17 @@ import { GroupMembersPopupComponent } from './group-members-popup/group-members-
 })
 export class GroupMapComponent implements OnInit {
 
+  // google map instance
   @ViewChild('myMap') map: GoogleMap;
 
+  // list of popups
   invitePopup = null;
   mapFiltersPopup = null;
   leaveGroupPopup = null;
   votingPopup = null;
   locationInfoPopup = null;
 
+  // details to be passed into location info popup
   currentLocationName = "";
   currentPos: pos = {
     lat: 0,
@@ -42,21 +45,18 @@ export class GroupMapComponent implements OnInit {
     public alertCtrl: AlertController) {}
 
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  // initiates the meetup feature of the app as well as other functions that go along with it
   meetup() {
     this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);
-    // Start of TechDebt
-    //setTimeout(()=> {this.mapService.meetup(this.userDataService.currentGroupMembers, this.map);}, (300))
-    // End of TechDebt
-
     document.getElementById('clickPin').style.display = 'block';
     console.log("Current Places: ", this.mapService.currentPlaces);
     this.mapService.zoom = 13;
     //this.popup('Voting');
   }
 
+  // sets all the variables to be passed into the location info popup with the corrisponding details of the pin they clicked
   showLocationInfo(color, name) {
     if (color == 'blue') {
       this.currentLocationName = name;
@@ -75,9 +75,8 @@ export class GroupMapComponent implements OnInit {
     }
   }
 
-
+  // passes data, and a component to present as a popup based on the type sent into the function
   popup = async function presentPopover(type: string) {
-
     if (type == "Invite") {
       this.invitePopup = await this.popoverController.create({
         component: InvitePopupComponent,
@@ -159,6 +158,8 @@ export class GroupMapComponent implements OnInit {
     }
   } // popup
 
+
+  // confirms that the current member wants to leave the group and removes them from the group if they confirm yes
   leaveGroup() {
     this.alertCtrl
     .create({
@@ -181,7 +182,7 @@ export class GroupMapComponent implements OnInit {
       alertEl.present();
     });
     return false;
-  }
+  } // leaveGroup
 
 
-}
+} // CLASS
