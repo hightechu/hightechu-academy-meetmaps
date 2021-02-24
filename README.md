@@ -26,7 +26,7 @@ There are two main ways in which you can participate in the project:
 * [Submit bugs and feature requests](https://github.com/hightechu/hightechu-academy-meetmaps/issues/new/choose)
 * Contribute to the code base through [source code changes](https://github.com/hightechu/hightechu-academy-meetmaps/compare)
 
-Learn more in our [Contributing]() Document
+Learn more in our [Contributing](https://github.com/hightechu/hightechu-academy-meetmaps/blob/main/CONTRIBUTING.md) Document
 
 ### 📜 Code of Conduct
 
@@ -58,4 +58,4 @@ Come to talk to us!
 
 ### ⚖️ Licence 
 
-This project uses the [MIT]() Licence
+This project uses the [MIT](https://github.com/hightechu/hightechu-academy-meetmaps/blob/main/LICENCE.md) Licence
