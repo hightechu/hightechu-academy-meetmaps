@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid id="mainGrid">
+    <!-- Title -->
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ type }}</ion-title>
+      </ion-col>
+    </ion-row>
+  <!-- Username (just sign up)-->
+    <ion-row *ngIf="type == 'Sign Up'">
+      <ion-col>
+        <ion-label>Username: </ion-label><ion-input ngDefaultControl type="text" placeholder="Username" [(ngModel)]="username" required></ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- Email (both popups)-->
+    <ion-row>
+      <ion-col>
+        <ion-label>Email: </ion-label><ion-input ngDefaultControl type="email" placeholder="Email" [(ngModel)]="email" required></ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- Password (both popups)-->
+    <ion-row>
+      <ion-col>
+        <ion-label>Password: </ion-label><ion-input ngDefaultControl type="password" placeholder="Password" [(ngModel)]="password" required></ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- Confirm Password (only sign up)-->
+    <ion-row *ngIf="type == 'Sign Up'">
+      <ion-col>
+        <ion-label>Confirm Password: </ion-label><ion-input ngDefaultControl type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" required></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="auth-popup-buttons" *ngIf="type == 'Sign Up'" (click)="userAuth(username, email, password, popover, 'signup')">Create Account</ion-button>
+        <ion-button class="auth-popup-buttons" *ngIf="type == 'Log In'" (click)="userAuth(username, email, password, popover, 'login')">Log In</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

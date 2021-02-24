@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ type }}</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="inviting == true">
+      <ion-col>
+        <ion-text>{{ error }}</ion-text>
+        <ion-input *ngIf="type == 'Invite'" placeholder="Username" [(ngModel)]="invitedUser"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="inviting == true">
+      <ion-col>
+        <ion-button class="invite-popup-button" *ngIf="type == 'Invite'" (click)="inviteUser()">Invite User</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="inviting == false">
+      <ion-col>
+        <ion-title>User Invited</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

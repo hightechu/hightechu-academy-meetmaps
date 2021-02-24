@@ -1,0 +1,76 @@
+ <!-- MENU -->
+ <ion-menu menuId="main-menu" content-id="main">
+  <ion-content id="main">
+
+    <ion-menu-toggle>
+      <ion-text class="welcomeUser">{{ "Hello " + userDataService.user.username }}</ion-text>
+      <ion-button class="menu-buttons" expand="full" (click)="changePage('group-list')">
+        <ion-icon name="navigate-outline" slot="start"></ion-icon>
+        Groups
+      </ion-button>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-button class="menu-buttons" text-align="left" expand="full" (click)="changePage('inbox')">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        Inbox
+        <ion-badge color="danger" *ngIf="this.userDataService.invites.length != 0" slot="end">{{this.userDataService.invites.length}}</ion-badge>
+      </ion-button>
+    </ion-menu-toggle>
+<!--
+    <ion-menu-toggle>
+      <ion-button class="menu-buttons" text-align="left" expand="full">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        Profile
+      </ion-button>
+    </ion-menu-toggle>
+  -->
+    <ion-menu-toggle>
+      <ion-button class="menu-buttons" text-align="left" expand="full" (click)="Logout()">
+        <ion-icon name="exit-outline" slot="start"></ion-icon>
+        Sign Out
+      </ion-button>
+    </ion-menu-toggle>
+
+    <ion-text class="project">
+      Check out the Open Source Project <ion-button class="menu-buttons" (click)="goto()">HERE</ion-button>
+    </ion-text>
+    <ion-text class="project" id="beta">Meetmaps v1.1 beta</ion-text>
+  </ion-content>
+  </ion-menu>
+
+
+
+
+<ion-content>
+
+  <ion-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+            <!--Button to open menu-->
+          <ion-button *ngIf="userDataService.currentComponent != 'group-map'" class="menu-toggle-button">
+            <ion-menu-button menu="main-menu"></ion-menu-button>
+          </ion-button>
+
+          <ion-button *ngIf="userDataService.currentComponent == 'group-map'" class="back-button" (click)="changePage('group-list')">
+            <ion-icon name="chevron-back"></ion-icon>Back
+          </ion-button>
+
+        </ion-col>
+
+        <ion-col size="10">
+          <ion-title>{{pageName}}</ion-title>
+        </ion-col>
+
+
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+
+  <app-group-list *ngIf="userDataService.currentComponent == 'group-list'"></app-group-list>
+  <app-group-map *ngIf="userDataService.currentComponent == 'group-map'"></app-group-map>
+  <app-inbox *ngIf="userDataService.currentComponent == 'inbox'"></app-inbox>
+
+</ion-content>
+

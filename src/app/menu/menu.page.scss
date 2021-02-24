@@ -1,0 +1,68 @@
+ion-content {
+  --ion-background-color: var(--ion-color-apptheme);
+  --ion-text-color: var(--ion-color-apptheme-contrast);
+  text-align: center;
+}
+
+.menu-buttons {
+  --color: var(--ion-color-apptheme);
+  --background: var(--ion-color-apptheme-contrast);
+  --background-activated: var(--ion-color-apptheme-contrastShade);
+  --border-radius: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.menu-toggle-button {
+  --color: var(--ion-color-apptheme);
+  --background: var(--ion-color-apptheme-contrast);
+  --border-radius: 25px;
+  --background-activated: var(--ion-color-apptheme-contrastShade);
+  width: 130%;
+}
+
+ion-title {
+  text-align: center;
+  font-size: 38px;
+}
+
+.welcomeUser {
+  margin-top: 15px;
+  --color: var(--ion-color-apptheme);
+  text-align: center;
+  font-size: 16px;
+}
+
+.back-button {
+  --color: var(--ion-color-apptheme);
+  --background: var(--ion-color-apptheme-contrast);
+  --border-radius: 25px;
+}
+
+ion-badge {
+  --padding-end: 3px;
+  margin-left: 5px;
+  width: 15px;
+  z-index:100;
+}
+
+.menu-badge {
+  margin-left: -5px;
+  padding: 3px;
+}
+
+.project {
+  position: absolute;
+  left: 5px;
+  bottom: 30px;
+}
+#beta {
+  bottom: 10px;
+  left: 80px;
+
+}
+a {
+  color: var(--ion-color-light);
+  z-index: 5;
+}

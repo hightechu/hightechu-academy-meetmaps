@@ -1,0 +1,54 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ type }}</ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  *ngIf="hasVoted() == true">
+      <ion-col  *ngIf="hasVoted() == true">
+        <ion-text class="titleText">Possible Locations</ion-text>
+      </ion-col>
+      <ion-col  *ngIf="hasVoted() == true">
+        <ion-text class="titleText">Number of Votes</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col *ngIf="hasVoted() == false">
+        <ion-list>
+          <ion-item *ngFor="let place of mapService.currentPlaces">
+            <ion-label>{{place.data.name}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="place.voted"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col *ngIf="hasVoted() == true">
+        <ion-list>
+          <ion-item *ngFor="let place of mapService.currentPlaces">
+            <ion-label>{{place.data.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col *ngIf="hasVoted() == true">
+        <ion-list>
+          <ion-item *ngFor="let place of mapService.currentPlaces">
+            <ion-label>{{place.totalVotes}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col *ngIf="hasVoted() == false">
+        <ion-button class="voting-popup-button" (click)="submitVote('submit')">Submit Vote</ion-button>
+      </ion-col>
+      <ion-col *ngIf="hasVoted() == true">
+        <ion-button class="voting-popup-button" (click)="submitVote('change')">Change Vote</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ type }}</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input *ngIf="type == 'Create Group'" placeholder="Group Name" [(ngModel)]="groupName"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-popup-buttons" *ngIf="type == 'Create Group'" (click)="createNewGroup()">Create Group</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

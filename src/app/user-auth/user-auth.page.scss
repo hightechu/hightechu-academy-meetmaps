@@ -1,0 +1,27 @@
+ion-grid {
+  margin-top: 10vw;
+  //@warn: 4px #FF0000 solid;
+}
+
+ion-col {
+  text-align: center;
+  //border: 4px #FF00FF solid;
+}
+
+.user-auth-buttons {
+  --color: var(--ion-color-apptheme-contrast);
+  --background: var(--ion-color-apptheme);
+  --border-radius: 25px;
+  --background-activated: var(--ion-color-apptheme-shade);
+    width: 50%;
+}
+
+ion-content {
+  text-align: center;
+  --ion-background-color: var(--ion-color-apptheme-contrast);
+  --ion-text-color: var(--ion-color-apptheme);
+}
+
+ion-title {
+  font-size: 50px;
+}

@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title class="centeredText">{{ data.name }}</ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'Rating: ' + data.rating + "/5" }}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'Price: ' + toDollar() }}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button class="location-popup-button" (click)="directMe()">Direct Me There!</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
