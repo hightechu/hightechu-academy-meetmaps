@@ -51,3 +51,18 @@ ion-badge {
   margin-left: -5px;
   padding: 3px;
 }
+
+.project {
+  position: absolute;
+  left: 5px;
+  bottom: 30px;
+}
+#beta {
+  bottom: 10px;
+  left: 80px;
+
+}
+a {
+  color: var(--ion-color-light);
+  z-index: 5;
+}
