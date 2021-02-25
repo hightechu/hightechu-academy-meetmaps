@@ -30,7 +30,7 @@ export class MenuPage implements OnInit {
   changePage(page: string) {
     this.userDataService.currentComponent = page;
     switch (page) {
-      case "inbox": this.pageName = "Pending Invites"; break;
+      case "inbox": this.pageName = "Inbox"; break;
       case "group-map": this.pageName = this.userDataService.currentGroup.name; break;
       default: this.pageName = "My Groups";
     }
