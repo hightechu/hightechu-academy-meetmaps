@@ -29,9 +29,7 @@
 ### ⚙️ Tech Used
 1. [Ionic](https://ionicframework.com/)
 2. [Angular](https://angular.io/)
-3. [Google Firebase](https://firebase.google.com/)
-  - [FireAuth](https://firebase.google.com/docs/auth)
-  - [FireStore](https://firebase.google.com/docs/firestore)
+3. [Google Firebase](https://firebase.google.com/) - [FireAuth](https://firebase.google.com/docs/auth) - [FireStore](https://firebase.google.com/docs/firestore)
 4. [Google Maps API](https://developers.google.com/maps)
 5. [Node.js](https://nodejs.org/en/)
 6. [Capacitor](https://capacitorjs.com/)
