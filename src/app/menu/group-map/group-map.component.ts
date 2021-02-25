@@ -125,11 +125,11 @@ export class GroupMapComponent implements OnInit {
         backdropDismiss: true
       });
       return await this.votingPopup.present();
-    } else if (type == "Leave Group") {
+    } else if (type == "Remove Group") {
       this.leaveGroupPopup = await this.popoverController.create({
         componentProps: {
           popover: this.leaveGroupPopup,
-          type: 'Please Confirm'
+          type: 'Remove Group'
         },
         cssClass: 'my-custom-popup',
         translucent: true,
@@ -163,8 +163,8 @@ export class GroupMapComponent implements OnInit {
   leaveGroup() {
     this.alertCtrl
     .create({
-      header: 'Remove Group',
-      message: 'Are you sure you want to permanently remove this group from your list?',
+      header: 'Leave Group',
+      message: "Are you sure you want to permanently remove this group from your groups list? You won't be able to rejoin without another invite.",
       buttons: [
         {
           text: 'No',
