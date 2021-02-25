@@ -6,7 +6,7 @@
 
 #### Finding it difficult to meet with friends? Meet Maps let's you conviently plan meetup's with friends by locating the top 5 closest destinations to the center of your group. Now you can spend less time <i>getting</i> together, and more time <i>actually</i> together!
 
-#### Join MeetMaps here: [https://meetmapsapp.herokuapp.com/](https://meetmapsapp.herokuapp.com/)
+#### Join MeetMaps here: [https://meetmapsapp.herokuapp.com/](https://meetmapsapp.herokuapp.com/) -- <strong>Google Playstore App Coming Soon</strong>
 
 ### 🌎 Our Mission
 
